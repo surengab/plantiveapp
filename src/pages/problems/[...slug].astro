@@ -1,0 +1,433 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { breadcrumbs, article, faqPage } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  const problems = await getCollection('problems', (p) => !p.data.draft);
+  return problems.map((problem) => ({ params: { slug: problem.id }, props: { problem } }));
+}
+
+interface Props {
+  problem: CollectionEntry<'problems'>;
+}
+
+const { problem } = Astro.props;
+const d = problem.data;
+const { Content, headings } = await render(problem);
+
+const url = `/problems/${problem.id}/`;
+const trail = [{ label: 'Plant problems', href: '/problems/' }, { label: d.symptom }];
+
+const allPlants = await getCollection('plants', (p) => !p.data.draft);
+const affected = d.affectedPlants
+  .map((slug) => allPlants.find((p) => p.id === slug))
+  .filter((p): p is CollectionEntry<'plants'> => Boolean(p));
+
+const allProblems = await getCollection('problems', (p) => !p.data.draft);
+const others = allProblems.filter((p) => p.id !== problem.id).slice(0, 3);
+
+const schema = [
+  breadcrumbs(trail),
+  article({
+    url,
+    headline: d.heading ?? d.title,
+    description: d.description,
+    publishDate: d.publishDate,
+    updatedDate: d.updatedDate,
+    section: 'Plant problems',
+    keywords: d.keywords,
+  }),
+  faqPage(d.faqs, url),
+].filter(Boolean);
+
+const fmt = (date: Date) =>
+  date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const h2s = headings.filter((h) => h.depth === 2);
+---
+
+<Base
+  title={d.title}
+  description={d.description}
+  canonical={url}
+  type="article"
+  publishDate={d.publishDate}
+  updatedDate={d.updatedDate}
+  schema={schema}
+>
+  <article>
+    <header class="wrap prob-head">
+      <Breadcrumbs trail={trail} />
+      <span class={`sev sev-${d.severity}`}>{d.severity} severity</span>
+      <h1>{d.heading ?? d.title}</h1>
+
+      <div class="quick-answer">
+        <p class="qa-label">Short answer</p>
+        <p class="qa-text">{d.quickAnswer}</p>
+      </div>
+    </header>
+
+    <!-- ---------------- Ranked causes ---------------- -->
+    {
+      d.causes.length > 0 && (
+        <section class="wrap section-tight" id="causes">
+          <h2 class="h-sec">Work through the causes in order</h2>
+          <ol class="causes">
+            {d.causes.map((c, i) => (
+              <li class="cause">
+                <div class="c-head">
+                  <span class="c-num">{i + 1}</span>
+                  <h3>{c.name}</h3>
+                  <span class={`lk lk-${c.likelihood.replace(/\s+/g, '-')}`}>{c.likelihood}</span>
+                </div>
+                <div class="c-body">
+                  <p>
+                    <strong>How to tell:</strong> {c.tell}
+                  </p>
+                  <p>
+                    <strong>What to do:</strong> {c.fix}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )
+    }
+
+    <!-- ---------------- Body ---------------- -->
+    <div class="wrap body-grid">
+      <div class="prose">
+        <Content />
+      </div>
+
+      <aside class="side">
+        {
+          h2s.length > 2 && (
+            <nav class="toc" aria-label="On this page">
+              <h2>On this page</h2>
+              <ul>
+                {h2s.map((h) => (
+                  <li>
+                    <a href={`#${h.slug}`}>{h.text}</a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )
+        }
+
+        {
+          affected.length > 0 && (
+            <div class="affected">
+              <h2>Commonly affects</h2>
+              <ul>
+                {affected.map((p) => (
+                  <li>
+                    <a href={`/plant-care/${p.id}/`}>{p.data.commonName}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+      </aside>
+    </div>
+
+    <div class="wrap">
+      <div class="wrap-prose faq-wrap">
+        <FaqSection faqs={d.faqs} />
+      </div>
+
+      <CtaBand
+        source={`problem-${problem.id}`}
+        heading="Sure you know what plant this is?"
+        body="The right fix depends on the species — a succulent and a fern showing the same symptom need opposite treatment. Scan yours with Plantive to confirm."
+      />
+
+      <section class="section-tight">
+        <h2 class="h-sec">Other problems to rule out</h2>
+        <div class="grid grid-3">
+          {
+            others.map((p) => (
+              <a class="card other" href={`/problems/${p.id}/`}>
+                <span class={`sev sev-${p.data.severity}`}>{p.data.severity}</span>
+                <h3>{p.data.symptom}</h3>
+                <p>{p.data.quickAnswer}</p>
+              </a>
+            ))
+          }
+        </div>
+      </section>
+
+      <p class="dates">
+        Published {fmt(d.publishDate)}{d.updatedDate && ` · Last reviewed ${fmt(d.updatedDate)}`}
+      </p>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .prob-head {
+    padding-top: 2.25rem;
+  }
+
+  .prob-head h1 {
+    margin-block: 0.65rem 1.5rem;
+    font-size: var(--step-4);
+  }
+
+  .sev {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 650;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.28rem 0.7rem;
+    border-radius: 999px;
+    margin-top: 1rem;
+  }
+
+  .sev-low {
+    background: var(--green-100);
+    color: var(--green-900);
+  }
+  .sev-medium {
+    background: var(--amber-100);
+    color: var(--amber-500);
+  }
+  .sev-high {
+    background: var(--rose-100);
+    color: var(--rose-500);
+  }
+
+  .quick-answer {
+    border-left: 4px solid var(--green-500);
+    background: var(--accent-soft);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.15rem 1.4rem;
+    max-width: 68ch;
+  }
+
+  .qa-label {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 650;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent-on-soft);
+    margin-bottom: 0.35rem;
+  }
+
+  .qa-text {
+    font-size: 1.06rem;
+    line-height: 1.55;
+    color: var(--accent-on-soft);
+  }
+
+  .h-sec {
+    font-size: var(--step-3);
+    margin-bottom: 1.4rem;
+    scroll-margin-top: 5.5rem;
+  }
+
+  /* ---------------- Causes ---------------- */
+  .causes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .cause {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--bg-raised);
+    padding: 1.3rem 1.5rem 1.4rem;
+  }
+
+  .c-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+
+  .c-num {
+    width: 1.75rem;
+    height: 1.75rem;
+    flex: none;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent-on-soft);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  .cause h3 {
+    font-size: 1.15rem;
+    flex: 1;
+    min-width: 8rem;
+  }
+
+  .lk {
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    font-weight: 650;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.22rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-strong);
+    color: var(--text-muted);
+    flex: none;
+  }
+
+  .lk-most-likely {
+    background: var(--rose-100);
+    color: var(--rose-500);
+    border-color: transparent;
+  }
+
+  .lk-common {
+    background: var(--amber-100);
+    color: var(--amber-500);
+    border-color: transparent;
+  }
+
+  .c-body {
+    display: grid;
+    gap: 0.5rem;
+    padding-left: 2.5rem;
+  }
+
+  @media (max-width: 520px) {
+    .c-body {
+      padding-left: 0;
+    }
+  }
+
+  .c-body p {
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  .c-body strong {
+    color: var(--text);
+    font-weight: 650;
+  }
+
+  /* ---------------- Body layout ---------------- */
+  .body-grid {
+    display: grid;
+    gap: clamp(2rem, 5vw, 3.5rem);
+    align-items: start;
+    padding-top: 1.5rem;
+  }
+
+  @media (min-width: 1000px) {
+    .body-grid {
+      grid-template-columns: minmax(0, 1fr) 16rem;
+    }
+  }
+
+  .side {
+    display: grid;
+    gap: 1.25rem;
+    position: sticky;
+    top: 5.5rem;
+  }
+
+  @media (max-width: 999px) {
+    .side {
+      position: static;
+    }
+  }
+
+  .toc,
+  .affected {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.25rem;
+    background: var(--bg-raised);
+  }
+
+  .toc h2,
+  .affected h2 {
+    font-size: 0.72rem;
+    font-weight: 650;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc ul,
+  .affected ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .toc a,
+  .affected a {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    line-height: 1.4;
+  }
+
+  .toc a:hover,
+  .affected a:hover {
+    color: var(--accent);
+  }
+
+  /* ---------------- Other problems ---------------- */
+  .other {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .other .sev {
+    align-self: flex-start;
+    margin-top: 0;
+  }
+
+  .other h3 {
+    font-size: 1.08rem;
+    line-height: 1.3;
+  }
+
+  .other p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
+  .faq-wrap {
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+
+  .dates {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding-top: 1.25rem;
+    margin-top: 2rem;
+  }
+</style>

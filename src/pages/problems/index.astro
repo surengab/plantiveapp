@@ -1,0 +1,196 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { breadcrumbs, itemList } from '../../lib/schema';
+
+const problems = (await getCollection('problems', (p) => !p.data.draft)).sort(
+  (a, b) => Number(b.data.featured) - Number(a.data.featured)
+);
+
+const title = 'Houseplant Problems: Diagnose Symptoms and Fix Them';
+const description =
+  'Yellow leaves, brown tips, drooping stems, webbing or gnats? Start from the symptom, work through the likely causes in order, and apply the fix that actually matches.';
+
+const trail = [{ label: 'Plant problems', href: '/problems/' }];
+
+const schema = [
+  breadcrumbs(trail),
+  itemList(
+    '/problems/',
+    'Houseplant problem diagnosis',
+    problems.map((p) => ({ name: p.data.symptom, href: `/problems/${p.id}/` }))
+  ),
+];
+---
+
+<Base title={title} description={description} canonical="/problems/" schema={schema}>
+  <div class="wrap hub-head">
+    <Breadcrumbs trail={trail} />
+    <h1>Diagnose a Plant Problem</h1>
+    <p class="lede">
+      Most houseplant symptoms have several possible causes, and the treatments are often opposite.
+      Start from what you can see and work through the causes in order of likelihood.
+    </p>
+  </div>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="grid grid-2">
+        {
+          problems.map((p) => (
+            <a class="card prob" href={`/problems/${p.id}/`}>
+              <div class="prob-top">
+                <span class={`sev sev-${p.data.severity}`}>{p.data.severity}</span>
+                <h2>{p.data.symptom}</h2>
+              </div>
+              <p class="quick">{p.data.quickAnswer}</p>
+              {p.data.causes.length > 0 && (
+                <p class="causes">
+                  <strong>Most likely:</strong> {p.data.causes[0].name}
+                  {p.data.causes.length > 1 && ` · ${p.data.causes.length} causes covered`}
+                </p>
+              )}
+              <span class="read-more">Work through it →</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="section-tight">
+      <h2 class="h-sec">The two checks that solve most problems</h2>
+      <div class="grid grid-2">
+        <div class="card tip">
+          <h3>1. Feel the soil, two inches down</h3>
+          <p>
+            Not the surface — the surface dries within a day of watering and tells you nothing. Damp
+            at two inches means stop watering. Bone dry means water thoroughly. This single test
+            resolves the majority of yellowing, drooping and wilting cases.
+          </p>
+          <a href="/problems/overwatering-vs-underwatering/">Overwatering vs underwatering →</a>
+        </div>
+        <div class="card tip">
+          <h3>2. Be honest about the light</h3>
+          <p>
+            At midday, could you comfortably read a book in that spot without a lamp? If not, it is a
+            low-light position no matter how bright the room feels. Light intensity falls off with
+            the square of the distance from the window.
+          </p>
+          <a href="/blog/how-to-measure-light-for-houseplants/">How to measure light →</a>
+        </div>
+      </div>
+    </section>
+
+    <CtaBand
+      source="problems-hub"
+      heading="Diagnosing the wrong plant?"
+      body="Care advice only works if you know the species. Scan your plant with Plantive to confirm what it is, then match the symptom to the right cause."
+    />
+  </div>
+</Base>
+
+<style>
+  .hub-head {
+    padding-top: 2.25rem;
+  }
+
+  .hub-head h1 {
+    margin-block: 1rem 0.9rem;
+  }
+
+  .prob {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 1.5rem 1.6rem 1.65rem;
+  }
+
+  .prob-top {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+  }
+
+  .prob h2 {
+    font-size: 1.28rem;
+    line-height: 1.25;
+  }
+
+  .quick {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    flex: 1;
+  }
+
+  .causes {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding-top: 0.7rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .causes strong {
+    color: var(--text);
+  }
+
+  .read-more {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--accent);
+  }
+
+  .sev {
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    font-weight: 650;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    flex: none;
+  }
+
+  .sev-low {
+    background: var(--green-100);
+    color: var(--green-900);
+  }
+  .sev-medium {
+    background: var(--amber-100);
+    color: var(--amber-500);
+  }
+  .sev-high {
+    background: var(--rose-100);
+    color: var(--rose-500);
+  }
+
+  .h-sec {
+    font-size: var(--step-3);
+    margin-bottom: 1.4rem;
+  }
+
+  .tip h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .tip p {
+    color: var(--text-muted);
+    font-size: 0.94rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+  }
+
+  .tip a {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-decoration: none;
+  }
+</style>

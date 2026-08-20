@@ -1,0 +1,483 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CareTable from '../../components/CareTable.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import LeafArt from '../../components/LeafArt.astro';
+import { APP } from '../../consts';
+import { breadcrumbs, article, faqPage, careHowTo } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  const plants = await getCollection('plants', (p) => !p.data.draft);
+  return plants.map((plant) => ({ params: { slug: plant.id }, props: { plant } }));
+}
+
+interface Props {
+  plant: CollectionEntry<'plants'>;
+}
+
+const { plant } = Astro.props;
+const d = plant.data;
+const { Content, headings } = await render(plant);
+
+const url = `/plant-care/${plant.id}/`;
+const trail = [
+  { label: 'Plant care guides', href: '/plant-care/' },
+  { label: d.commonName },
+];
+
+// Related guides, skipping any slug that has not been written yet.
+const allPlants = await getCollection('plants', (p) => !p.data.draft);
+const related = d.related
+  .map((slug) => allPlants.find((p) => p.id === slug))
+  .filter((p): p is CollectionEntry<'plants'> => Boolean(p))
+  .slice(0, 3);
+
+const allProblems = await getCollection('problems', (p) => !p.data.draft);
+const problemFor = (slug?: string) =>
+  slug ? allProblems.find((p) => p.id === slug) : undefined;
+
+const careSteps = [
+  { name: 'Light', text: `${d.care.light.label}. ${d.care.light.detail}` },
+  { name: 'Water', text: `${d.care.water.label}. ${d.care.water.detail}` },
+  { name: 'Soil', text: `${d.care.soil.label}. ${d.care.soil.detail}` },
+  { name: 'Feed', text: `${d.care.fertilizer.label}. ${d.care.fertilizer.detail}` },
+  { name: 'Repot', text: `${d.care.repotting.label}. ${d.care.repotting.detail}` },
+];
+
+const schema = [
+  breadcrumbs(trail),
+  article({
+    url,
+    headline: d.heading ?? d.title,
+    description: d.description,
+    publishDate: d.publishDate,
+    updatedDate: d.updatedDate,
+    section: 'Plant care',
+    keywords: d.keywords,
+  }),
+  careHowTo({
+    url,
+    name: `How to care for a ${d.commonName}`,
+    description: `Light, watering, soil, feeding and repotting for ${d.botanicalName}.`,
+    steps: careSteps,
+  }),
+  faqPage(d.faqs, url),
+].filter(Boolean);
+
+const fmt = (date: Date) =>
+  date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const h2s = headings.filter((h) => h.depth === 2);
+---
+
+<Base
+  title={d.title}
+  description={d.description}
+  canonical={url}
+  type="article"
+  publishDate={d.publishDate}
+  updatedDate={d.updatedDate}
+  schema={schema}
+>
+  <article>
+    <!-- ---------------- Header ---------------- -->
+    <header class="guide-head">
+      <div class="wrap head-grid">
+        <div class="head-copy">
+          <Breadcrumbs trail={trail} />
+          <h1>{d.heading ?? d.title}</h1>
+          <p class="botanical">{d.botanicalName}</p>
+          <div class="badges">
+            <span class={`pill pill-${d.difficulty}`}>{d.difficulty} care</span>
+            <span class="pill pill-outline">{d.growthRate} growing</span>
+            {
+              d.petSafe ? (
+                <span class="pill pill-easy">Pet safe</span>
+              ) : (
+                <span class="pill pill-demanding">Toxic to pets</span>
+              )
+            }
+          </div>
+          {
+            d.alsoKnownAs.length > 0 && (
+              <p class="aka">
+                Also called {d.alsoKnownAs.join(', ')}
+              </p>
+            )
+          }
+        </div>
+        <LeafArt silhouette={d.silhouette} hue={d.hue} class="head-art" />
+      </div>
+    </header>
+
+    <!-- ---------------- Quick facts ---------------- -->
+    <div class="wrap">
+      <dl class="quickfacts">
+        <div><dt>Family</dt><dd>{d.family}</dd></div>
+        <div><dt>Native to</dt><dd>{d.origin}</dd></div>
+        <div><dt>Mature size</dt><dd>{d.matureSize}</dd></div>
+        <div><dt>Toxicity</dt><dd>{d.toxicity}</dd></div>
+      </dl>
+    </div>
+
+    <!-- ---------------- Care at a glance ---------------- -->
+    <section class="wrap section-tight" id="care">
+      <h2 class="care-h">{d.commonName} care at a glance</h2>
+      <CareTable care={d.care} />
+    </section>
+
+    <!-- ---------------- Body + TOC ---------------- -->
+    <div class="wrap body-grid">
+      <div class="prose">
+        <Content />
+      </div>
+
+      <aside class="side">
+        {
+          h2s.length > 2 && (
+            <nav class="toc" aria-label="On this page">
+              <h2>On this page</h2>
+              <ul>
+                {h2s.map((h) => (
+                  <li>
+                    <a href={`#${h.slug}`}>{h.text}</a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )
+        }
+        <div class="side-cta">
+          <img src="/assets/icon-192.png" width="52" height="52" alt="" decoding="async" />
+          <p>Scan a plant and get its care schedule instantly.</p>
+          <a class="btn btn-primary side-btn" href={APP.appStoreUrl} rel="noopener">
+            Get Plantive free
+          </a>
+        </div>
+      </aside>
+    </div>
+
+    <!-- ---------------- Troubleshooting ---------------- -->
+    {
+      d.troubleshooting.length > 0 && (
+        <section class="wrap section-tight" id="troubleshooting">
+          <h2 class="care-h">{d.commonName} problems and fixes</h2>
+          <div class="table-scroll">
+            <table class="trouble">
+              <thead>
+                <tr>
+                  <th scope="col">Symptom</th>
+                  <th scope="col">Likely cause</th>
+                  <th scope="col">What to do</th>
+                </tr>
+              </thead>
+              <tbody>
+                {d.troubleshooting.map((t) => {
+                  const problem = problemFor(t.problemSlug);
+                  return (
+                    <tr>
+                      <th scope="row">{t.symptom}</th>
+                      <td>{t.cause}</td>
+                      <td>
+                        {t.fix}
+                        {problem && (
+                          <>
+                            {' '}
+                            <a href={`/problems/${problem.id}/`}>Full guide →</a>
+                          </>
+                        )}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )
+    }
+
+    <!-- ---------------- FAQs ---------------- -->
+    <div class="wrap">
+      <div class="wrap-prose faq-wrap">
+        <FaqSection faqs={d.faqs} heading={`${d.commonName} FAQs`} />
+      </div>
+
+      <CtaBand
+        source={`plant-${plant.id}`}
+        heading={`Is this really a ${d.commonName}?`}
+        body="Plant labels are often wrong and lookalikes are common. Scan yours with Plantive to confirm the species before you commit to a care routine."
+      />
+
+      {
+        related.length > 0 && (
+          <section class="section-tight">
+            <h2 class="care-h">Related care guides</h2>
+            <div class="grid grid-3">
+              {related.map((p) => (
+                <a class="card rel-card" href={`/plant-care/${p.id}/`}>
+                  <h3>{p.data.commonName}</h3>
+                  <p class="rel-bot">{p.data.botanicalName}</p>
+                  <p class="rel-sum">
+                    {p.data.care.light.label} · {p.data.care.water.label}
+                  </p>
+                </a>
+              ))}
+            </div>
+          </section>
+        )
+      }
+
+      <p class="dates">
+        Published {fmt(d.publishDate)}{d.updatedDate && ` · Last reviewed ${fmt(d.updatedDate)}`}
+      </p>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .guide-head {
+    background: var(--bg-subtle);
+    border-bottom: 1px solid var(--border);
+    padding-block: 2.25rem clamp(2rem, 5vw, 3rem);
+  }
+
+  .head-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  @media (min-width: 860px) {
+    .head-grid {
+      grid-template-columns: 1.6fr 1fr;
+    }
+  }
+
+  .head-copy h1 {
+    margin-block: 1rem 0.4rem;
+    font-size: var(--step-4);
+  }
+
+  .botanical {
+    font-style: italic;
+    font-size: var(--step-1);
+    color: var(--text-muted);
+    margin-bottom: 1.1rem;
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .aka {
+    margin-top: 1rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+
+  .head-grid :global(.head-art) {
+    border-radius: var(--radius-lg);
+    aspect-ratio: 4 / 3;
+    box-shadow: var(--shadow-md);
+  }
+
+  @media (max-width: 859px) {
+    .head-grid :global(.head-art) {
+      display: none;
+    }
+  }
+
+  /* ---------------- Quick facts ---------------- */
+  .quickfacts {
+    display: grid;
+    gap: 1.25rem 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    margin: 2rem 0 0;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--bg-raised);
+  }
+
+  .quickfacts dt {
+    font-size: 0.7rem;
+    font-weight: 650;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+  }
+
+  .quickfacts dd {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .care-h {
+    font-size: var(--step-3);
+    margin-bottom: 1.4rem;
+    scroll-margin-top: 5.5rem;
+  }
+
+  /* ---------------- Body layout ---------------- */
+  .body-grid {
+    display: grid;
+    gap: clamp(2rem, 5vw, 3.5rem);
+    align-items: start;
+    padding-top: 1rem;
+  }
+
+  @media (min-width: 1000px) {
+    .body-grid {
+      grid-template-columns: minmax(0, 1fr) 17rem;
+    }
+  }
+
+  .side {
+    display: grid;
+    gap: 1.25rem;
+    position: sticky;
+    top: 5.5rem;
+  }
+
+  @media (max-width: 999px) {
+    .side {
+      position: static;
+    }
+  }
+
+  .toc {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.25rem;
+    background: var(--bg-raised);
+  }
+
+  .toc h2 {
+    font-size: 0.72rem;
+    font-weight: 650;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .toc a {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    line-height: 1.4;
+    display: block;
+  }
+
+  .toc a:hover {
+    color: var(--accent);
+  }
+
+  .side-cta {
+    border: 1px solid var(--green-300);
+    background: var(--accent-soft);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    text-align: center;
+    display: grid;
+    justify-items: center;
+    gap: 0.7rem;
+  }
+
+  .side-cta img {
+    border-radius: 22%;
+  }
+
+  .side-cta p {
+    font-size: 0.9rem;
+    color: var(--accent-on-soft);
+    line-height: 1.5;
+  }
+
+  .side-btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+  }
+
+  /* ---------------- Troubleshooting table ---------------- */
+  .trouble {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    min-width: 44rem;
+  }
+
+  .trouble :is(th, td) {
+    text-align: left;
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .trouble thead th {
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1.5px solid var(--border-strong);
+  }
+
+  .trouble tbody th {
+    font-weight: 600;
+    font-family: var(--font-display);
+    width: 30%;
+  }
+
+  .trouble td {
+    color: var(--text-muted);
+  }
+
+  /* ---------------- Related ---------------- */
+  .rel-card h3 {
+    font-size: 1.08rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .rel-bot {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+  }
+
+  .rel-sum {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .faq-wrap {
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+
+  .dates {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding-top: 1.25rem;
+    margin-top: 2rem;
+  }
+</style>

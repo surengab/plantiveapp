@@ -1,0 +1,126 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import FaqSection from '../components/FaqSection.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { APP } from '../consts';
+import { breadcrumbs, faqPage } from '../lib/schema';
+
+const trail = [{ label: 'FAQ', href: '/faq/' }];
+
+const appFaqs = [
+  {
+    question: 'Is Plantive free to use?',
+    answer:
+      'Yes. Plantive is free to download from the App Store and you can identify a plant without creating an account. Optional Pro subscriptions and a lifetime unlock are offered as in-app purchases for people who want the full feature set.',
+  },
+  {
+    question: 'What devices does Plantive support?',
+    answer: `Plantive is an iPhone app requiring iOS ${APP.minimumOsVersion} or later. The download is about ${APP.fileSizeMb} MB. There is currently no Android version. The plant care guides on this website are free and work on any device with no app needed.`,
+  },
+  {
+    question: 'What can Plantive identify?',
+    answer:
+      'Plants, flowers, trees, leaves, succulents and houseplants. Identification is most accurate on a sharp, well-lit close-up of a distinctive feature — a flower, or a single leaf against a plain background — rather than a wide shot containing several plants.',
+  },
+  {
+    question: 'Do I need an internet connection?',
+    answer:
+      'Identifying a new plant requires a connection, since the image is processed remotely. Guides you have already saved to your garden remain readable offline.',
+  },
+  {
+    question: 'How do I cancel a subscription?',
+    answer:
+      'Subscriptions are managed by Apple, not by us. Open the Settings app on your iPhone, tap your name, then Subscriptions, select Plantive and choose Cancel Subscription. Cancelling takes effect at the end of the current billing period.',
+  },
+  {
+    question: 'How do I get a refund?',
+    answer:
+      'Refunds for App Store purchases are handled by Apple. Go to reportaproblem.apple.com, sign in with your Apple ID, find the purchase and request a refund. We cannot issue App Store refunds directly, but do contact us if something went wrong and we will help where we can.',
+  },
+];
+
+const careFaqs = [
+  {
+    question: 'How accurate is photo-based plant identification?',
+    answer:
+      'Accuracy depends far more on the photo than on the app. A close, well-lit shot of a flower or a single leaf identifies common cultivated and wild species reliably. Distant photos, dim or harsh light, several plants in frame, or damaged foliage all reduce accuracy significantly. Distinguishing named cultivars within a species is genuinely difficult for any tool.',
+  },
+  {
+    question: 'How often should I water my houseplants?',
+    answer:
+      'There is no universal schedule, and following one is the most common cause of houseplant death. Water needs depend on species, pot size and material, light, temperature, humidity and season. Check the soil on a regular schedule instead — push a finger two inches in and water only when that particular plant is ready.',
+  },
+  {
+    question: 'Why do my plants keep dying?',
+    answer:
+      'Overwatering and insufficient light account for the large majority of houseplant deaths. Both are correctable once identified: check soil moisture before watering rather than following a calendar, and be realistic about light — if you could not comfortably read a book in that spot at midday without a lamp, it is a low-light position regardless of how bright the room feels.',
+  },
+  {
+    question: 'Can I use Plantive to check if a plant is safe for my pet?',
+    answer:
+      'You can identify the species and read its toxicity information, and our pet-safe plants guide covers the common ones. But never rely on an app alone in an emergency. If a pet has eaten part of a plant, call your vet or an animal poison control line immediately and bring the plant or a photo — do not spend time identifying it yourself first.',
+  },
+  {
+    question: 'Are the care guides on this site written by people?',
+    answer:
+      'Yes. Every guide is written and reviewed by our team against established horticultural sources, and each page shows when it was last reviewed. The advice is general horticultural guidance rather than professional or veterinary advice — always confirm toxicity information with a vet.',
+  },
+];
+
+const privacyFaqs = [
+  {
+    question: 'What happens to the photos I take?',
+    answer:
+      'Photos are sent for processing so the species can be identified, and are handled according to our privacy policy. See the full policy for details of what is collected, how long it is retained and your rights over it.',
+  },
+  {
+    question: 'How do I contact support?',
+    answer: `Email ${APP.supportEmail} and describe the issue, including your iPhone model and iOS version if it is a technical problem. That information usually lets us resolve things in one exchange rather than several.`,
+  },
+];
+
+const allFaqs = [...appFaqs, ...careFaqs, ...privacyFaqs];
+
+const schema = [breadcrumbs(trail), faqPage(allFaqs, '/faq/')].filter(Boolean);
+---
+
+<Base
+  title="Plantive FAQ: App, Subscriptions and Plant Care Questions"
+  description="Answers about the Plantive app — pricing, devices, subscriptions and refunds — plus the plant care questions we are asked most often."
+  canonical="/faq/"
+  schema={schema}
+>
+  <div class="wrap hub-head">
+    <Breadcrumbs trail={trail} />
+    <h1>Frequently Asked Questions</h1>
+    <p class="lede">
+      Questions about the app, plant care, and how to reach us. If your question is not here, email
+      <a href={`mailto:${APP.supportEmail}`}>{APP.supportEmail}</a>.
+    </p>
+  </div>
+
+  <div class="wrap wrap-prose faq-page">
+    <FaqSection faqs={appFaqs} heading="About the app" id="app" />
+    <FaqSection faqs={careFaqs} heading="Plant care" id="care" />
+    <FaqSection faqs={privacyFaqs} heading="Privacy and support" id="support" />
+  </div>
+
+  <div class="wrap">
+    <CtaBand source="faq" />
+  </div>
+</Base>
+
+<style>
+  .hub-head {
+    padding-top: 2.25rem;
+  }
+
+  .hub-head h1 {
+    margin-block: 1rem 0.9rem;
+  }
+
+  .faq-page {
+    margin-inline: auto;
+  }
+</style>

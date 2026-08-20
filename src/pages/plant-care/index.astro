@@ -1,0 +1,213 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PlantCard from '../../components/PlantCard.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import { breadcrumbs, itemList, faqPage } from '../../lib/schema';
+
+const plants = (await getCollection('plants', (p) => !p.data.draft)).sort((a, b) =>
+  a.data.commonName.localeCompare(b.data.commonName)
+);
+
+const easy = plants.filter((p) => p.data.difficulty === 'easy');
+const petSafe = plants.filter((p) => p.data.petSafe);
+const lowLight = plants.filter((p) =>
+  /low|medium/i.test(p.data.care.light.label)
+);
+
+const title = 'Plant Care Guides: Watering, Light & Troubleshooting';
+const description =
+  'Detailed care guides for the most popular houseplants — exact watering intervals, light requirements, soil mixes, propagation and the problems each species is prone to.';
+
+const trail = [{ label: 'Plant care guides', href: '/plant-care/' }];
+
+const faqs = [
+  {
+    question: 'How often should I water my houseplants?',
+    answer:
+      'There is no single answer — it depends on the species, pot size and material, light, temperature and season. The same plant may need water weekly in July and every three weeks in January. Check the soil on a regular schedule rather than watering on one, and use each species guide for the depth of dryness that particular plant wants.',
+  },
+  {
+    question: 'Which houseplants are easiest for a complete beginner?',
+    answer:
+      'Pothos, snake plant, ZZ plant and spider plant are the four most forgiving. All tolerate irregular watering, adapt to a range of light levels, and recover well from mistakes. Pothos and spider plants also propagate almost effortlessly, which makes them satisfying to learn on.',
+  },
+  {
+    question: 'Which of these plants are safe for cats and dogs?',
+    answer:
+      'Spider plants, calatheas and prayer plants, Phalaenopsis orchids and echeveria succulents are all non-toxic. Most of the popular aroids — pothos, monstera, philodendron, peace lily and ZZ plant — contain calcium oxalate crystals that cause painful mouth irritation in pets, as do aloe vera and rubber plants.',
+  },
+  {
+    question: 'Why do my plants keep dying?',
+    answer:
+      'Overwatering and insufficient light account for the large majority of houseplant deaths. Both are easy to correct once identified: check soil moisture before watering rather than following a schedule, and be honest about how much light a spot genuinely gets — if you could not read a book there at midday without a lamp, it is a low-light position.',
+  },
+];
+
+const schema = [
+  breadcrumbs(trail),
+  itemList(
+    '/plant-care/',
+    'Houseplant care guides',
+    plants.map((p) => ({ name: p.data.commonName, href: `/plant-care/${p.id}/` }))
+  ),
+  faqPage(faqs, '/plant-care/'),
+].filter(Boolean);
+---
+
+<Base title={title} description={description} canonical="/plant-care/" schema={schema}>
+  <div class="wrap hub-head">
+    <Breadcrumbs trail={trail} />
+    <h1>Plant Care Guides</h1>
+    <p class="lede">
+      Species-specific care for the houseplants people actually own — how often to water, how much
+      light they really need, and the problems each one is prone to before they start.
+    </p>
+
+    <div class="filters" role="group" aria-label="Jump to a category">
+      <a href="#all" class="pill pill-outline">All {plants.length}</a>
+      <a href="#easy" class="pill pill-outline">Easy care ({easy.length})</a>
+      <a href="#pet-safe" class="pill pill-outline">Pet safe ({petSafe.length})</a>
+      <a href="#low-light" class="pill pill-outline">Low light ({lowLight.length})</a>
+    </div>
+  </div>
+
+  <section class="section-tight" id="all">
+    <div class="wrap">
+      <div class="grid grid-3">
+        {plants.map((plant) => <PlantCard plant={plant} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight" id="easy">
+    <div class="wrap">
+      <h2>Easiest plants to keep alive</h2>
+      <p class="sub">
+        Forgiving of missed waterings, adaptable about light, and quick to recover from mistakes.
+      </p>
+      <div class="grid grid-4 mini">
+        {
+          easy.map((p) => (
+            <a class="card mini-card" href={`/plant-care/${p.id}/`}>
+              <h3>{p.data.commonName}</h3>
+              <p>{p.data.care.water.label}</p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight" id="pet-safe">
+    <div class="wrap">
+      <h2>Safe for cats and dogs</h2>
+      <p class="sub">
+        Non-toxic species. For the wider list and what to do in an emergency, see
+        <a href="/blog/pet-safe-houseplants/">pet safe houseplants</a>.
+      </p>
+      <div class="grid grid-4 mini">
+        {
+          petSafe.map((p) => (
+            <a class="card mini-card" href={`/plant-care/${p.id}/`}>
+              <h3>{p.data.commonName}</h3>
+              <p>{p.data.botanicalName}</p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight" id="low-light">
+    <div class="wrap">
+      <h2>Tolerate lower light</h2>
+      <p class="sub">
+        Suitable for north-facing rooms and spots away from a window. See also
+        <a href="/blog/best-low-light-houseplants/">the best low light houseplants</a>.
+      </p>
+      <div class="grid grid-4 mini">
+        {
+          lowLight.map((p) => (
+            <a class="card mini-card" href={`/plant-care/${p.id}/`}>
+              <h3>{p.data.commonName}</h3>
+              <p>{p.data.care.light.label}</p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <CtaBand
+      source="plant-care-hub"
+      heading="Not sure which of these you have?"
+      body="Scan it with Plantive and get the species name plus its care schedule in seconds — free on iPhone."
+    />
+    <div class="wrap-prose faq-wrap">
+      <FaqSection faqs={faqs} heading="Plant care questions" />
+    </div>
+  </div>
+</Base>
+
+<style>
+  .hub-head {
+    padding-top: 2.25rem;
+  }
+
+  .hub-head h1 {
+    margin-block: 1rem 0.9rem;
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.75rem;
+  }
+
+  .filters a {
+    text-decoration: none;
+    transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+  }
+
+  .filters a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-soft);
+  }
+
+  section h2 {
+    font-size: var(--step-3);
+    scroll-margin-top: 5.5rem;
+  }
+
+  .sub {
+    color: var(--text-muted);
+    margin-block: 0.5rem 1.5rem;
+    max-width: 60ch;
+  }
+
+  .mini-card {
+    padding: 1rem 1.15rem 1.15rem;
+  }
+
+  .mini-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .mini-card p {
+    font-size: 0.83rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .faq-wrap {
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+</style>

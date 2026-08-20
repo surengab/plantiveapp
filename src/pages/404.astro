@@ -1,0 +1,104 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const plants = (await getCollection('plants', (p) => !p.data.draft))
+  .filter((p) => p.data.featured)
+  .slice(0, 4);
+---
+
+<Base
+  title="Page Not Found — Plantive"
+  description="That page does not exist. Browse our plant care guides, diagnose a plant problem, or head back to the homepage."
+  noindex={true}
+>
+  <div class="wrap nf">
+    <p class="code">404</p>
+    <h1>This page has been repotted</h1>
+    <p class="lede">
+      That URL does not exist any more, or never did. Try one of these instead.
+    </p>
+
+    <div class="actions">
+      <a href="/" class="btn btn-primary">Back to homepage</a>
+      <a href="/plant-care/" class="btn btn-secondary">Browse care guides</a>
+    </div>
+
+    <div class="popular">
+      <h2>Popular guides</h2>
+      <ul>
+        {plants.map((p) => <li><a href={`/plant-care/${p.id}/`}>{p.data.commonName} care</a></li>)}
+        <li><a href="/problems/yellow-leaves-on-houseplants/">Why leaves turn yellow</a></li>
+        <li><a href="/problems/overwatering-vs-underwatering/">Overwatering vs underwatering</a></li>
+      </ul>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .nf {
+    max-width: 44rem;
+    padding-block: clamp(3rem, 10vw, 6rem);
+    text-align: center;
+  }
+
+  .code {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(4rem, 14vw, 7rem);
+    line-height: 1;
+    color: var(--accent-soft);
+    letter-spacing: -0.04em;
+  }
+
+  .nf h1 {
+    font-size: var(--step-4);
+    margin-block: 0.5rem 1rem;
+  }
+
+  .nf .lede {
+    margin-inline: auto;
+    margin-bottom: 2rem;
+  }
+
+  .actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .popular {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .popular h2 {
+    font-size: 0.75rem;
+    font-weight: 650;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .popular ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    justify-content: center;
+  }
+
+  .popular a {
+    font-size: 0.93rem;
+    text-decoration: none;
+  }
+
+  .popular a:hover {
+    text-decoration: underline;
+  }
+</style>

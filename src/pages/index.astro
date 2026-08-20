@@ -1,0 +1,540 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PhoneMockup from '../components/PhoneMockup.astro';
+import AppStoreButton from '../components/AppStoreButton.astro';
+import PlantCard from '../components/PlantCard.astro';
+import FaqSection from '../components/FaqSection.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { APP, SITE } from '../consts';
+import { faqPage, mobileApp } from '../lib/schema';
+
+const allPlants = await getCollection('plants', (p) => !p.data.draft);
+const allProblems = await getCollection('problems', (p) => !p.data.draft);
+const guideCount = allPlants.length + allProblems.length;
+
+const plants = [...allPlants]
+  .sort((a, b) => Number(b.data.featured) - Number(a.data.featured))
+  .slice(0, 6);
+
+const problems = [...allProblems]
+  .sort((a, b) => Number(b.data.featured) - Number(a.data.featured))
+  .slice(0, 6);
+
+const posts = (await getCollection('blog', (p) => !p.data.draft))
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
+  .slice(0, 3);
+
+const title = 'Plantive — Plant Identifier & Plant Care App for iPhone';
+const description =
+  'Identify any plant, flower, tree or succulent from a photo in seconds, then get the watering and light schedule it actually needs. Free plant care guides plus the Plantive iPhone app.';
+
+const features = [
+  {
+    title: 'Identify from a photo',
+    body: 'Point your camera at any plant, flower, tree, leaf or succulent. Plantive names the species in seconds — no account needed to scan.',
+    icon: 'M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z',
+  },
+  {
+    title: 'Care that fits your plant',
+    body: 'Watering intervals, light requirements, humidity and feeding — specific to the species you scanned, not generic advice.',
+    icon: 'M12 2.7c4 4.6 6.5 8.2 6.5 11.4A6.5 6.5 0 0 1 5.5 14C5.5 10.9 8 7.3 12 2.7Z',
+  },
+  {
+    title: 'Diagnose what went wrong',
+    body: 'Yellow leaves, brown tips, drooping stems. Work back from the symptom to the cause and the fix that actually addresses it.',
+    icon: 'M11 3a8 8 0 1 0 4.9 14.32l3.9 3.9a1 1 0 0 0 1.42-1.42l-3.9-3.9A8 8 0 0 0 11 3Zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12Z',
+  },
+  {
+    title: 'Keep a living record',
+    body: 'Save every plant you scan into your garden and build a collection you can actually keep track of over the seasons.',
+    icon: 'M12 22v-7m0 0c-3 0-5-2-5-5 3 0 5 2 5 5Zm0 0c3 0 5-2 5-5-3 0-5 2-5 5Zm0-6c0-2 1-4 3-5-2-1-3-3-3-5 0 2-1 4-3 5 2 1 3 3 3 5Z',
+  },
+];
+
+const steps = [
+  {
+    n: '01',
+    title: 'Take a photo',
+    body: 'Get close, fill the frame with one leaf or flower, and use even natural light. That single habit does more for accuracy than anything else.',
+  },
+  {
+    n: '02',
+    title: 'Get the species',
+    body: 'Plantive returns the botanical and common name, so you can look up reliable care information rather than guessing from a shop label.',
+  },
+  {
+    n: '03',
+    title: 'Follow the care plan',
+    body: 'Watering rhythm, light level and the problems that species is prone to — the things that determine whether it survives its first year.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'Is Plantive free?',
+    answer:
+      'Yes. Plantive is free to download on the App Store and you can scan a plant without creating an account. Optional Pro subscriptions and a lifetime unlock are available as in-app purchases for people who want the full feature set.',
+  },
+  {
+    question: 'What can Plantive identify?',
+    answer:
+      'Plants, flowers, trees, leaves, succulents and houseplants. Identification works best on a sharp, well-lit close-up of a distinctive feature — a flower, or a single leaf against a plain background — rather than a wide shot of a whole garden bed.',
+  },
+  {
+    question: 'Which devices does Plantive run on?',
+    answer:
+      'Plantive is an iPhone app and requires iOS 17.0 or later. The download is around 15 MB, and the plant care guides on this website are free to read on any device with no app required.',
+  },
+  {
+    question: 'How accurate is photo-based plant identification?',
+    answer:
+      'Accuracy depends far more on the photo than on the app. A close, well-lit shot of a flower or a single leaf identifies common species reliably. Distant photos, poor light, several plants in frame, or damaged foliage all reduce accuracy — and distinguishing named cultivars within a species is genuinely hard for any tool.',
+  },
+  {
+    question: 'Can I use Plantive to check whether a plant is safe for my pet?',
+    answer:
+      'You can use it to identify the species and read its toxicity information, and our pet-safe plants guide covers the common ones. But never rely on an app alone in an emergency — if a pet has eaten part of a plant, call your vet or an animal poison control line immediately and bring the plant or a photo with you.',
+  },
+];
+
+const schema = [mobileApp(), faqPage(faqs, '/')].filter(Boolean);
+---
+
+<Base title={title} description={description} canonical="/" schema={schema}>
+  <!-- ================= Hero ================= -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="pill hero-pill">
+          <span class="dot"></span> Free on iPhone · iOS {APP.minimumOsVersion}+
+        </p>
+        <h1>Know exactly what<br /><span class="accent">plant that is</span></h1>
+        <p class="lede">
+          Point your camera at any plant, flower, tree or succulent. Plantive identifies the species
+          in seconds and gives you the watering and light schedule it actually needs — so it survives
+          past its first month.
+        </p>
+        <div class="hero-cta">
+          <AppStoreButton source="hero" />
+          <a href="/plant-care/" class="btn btn-secondary">Browse care guides</a>
+        </div>
+        <ul class="hero-meta">
+          <li>No account needed to scan</li>
+          <li>{guideCount} free care guides</li>
+          <li>Works offline once saved</li>
+        </ul>
+      </div>
+
+      <div class="hero-art" aria-hidden="false">
+        <PhoneMockup screen="identify" class="phone-front" />
+        <PhoneMockup screen="care" class="phone-back" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Features ================= -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <p class="eyebrow">What it does</p>
+      <h2>Identification is the easy half</h2>
+      <p class="lede">
+        Knowing the name of a plant is only useful if it tells you what to do next. Plantive connects
+        the species to a care routine, and the symptom to the cause.
+      </p>
+
+      <div class="grid grid-2 feature-grid">
+        {
+          features.map((f) => (
+            <div class="card feature">
+              <div class="f-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22">
+                  <path
+                    d={f.icon}
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <h3>{f.title}</h3>
+              <p>{f.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= How it works ================= -->
+  <section class="section-tight how" id="how-it-works">
+    <div class="wrap">
+      <p class="eyebrow">How it works</p>
+      <h2>Three steps, about a minute</h2>
+      <ol class="steps">
+        {
+          steps.map((s) => (
+            <li>
+              <span class="step-n">{s.n}</span>
+              <h3>{s.title}</h3>
+              <p>{s.body}</p>
+            </li>
+          ))
+        }
+      </ol>
+      <p class="how-note">
+        Want the photography detail? Read <a href="/blog/how-to-identify-a-plant-from-a-photo/"
+          >how to identify a plant from a photo</a
+        > — most misidentifications are photo problems, not app problems.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= Plant guides ================= -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Plant care guides</p>
+          <h2>Care that goes past the label</h2>
+        </div>
+        <a href="/plant-care/" class="btn btn-secondary see-all">All guides</a>
+      </div>
+      <div class="grid grid-3">
+        {plants.map((plant) => <PlantCard plant={plant} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Problems ================= -->
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Diagnose a problem</p>
+          <h2>Start from the symptom</h2>
+        </div>
+        <a href="/problems/" class="btn btn-secondary see-all">All problems</a>
+      </div>
+      <div class="grid grid-3">
+        {
+          problems.map((p) => (
+            <a class="card problem-card" href={`/problems/${p.id}/`}>
+              <span class={`sev sev-${p.data.severity}`}>{p.data.severity} severity</span>
+              <h3>{p.data.symptom}</h3>
+              <p>{p.data.quickAnswer}</p>
+              <span class="read-more">Diagnose this →</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <CtaBand source="home-mid" />
+  </div>
+
+  <!-- ================= Blog ================= -->
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">From the blog</p>
+          <h2>Get the fundamentals right</h2>
+        </div>
+        <a href="/blog/" class="btn btn-secondary see-all">All articles</a>
+      </div>
+      <div class="grid grid-3">
+        {
+          posts.map((post) => (
+            <a class="card post-card" href={`/blog/${post.id}/`}>
+              <span class="pill pill-outline">{post.data.category}</span>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.excerpt}</p>
+              <span class="read-more">Read article →</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section-tight">
+    <div class="wrap wrap-prose">
+      <FaqSection faqs={faqs} heading="Questions about Plantive" />
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* ---------------- Hero ---------------- */
+  .hero {
+    position: relative;
+    padding-block: clamp(2.5rem, 6vw, 5rem) clamp(3rem, 7vw, 5.5rem);
+    background:
+      radial-gradient(60rem 30rem at 15% -10%, var(--accent-soft) 0%, transparent 60%),
+      var(--bg);
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: grid;
+    gap: clamp(2.5rem, 6vw, 4rem);
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1.05fr 0.95fr;
+    }
+  }
+
+  .hero-pill {
+    margin-bottom: 1.4rem;
+  }
+
+  .hero-pill .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: var(--green-500);
+  }
+
+  .hero h1 {
+    margin-bottom: 1.1rem;
+  }
+
+  .hero h1 .accent {
+    color: var(--accent);
+  }
+
+  .hero .lede {
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    align-items: center;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin-top: 1.8rem;
+    font-size: 0.87rem;
+    color: var(--text-muted);
+  }
+
+  .hero-meta li {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .hero-meta li::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    flex: none;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    box-shadow: inset 0 0 0 1.5px var(--green-400);
+  }
+
+  .hero-art {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 30rem;
+  }
+
+  /* The two devices are offset far enough that the care screen's stat row stays
+     readable rather than hiding behind the front phone. */
+  .hero-art :global(.phone-front) {
+    position: relative;
+    z-index: 2;
+    transform: translateX(-26%) rotate(-5deg);
+  }
+
+  .hero-art :global(.phone-back) {
+    position: absolute;
+    top: 3.25rem;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-14%) rotate(6deg) scale(0.9);
+  }
+
+  @media (max-width: 620px) {
+    .hero-art {
+      min-height: 25rem;
+    }
+    .hero-art :global(.phone-front) {
+      transform: translateX(-32%) rotate(-5deg) scale(0.85);
+    }
+    .hero-art :global(.phone-back) {
+      top: 2.25rem;
+      transform: translateX(-22%) rotate(6deg) scale(0.76);
+    }
+  }
+
+  /* ---------------- Features ---------------- */
+  .feature-grid {
+    margin-top: 2.75rem;
+  }
+
+  .feature {
+    padding: 1.6rem 1.5rem 1.75rem;
+  }
+
+  .f-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: var(--accent-soft);
+    color: var(--accent-on-soft);
+    margin-bottom: 1rem;
+  }
+
+  .feature h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .feature p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* ---------------- How ---------------- */
+  .how {
+    background: var(--bg-subtle);
+    border-block: 1px solid var(--border);
+  }
+
+  .steps {
+    list-style: none;
+    padding: 0;
+    margin: 2.5rem 0 0;
+    display: grid;
+    gap: 1.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    counter-reset: step;
+  }
+
+  .steps li {
+    position: relative;
+    padding-top: 1.25rem;
+    border-top: 2px solid var(--green-300);
+  }
+
+  .step-n {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .steps h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .steps p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .how-note {
+    margin-top: 2.25rem;
+    font-size: 0.93rem;
+    color: var(--text-muted);
+  }
+
+  /* ---------------- Section headers ---------------- */
+  .sec-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .see-all {
+    padding: 0.7rem 1.25rem;
+    font-size: 0.9rem;
+    flex: none;
+  }
+
+  /* ---------------- Problem + post cards ---------------- */
+  .problem-card,
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .problem-card h3,
+  .post-card h3 {
+    font-size: 1.12rem;
+    line-height: 1.3;
+  }
+
+  .problem-card p,
+  .post-card p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .read-more {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--accent);
+    margin-top: 0.35rem;
+  }
+
+  .sev {
+    align-self: flex-start;
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    font-weight: 650;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+  }
+
+  .sev-low {
+    background: var(--green-100);
+    color: var(--green-900);
+  }
+  .sev-medium {
+    background: var(--amber-100);
+    color: var(--amber-500);
+  }
+  .sev-high {
+    background: var(--rose-100);
+    color: var(--rose-500);
+  }
+</style>

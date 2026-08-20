@@ -1,0 +1,90 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { APP } from '../consts';
+import { breadcrumbs } from '../lib/schema';
+
+const trail = [{ label: 'Terms of use', href: '/terms/' }];
+---
+
+<Base
+  title="Terms of Use — Plantive"
+  description="The terms of use governing the Plantive app and this website, including subscription terms and the limits of the plant care information published here."
+  canonical="/terms/"
+  schema={[breadcrumbs(trail)]}
+>
+  <div class="wrap wrap-prose page">
+    <Breadcrumbs trail={trail} />
+    <h1>Terms of Use</h1>
+    <p class="lede">
+      The full terms of use for {APP.name} are maintained as a published document by {APP.developer}.
+    </p>
+
+    <p>
+      <a class="btn btn-primary" href={APP.termsUrl} rel="noopener" target="_blank">
+        Read the full terms of use →
+      </a>
+    </p>
+
+    <div class="prose">
+      <h2>About the information on this site</h2>
+      <p>
+        The plant care guides published on plantiveapp.com are general horticultural guidance. They
+        are researched and reviewed, and each page shows when it was last checked — but plants vary,
+        conditions vary, and no guide can account for every situation.
+      </p>
+      <p>
+        <strong>Toxicity information is not veterinary advice.</strong> If a pet or child has eaten
+        part of a plant, contact a vet, a poison control line or emergency services immediately rather
+        than relying on anything published here.
+      </p>
+      <p>
+        Plant identification, whether by app or by eye, produces a probable answer rather than a
+        certainty. Do not rely on an identification alone for any decision involving safety, ingestion
+        or medical use.
+      </p>
+
+      <h2>Subscriptions</h2>
+      <p>
+        Plantive is free to download, with optional Pro subscriptions and a lifetime unlock available
+        as in-app purchases. All purchases, renewals, cancellations and refunds are processed by Apple
+        under the App Store terms.
+      </p>
+      <p>
+        To cancel, open Settings on your iPhone, tap your name, then Subscriptions. For refunds, visit
+        reportaproblem.apple.com. Full details are on the <a href="/support/">support page</a>.
+      </p>
+
+      <h2>Trademarks</h2>
+      <p>
+        Apple and App Store are trademarks of Apple Inc., registered in the U.S. and other countries.
+        Plantive is not affiliated with or endorsed by Apple Inc.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions about these terms: <a href={`mailto:${APP.supportEmail}`}>{APP.supportEmail}</a>.
+        See also our <a href="/privacy/">privacy policy</a>.
+      </p>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .page {
+    margin-inline: auto;
+    padding-top: 2.25rem;
+  }
+
+  .page h1 {
+    margin-block: 1rem 0.9rem;
+  }
+
+  .page .lede {
+    margin-bottom: 1.75rem;
+  }
+
+  .page .btn {
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,230 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { breadcrumbs, article, faqPage } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', (p) => !p.data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const d = post.data;
+const { Content, headings } = await render(post);
+
+const url = `/blog/${post.id}/`;
+const trail = [{ label: 'Blog', href: '/blog/' }, { label: d.title }];
+
+const others = (await getCollection('blog', (p) => !p.data.draft))
+  .filter((p) => p.id !== post.id)
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
+  .slice(0, 3);
+
+const schema = [
+  breadcrumbs(trail),
+  article({
+    url,
+    headline: d.heading ?? d.title,
+    description: d.description,
+    publishDate: d.publishDate,
+    updatedDate: d.updatedDate,
+    section: d.category,
+    keywords: d.keywords,
+  }),
+  faqPage(d.faqs, url),
+].filter(Boolean);
+
+const fmt = (date: Date) =>
+  date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const h2s = headings.filter((h) => h.depth === 2);
+---
+
+<Base
+  title={d.title}
+  description={d.description}
+  canonical={url}
+  type="article"
+  publishDate={d.publishDate}
+  updatedDate={d.updatedDate}
+  schema={schema}
+>
+  <article>
+    <header class="wrap post-head">
+      <Breadcrumbs trail={trail} />
+      <span class="pill">{d.category}</span>
+      <h1>{d.heading ?? d.title}</h1>
+      <p class="lede">{d.excerpt}</p>
+      <p class="byline">
+        Published {fmt(d.publishDate)}
+        {d.updatedDate && ` · Updated ${fmt(d.updatedDate)}`}
+        {d.readingTime && ` · ${d.readingTime} min read`}
+      </p>
+    </header>
+
+    <div class="wrap body-grid">
+      <div class="prose">
+        <Content />
+      </div>
+
+      <aside class="side">
+        {
+          h2s.length > 2 && (
+            <nav class="toc" aria-label="On this page">
+              <h2>On this page</h2>
+              <ul>
+                {h2s.map((h) => (
+                  <li>
+                    <a href={`#${h.slug}`}>{h.text}</a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )
+        }
+      </aside>
+    </div>
+
+    <div class="wrap">
+      <div class="wrap-prose faq-wrap">
+        <FaqSection faqs={d.faqs} />
+      </div>
+
+      <CtaBand source={`blog-${post.id}`} />
+
+      <section class="section-tight">
+        <h2 class="h-sec">More from the blog</h2>
+        <div class="grid grid-3">
+          {
+            others.map((p) => (
+              <a class="card other" href={`/blog/${p.id}/`}>
+                <span class="pill pill-outline">{p.data.category}</span>
+                <h3>{p.data.title}</h3>
+                <p>{p.data.excerpt}</p>
+              </a>
+            ))
+          }
+        </div>
+      </section>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .post-head {
+    padding-top: 2.25rem;
+    max-width: calc(var(--wrap-prose) + 2 * var(--gutter));
+    margin-inline: auto;
+  }
+
+  .post-head .pill {
+    margin-top: 1rem;
+  }
+
+  .post-head h1 {
+    margin-block: 0.85rem 1rem;
+    font-size: var(--step-4);
+  }
+
+  .byline {
+    margin-top: 1.25rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .body-grid {
+    display: grid;
+    gap: clamp(2rem, 5vw, 3.5rem);
+    align-items: start;
+    padding-top: 2rem;
+  }
+
+  @media (min-width: 1000px) {
+    .body-grid {
+      grid-template-columns: minmax(0, 1fr) 16rem;
+    }
+  }
+
+  .side {
+    position: sticky;
+    top: 5.5rem;
+  }
+
+  @media (max-width: 999px) {
+    .side {
+      position: static;
+    }
+  }
+
+  .toc {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.25rem;
+    background: var(--bg-raised);
+  }
+
+  .toc h2 {
+    font-size: 0.72rem;
+    font-weight: 650;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .toc a {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    line-height: 1.4;
+    display: block;
+  }
+
+  .toc a:hover {
+    color: var(--accent);
+  }
+
+  .h-sec {
+    font-size: var(--step-3);
+    margin-bottom: 1.4rem;
+  }
+
+  .other {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .other h3 {
+    font-size: 1.08rem;
+    line-height: 1.3;
+  }
+
+  .other p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
+  .faq-wrap {
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+</style>

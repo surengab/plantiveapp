@@ -1,8 +1,12 @@
 ---
 /**
- * Lightweight generated card art. Each guide gets a tinted ground plus a leaf
- * silhouette matching its foliage shape — so the index looks illustrated
- * without shipping a single photograph.
+ * Lightweight generated card art. Each guide gets a tinted ground plus a
+ * silhouette matching its foliage shape, so the index looks illustrated without
+ * shipping a single photograph.
+ *
+ * Shapes are composed from primitives (ellipses, rotated copies) rather than
+ * hand-authored bezier paths — easier to reason about and they render cleanly
+ * at every size.
  */
 interface Props {
   silhouette:
@@ -20,38 +24,109 @@ interface Props {
 
 const { silhouette, hue = 140, class: className = '' } = Astro.props;
 
+const stem = (d: string, w = 3) =>
+  `<path d="${d}" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round"/>`;
+
+/** Lobes mirrored either side of a central midrib — the split-leaf look. */
+const lobes = (rows: [cy: number, dx: number, rx: number, ry: number, rot: number][]) =>
+  rows
+    .flatMap(([cy, dx, rx, ry, rot]) => [
+      `<ellipse cx="${50 - dx}" cy="${cy}" rx="${rx}" ry="${ry}" transform="rotate(${-rot} ${50 - dx} ${cy})"/>`,
+      `<ellipse cx="${50 + dx}" cy="${cy}" rx="${rx}" ry="${ry}" transform="rotate(${rot} ${50 + dx} ${cy})"/>`,
+    ])
+    .join('');
+
+/** Petals radiating from the centre, for rosette succulents. */
+const rosettePetals = (count: number, cy: number, rx: number, ry: number) =>
+  Array.from(
+    { length: count },
+    (_, i) =>
+      `<ellipse cx="50" cy="${cy}" rx="${rx}" ry="${ry}" transform="rotate(${(360 / count) * i} 50 50)"/>`
+  ).join('');
+
+/** Tapered blades fanning from a common base, for aloes and snake plants. */
+const blades = (angles: number[], baseY: number, tipY: number, halfWidth: number) =>
+  angles
+    .map(
+      (a) =>
+        `<path d="M50 ${baseY} L${50 - halfWidth} ${(baseY + tipY) / 2} L50 ${tipY} L${50 + halfWidth} ${(baseY + tipY) / 2} Z" transform="rotate(${a} 50 ${baseY})"/>`
+    )
+    .join('');
+
+/**
+ * Monstera: one broad leaf with slits masked out of the margins, which is how
+ * fenestration actually looks — rather than separate lobes on a stalk.
+ */
+const monsteraCuts = [
+  [30, -26],
+  [50, -4],
+  [70, 17],
+]
+  .flatMap(([cy, rot]) => [
+    `<ellipse cx="76" cy="${cy}" rx="27" ry="4.6" transform="rotate(${rot} 76 ${cy})" fill="#000"/>`,
+    `<ellipse cx="24" cy="${cy}" rx="27" ry="4.6" transform="rotate(${-rot} 24 ${cy})" fill="#000"/>`,
+  ])
+  .join('');
+
 const shapes: Record<Props['silhouette'], string> = {
-  // Split-leaf: an oval with wedges cut from both margins.
   monstera:
-    'M50 8c22 0 36 18 36 40S72 92 50 92 14 70 14 48 28 8 50 8Zm2 10v14l16-9-16-5Zm0 20v14l20-6-20-8Zm0 20v13l17-3-17-10ZM46 18 30 23l16 9V18Zm0 20-20 8 20 6V38Zm0 20-17 10 17 3V58Z',
-  // Heart-shaped: philodendron / pothos foliage.
+    `<defs><mask id="la-monstera">` +
+    `<ellipse cx="50" cy="46" rx="35" ry="40" fill="#fff"/>` +
+    monsteraCuts +
+    // Painted back over the cuts so the midrib stays continuous, as it does on
+    // a real leaf — otherwise the slits sever the blade into floating bands.
+    `<ellipse cx="50" cy="46" rx="5" ry="40" fill="#fff"/>` +
+    `</mask></defs>` +
+    stem('M50 99V80') +
+    `<ellipse cx="50" cy="46" rx="35" ry="40" mask="url(#la-monstera)"/>`,
+
+  // Heart-shaped: philodendron and pothos foliage.
   heart:
-    'M50 92C30 78 12 62 12 42 12 26 24 14 38 14c6 0 10 3 12 7 2-4 6-7 12-7 14 0 24 12 24 28 0 20-18 36-36 50Z',
-  // Long strap leaf: snake plant, dracaena.
-  lance: 'M50 6c10 22 14 42 14 56 0 18-6 30-14 32-8-2-14-14-14-32 0-14 4-34 14-56Z',
-  // Broad round leaf: rubber plant, peperomia.
-  round: 'M50 10c22 0 38 16 38 38S72 90 50 90 12 74 12 48 28 10 50 10Z',
-  // Spiky rosette: aloe, haworthia.
-  spiky:
-    'M50 92 42 60 22 74l14-24-26-4 26-8-16-20 22 12 8-32 8 32 22-12-16 20 26 8-26 4 14 24-20-14-8 32Z',
-  // Trailing vine: string of pearls, ivy.
+    `<path d="M50 94C31 80 13 63 13 43 13 27 25 15 39 15c6 0 9 3 11 7 2-4 5-7 11-7 14 0 24 12 24 28 0 20-18 37-35 51Z"/>` +
+    `<path class="vein" d="M50 88V30" fill="none" stroke-width="2.4" stroke-linecap="round"/>`,
+
+  // Upright strap leaves: snake plant, dracaena.
+  lance: blades([-16, 0, 16], 96, 8, 11),
+
+  // Broad round leaf: rubber plant, fiddle leaf fig, peperomia.
+  round:
+    stem('M50 97V78') +
+    `<ellipse cx="50" cy="47" rx="33" ry="38"/>` +
+    `<g class="vein" fill="none" stroke-width="2.2" stroke-linecap="round">` +
+    `<path d="M50 80V16"/><path d="M50 40 68 26"/><path d="M50 40 32 26"/><path d="M50 58 72 46"/><path d="M50 58 28 46"/>` +
+    `</g>`,
+
+  // Fleshy spikes fanning from a base: aloe, haworthia.
+  spiky: blades([-44, -22, 0, 22, 44], 94, 12, 9),
+
+  // Trailing vine with round leaves: string of pearls, ivy.
   trailing:
-    'M22 12c0 14 8 20 16 26s16 14 16 28-10 22-22 22c14 0 26-8 32-18 14-4 24-16 24-30 0-6-2-10-4-14 4 12 0 22-10 28 2-14-4-24-16-30S24 24 22 12Z',
+    stem('M30 8C42 28 22 42 36 60 48 76 36 86 46 97', 3) +
+    `<circle cx="30" cy="10" r="6"/><circle cx="37" cy="26" r="6.5"/><circle cx="27" cy="42" r="6.5"/>` +
+    `<circle cx="38" cy="59" r="7"/><circle cx="42" cy="77" r="6.5"/><circle cx="46" cy="94" r="5.5"/>`,
+
   // Feathered frond: fern, palm.
   frond:
-    'M48 94V50C40 40 30 34 18 30c10 10 16 20 18 32-10-8-18-12-28-14 10 8 18 18 22 30 8-2 12-2 18 0V26C50 16 60 8 74 4 64 14 58 24 56 36c8-8 16-12 26-14-10 8-16 18-20 30-4-2-8-2-14 0v42Z',
+    stem('M50 98V8') +
+    lobes([
+      [22, 11, 11, 5, 40],
+      [40, 13, 14, 5.5, 30],
+      [58, 14, 15, 6, 22],
+      [76, 12, 12, 5.5, 14],
+    ]),
+
   // Tight rosette: echeveria, succulents.
   rosette:
-    'M50 8c6 10 6 20 2 28 8-6 18-8 28-4-8 8-18 12-26 12 10 2 18 8 22 18-10 0-20-4-26-10 4 10 4 20 0 30-4-10-4-20 0-30-6 6-16 10-26 10 4-10 12-16 22-18-8 0-18-4-26-12 10-4 20-2 28 4-4-8-4-18 2-28Z',
+    rosettePetals(9, 26, 8.5, 17) +
+    rosettePetals(6, 38, 6, 11) +
+    `<circle cx="50" cy="50" r="5.5"/>`,
 };
 
-const path = shapes[silhouette];
+const inner = shapes[silhouette];
 ---
 
 <div class={`leaf-art ${className}`} style={`--h:${hue}`} aria-hidden="true">
-  <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-    <path d={path} fill-rule="evenodd" />
-  </svg>
+  <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" set:html={inner} />
 </div>
 
 <style>
@@ -70,15 +145,18 @@ const path = shapes[silhouette];
   }
 
   .leaf-art svg {
-    width: 58%;
-    height: 58%;
-    transform: rotate(-8deg);
-    filter: drop-shadow(0 4px 10px hsl(var(--h) 35% 30% / 0.22));
+    width: 62%;
+    height: 78%;
+    transform: rotate(-7deg);
+    fill: hsl(var(--h) 40% 34%);
+    color: hsl(var(--h) 40% 34%);
+    filter: drop-shadow(0 4px 10px hsl(var(--h) 35% 30% / 0.2));
   }
 
-  .leaf-art path {
-    fill: hsl(var(--h) 40% 32%);
-    opacity: 0.9;
+  /* Midribs and veins read as a lighter tracery cut into the leaf body. */
+  .leaf-art :global(.vein) {
+    stroke: hsl(var(--h) 42% 92%);
+    opacity: 0.5;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -89,8 +167,13 @@ const path = shapes[silhouette];
         hsl(calc(var(--h) + 22) 26% 13%) 100%
       );
     }
-    :global(:root:not([data-theme='light'])) .leaf-art path {
-      fill: hsl(var(--h) 38% 62%);
+    :global(:root:not([data-theme='light'])) .leaf-art svg {
+      fill: hsl(var(--h) 38% 60%);
+      color: hsl(var(--h) 38% 60%);
+    }
+    :global(:root:not([data-theme='light'])) .leaf-art :global(.vein) {
+      stroke: hsl(var(--h) 28% 16%);
+      opacity: 0.65;
     }
   }
 
@@ -101,7 +184,12 @@ const path = shapes[silhouette];
       hsl(calc(var(--h) + 22) 26% 13%) 100%
     );
   }
-  :global(:root[data-theme='dark']) .leaf-art path {
-    fill: hsl(var(--h) 38% 62%);
+  :global(:root[data-theme='dark']) .leaf-art svg {
+    fill: hsl(var(--h) 38% 60%);
+    color: hsl(var(--h) 38% 60%);
+  }
+  :global(:root[data-theme='dark']) .leaf-art :global(.vein) {
+    stroke: hsl(var(--h) 28% 16%);
+    opacity: 0.65;
   }
 </style>

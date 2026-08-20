@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { APP } from '../consts';
+import { breadcrumbs } from '../lib/schema';
+
+const trail = [{ label: 'Privacy policy', href: '/privacy/' }];
+---
+
+<Base
+  title="Privacy Policy — Plantive"
+  description="How Plantive handles your data, including the photos you take for plant identification. Read the full privacy policy for Plantive by DEDUCTIFY, LLC."
+  canonical="/privacy/"
+  schema={[breadcrumbs(trail)]}
+>
+  <div class="wrap wrap-prose page">
+    <Breadcrumbs trail={trail} />
+    <h1>Privacy Policy</h1>
+    <p class="lede">
+      The full privacy policy for {APP.name} is maintained as a published document by {APP.developer}.
+    </p>
+
+    <p>
+      <a class="btn btn-primary" href={APP.privacyUrl} rel="noopener" target="_blank">
+        Read the full privacy policy →
+      </a>
+    </p>
+
+    <div class="prose">
+      <h2>In short</h2>
+      <p>
+        Plantive processes the photos you take in order to identify the plant in them. What is
+        collected, how long it is kept, who it is shared with and the rights you have over it are all
+        set out in the policy linked above, which is the authoritative version.
+      </p>
+
+      <h2>This website</h2>
+      <p>
+        The plant care guides on plantiveapp.com are free to read and require no account. The site
+        loads a web font from Google Fonts; beyond that it does not embed third-party trackers or
+        advertising scripts.
+      </p>
+
+      <h2>Questions</h2>
+      <p>
+        For any privacy question, or to make a request about your data, email
+        <a href={`mailto:${APP.supportEmail}`}>{APP.supportEmail}</a>.
+      </p>
+      <p>
+        See also our <a href="/terms/">terms of use</a> and <a href="/support/">support page</a>.
+      </p>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .page {
+    margin-inline: auto;
+    padding-top: 2.25rem;
+  }
+
+  .page h1 {
+    margin-block: 1rem 0.9rem;
+  }
+
+  .page .lede {
+    margin-bottom: 1.75rem;
+  }
+
+  .page .btn {
+    margin-bottom: 2rem;
+  }
+</style>

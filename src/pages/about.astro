@@ -1,0 +1,121 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { APP, SITE } from '../consts';
+import { breadcrumbs } from '../lib/schema';
+
+const trail = [{ label: 'About', href: '/about/' }];
+---
+
+<Base
+  title="About Plantive — Plant Identification and Care"
+  description="Who makes Plantive, how our plant care guides are researched and reviewed, and the editorial standards we hold them to."
+  canonical="/about/"
+  schema={[breadcrumbs(trail)]}
+>
+  <div class="wrap hub-head">
+    <Breadcrumbs trail={trail} />
+    <h1>About Plantive</h1>
+    <p class="lede">
+      Plantive is a plant identification and plant care app for iPhone, made by {APP.developer}. This
+      site is its free companion library of care guides.
+    </p>
+  </div>
+
+  <div class="wrap wrap-prose prose about">
+    <h2>What we are trying to do</h2>
+    <p>
+      Most houseplants die for two reasons: they were watered on a schedule instead of when they
+      needed it, and they were put somewhere with far less light than they required. Both are
+      completely fixable, and both are hard to fix if you do not know what the plant actually is.
+    </p>
+    <p>
+      That is the gap Plantive is built for. Identification on its own is a novelty. Identification
+      that leads straight to <em>this species wants its top two inches dry, and it needs to be within
+      six feet of that window</em> is genuinely useful.
+    </p>
+
+    <h2>How these guides are made</h2>
+    <p>
+      Every care guide on this site is written and reviewed by our team, cross-checked against
+      established horticultural references and botanical sources. We aim for specifics rather than
+      the vague advice that fills most plant content:
+    </p>
+    <ul>
+      <li>
+        <strong>Concrete numbers.</strong> "Every 7–14 days in summer, every 2–3 weeks in winter,
+        checking the top two inches" instead of "water regularly."
+      </li>
+      <li>
+        <strong>Honest difficulty.</strong> We call fiddle leaf figs and calatheas demanding, because
+        they are, rather than describing everything as easy.
+      </li>
+      <li>
+        <strong>Symptom-first troubleshooting.</strong> Ranked by how often each cause turns out to be
+        the answer, so you check the likely thing first.
+      </li>
+      <li>
+        <strong>Review dates on every page.</strong> You can see when a guide was last checked.
+      </li>
+    </ul>
+    <p>
+      Where advice is genuinely contested, we say so. Where a popular claim does not hold up — that
+      snake plants meaningfully purify the air in a real room, or that misting fixes humidity — we
+      say that too.
+    </p>
+
+    <h2>Toxicity and safety</h2>
+    <p>
+      We include toxicity information on every plant guide because it matters in homes with pets and
+      children. It is general guidance, not veterinary advice.
+    </p>
+    <p>
+      <strong>If an animal or child has eaten part of a plant, contact a vet or poison control line
+      immediately.</strong> Do not spend time identifying the plant first — bring it with you or send
+      a photo, and let them identify it while treatment begins.
+    </p>
+
+    <h2>The app</h2>
+    <p>
+      {APP.name} is free to download and requires iOS {APP.minimumOsVersion} or later. You can scan a
+      plant without creating an account. Optional Pro subscriptions and a lifetime unlock are
+      available as in-app purchases.
+    </p>
+    <p>
+      Subscriptions and refunds are handled by Apple. To cancel, open Settings on your iPhone, tap
+      your name, then Subscriptions. For refunds, visit reportaproblem.apple.com.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Corrections, questions and feedback are all welcome at
+      <a href={`mailto:${APP.supportEmail}`}>{APP.supportEmail}</a>. If you spot something wrong in a
+      care guide, please tell us — we would rather fix it than have it sit there.
+    </p>
+    <p>
+      Plantive is published by {APP.developer}. Read our
+      <a href={APP.privacyUrl} rel="noopener" target="_blank">privacy policy</a> and
+      <a href={APP.termsUrl} rel="noopener" target="_blank">terms of use</a>.
+    </p>
+  </div>
+
+  <div class="wrap">
+    <CtaBand source="about" />
+  </div>
+</Base>
+
+<style>
+  .hub-head {
+    padding-top: 2.25rem;
+  }
+
+  .hub-head h1 {
+    margin-block: 1rem 0.9rem;
+  }
+
+  .about {
+    margin-inline: auto;
+    padding-top: 1rem;
+  }
+</style>

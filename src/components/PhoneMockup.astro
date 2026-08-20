@@ -53,11 +53,21 @@ const active = screen === 'identify' ? 'identify' : 'guides';
               <span class="c tl" /><span class="c tr" /><span class="c bl" /><span class="c br" />
               <div class="scanline" />
               <div class="subject">
-                <svg viewBox="0 0 100 100" aria-hidden="true">
+                {/* Simple potted-plant silhouette standing in for the camera subject */}
+                <svg viewBox="0 0 100 124" aria-hidden="true" fill="currentColor">
                   <path
-                    d="M48 94V50C40 40 30 34 18 30c10 10 16 20 18 32-10-8-18-12-28-14 10 8 18 18 22 30 8-2 12-2 18 0V26C50 16 60 8 74 4 64 14 58 24 56 36c8-8 16-12 26-14-10 8-16 18-20 30-4-2-8-2-14 0v42Z"
-                    fill="currentColor"
+                    d="M50 104V40"
+                    stroke="currentColor"
+                    stroke-width="3.4"
+                    stroke-linecap="round"
+                    fill="none"
                   />
+                  <ellipse cx="50" cy="24" rx="12.5" ry="16.5" />
+                  <ellipse cx="31" cy="44" rx="15.5" ry="10" transform="rotate(-26 31 44)" />
+                  <ellipse cx="69" cy="40" rx="15.5" ry="10" transform="rotate(26 69 40)" />
+                  <ellipse cx="29" cy="68" rx="16.5" ry="10.5" transform="rotate(-20 29 68)" />
+                  <ellipse cx="71" cy="64" rx="16.5" ry="10.5" transform="rotate(20 71 64)" />
+                  <path d="M33 102h34l-4.5 20h-25L33 102Z" />
                 </svg>
               </div>
             </div>
