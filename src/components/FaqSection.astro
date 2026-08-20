@@ -1,0 +1,105 @@
+---
+interface Props {
+  faqs: { question: string; answer: string }[];
+  heading?: string;
+  id?: string;
+}
+const { faqs, heading = 'Frequently asked questions', id = 'faq' } = Astro.props;
+---
+
+{
+  faqs.length > 0 && (
+    <section class="faq" id={id}>
+      <h2>{heading}</h2>
+      <div class="items">
+        {faqs.map((f, i) => (
+          <details name="faq-group" open={i === 0}>
+            <summary>
+              <span>{f.question}</span>
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  d="m6 9 6 6 6-6"
+                />
+              </svg>
+            </summary>
+            <div class="answer">
+              <p>{f.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .faq {
+    margin-top: 3.5rem;
+  }
+
+  .faq > h2 {
+    font-size: var(--step-3);
+    margin-bottom: 1.4rem;
+    scroll-margin-top: 5.5rem;
+  }
+
+  .items {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  details {
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color 0.16s ease;
+  }
+
+  details[open] {
+    border-color: var(--green-300);
+  }
+
+  summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.05rem 1.25rem;
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.02rem;
+    line-height: 1.4;
+    list-style: none;
+    color: var(--text);
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary:hover {
+    color: var(--accent);
+  }
+
+  summary svg {
+    flex: none;
+    color: var(--text-muted);
+    transition: transform 0.2s ease;
+  }
+
+  details[open] summary svg {
+    transform: rotate(180deg);
+  }
+
+  .answer {
+    padding: 0 1.25rem 1.25rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+</style>

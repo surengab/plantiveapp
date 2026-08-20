@@ -1,0 +1,147 @@
+---
+import { SITE } from '../consts';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Absolute or root-relative path; defaults to the current URL. */
+  canonical?: string;
+  image?: string;
+  imageAlt?: string;
+  type?: 'website' | 'article';
+  publishDate?: Date;
+  updatedDate?: Date;
+  /** Set on thin/duplicate pages (e.g. paginated tails) to keep the index clean. */
+  noindex?: boolean;
+  /** JSON-LD graph nodes contributed by the page. */
+  schema?: unknown[];
+}
+
+const {
+  title,
+  description,
+  canonical,
+  image = '/og-default.png',
+  imageAlt = 'Plantive — identify any plant from a photo and get a care schedule that works',
+  type = 'website',
+  publishDate,
+  updatedDate,
+  noindex = false,
+  schema = [],
+} = Astro.props;
+
+const canonicalUrl = new URL(canonical ?? Astro.url.pathname, Astro.site ?? SITE.url);
+const ogImage = new URL(image, Astro.site ?? SITE.url);
+
+// Every page ships one @graph rather than several disconnected blobs, so the
+// crawler resolves Organization/WebSite/WebPage relationships in a single pass.
+const graph = [
+  {
+    '@type': 'Organization',
+    '@id': `${SITE.url}/#organization`,
+    name: SITE.name,
+    url: SITE.url,
+    logo: {
+      '@type': 'ImageObject',
+      '@id': `${SITE.url}/#logo`,
+      url: `${SITE.url}/assets/app-icon.png`,
+      width: 1024,
+      height: 1024,
+      caption: SITE.name,
+    },
+    image: { '@id': `${SITE.url}/#logo` },
+  },
+  {
+    '@type': 'WebSite',
+    '@id': `${SITE.url}/#website`,
+    url: SITE.url,
+    name: SITE.name,
+    description: SITE.description,
+    publisher: { '@id': `${SITE.url}/#organization` },
+    inLanguage: SITE.lang,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE.url}/search/?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  },
+  {
+    '@type': type === 'article' ? 'WebPage' : 'WebPage',
+    '@id': `${canonicalUrl.href}#webpage`,
+    url: canonicalUrl.href,
+    name: title,
+    description,
+    isPartOf: { '@id': `${SITE.url}/#website` },
+    inLanguage: SITE.lang,
+    primaryImageOfPage: { '@type': 'ImageObject', url: ogImage.href },
+    ...(publishDate ? { datePublished: publishDate.toISOString() } : {}),
+    ...(updatedDate ? { dateModified: updatedDate.toISOString() } : {}),
+  },
+  ...schema,
+];
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl.href} />
+
+{noindex && <meta name="robots" content="noindex, follow" />}
+{
+  !noindex && (
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+  )
+}
+
+<meta name="theme-color" content="#14532d" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0b1310" media="(prefers-color-scheme: dark)" />
+<meta name="color-scheme" content="light dark" />
+
+<!-- Open Graph -->
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={SITE.name} />
+<meta property="og:locale" content={SITE.locale} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl.href} />
+<meta property="og:image" content={ogImage.href} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={imageAlt} />
+{publishDate && <meta property="article:published_time" content={publishDate.toISOString()} />}
+{updatedDate && <meta property="article:modified_time" content={updatedDate.toISOString()} />}
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage.href} />
+<meta name="twitter:image:alt" content={imageAlt} />
+
+<!-- Apple Smart App Banner: turns organic mobile traffic into installs -->
+<meta name="apple-itunes-app" content="app-id=6762530988" />
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="alternate" type="application/rss+xml" title={`${SITE.name} — plant care articles`} href="/rss.xml" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })} is:inline />

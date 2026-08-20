@@ -1,0 +1,42 @@
+---
+interface Props {
+  size?: number;
+  withWordmark?: boolean;
+  class?: string;
+}
+const { size = 34, withWordmark = true, class: className = '' } = Astro.props;
+---
+
+<span class={`logo ${className}`}>
+  <img
+    src="/assets/logo-96.png"
+    width={size}
+    height={size}
+    alt=""
+    decoding="async"
+    style={`--s:${size}px`}
+  />
+  {withWordmark && <span class="logo-word">Plantive</span>}
+</span>
+
+<style>
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+  .logo img {
+    flex: none;
+    width: var(--s);
+    height: var(--s);
+    border-radius: 24%;
+    box-shadow: var(--shadow-sm);
+  }
+  .logo-word {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.26rem;
+    letter-spacing: -0.025em;
+    color: var(--text);
+  }
+</style>

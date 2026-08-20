@@ -1,0 +1,92 @@
+---
+import { APP } from '../consts';
+
+interface Props {
+  /** Placement label, kept as a data attribute for analytics without altering the URL. */
+  source?: string;
+  label?: string;
+  class?: string;
+  variant?: 'dark' | 'light';
+}
+
+const { source = 'site', label, class: className = '', variant = 'dark' } = Astro.props;
+
+const href = APP.appStoreUrl;
+---
+
+<a
+  class={`asb asb-${variant} ${className}`}
+  href={href}
+  rel="noopener"
+  data-source={source}
+  aria-label={`Download ${APP.name} on the App Store`}
+>
+  <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false">
+    <path
+      fill="currentColor"
+      d="M17.05 12.54c-.02-2.2 1.8-3.27 1.88-3.32-1.02-1.5-2.62-1.7-3.19-1.72-1.36-.14-2.65.8-3.34.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.61 2.18-1.54 2.67-.39 6.62 1.11 8.79.73 1.06 1.6 2.25 2.75 2.21 1.1-.05 1.52-.71 2.85-.71 1.33 0 1.71.71 2.87.69 1.19-.02 1.94-1.08 2.66-2.15.84-1.23 1.19-2.42 1.21-2.48-.03-.01-2.32-.89-2.34-3.53h.03ZM14.86 5.6c.6-.74 1.01-1.76.9-2.78-.87.04-1.93.58-2.56 1.31-.56.65-1.06 1.69-.93 2.68.97.08 1.97-.49 2.59-1.21Z"
+    ></path>
+  </svg>
+  <span class="asb-text">
+    <span class="asb-small">{label ? '' : 'Download on the'}</span>
+    <span class="asb-big">{label ?? 'App Store'}</span>
+  </span>
+</a>
+
+<style>
+  .asb {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.7rem 1.35rem 0.75rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-family: var(--font-display);
+    border: 1.5px solid transparent;
+    transition: transform 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease;
+    white-space: nowrap;
+  }
+  .asb:hover {
+    transform: translateY(-2px);
+  }
+  .asb-dark {
+    background: var(--green-800);
+    color: #fff;
+    box-shadow: var(--shadow-md);
+  }
+  .asb-dark:hover {
+    background: var(--green-700);
+    color: #fff;
+    box-shadow: var(--shadow-lg);
+  }
+  .asb-light {
+    background: #fff;
+    color: var(--green-900);
+    box-shadow: var(--shadow-md);
+  }
+  .asb-light:hover {
+    color: var(--green-900);
+    background: #fff;
+    box-shadow: var(--shadow-lg);
+  }
+  .asb-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+    text-align: left;
+  }
+  .asb-small {
+    font-size: 0.68rem;
+    font-weight: 500;
+    opacity: 0.82;
+    letter-spacing: 0.01em;
+  }
+  .asb-small:empty {
+    display: none;
+  }
+  .asb-big {
+    font-size: 1.06rem;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+  }
+</style>

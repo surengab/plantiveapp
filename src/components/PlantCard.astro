@@ -1,0 +1,98 @@
+---
+import LeafArt from './LeafArt.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  plant: CollectionEntry<'plants'>;
+}
+const { plant } = Astro.props;
+const d = plant.data;
+---
+
+<a class="card plant-card" href={`/plant-care/${plant.id}/`}>
+  <LeafArt silhouette={d.silhouette} hue={d.hue} class="art" />
+  <div class="body">
+    <div class="tags">
+      <span class={`pill pill-${d.difficulty}`}>{d.difficulty} care</span>
+      {d.petSafe && <span class="pill pill-outline">Pet safe</span>}
+    </div>
+    <h3>{d.commonName}</h3>
+    <p class="botanical">{d.botanicalName}</p>
+    <dl class="facts">
+      <div>
+        <dt>Light</dt>
+        <dd>{d.care.light.label}</dd>
+      </div>
+      <div>
+        <dt>Water</dt>
+        <dd>{d.care.water.label}</dd>
+      </div>
+    </dl>
+  </div>
+</a>
+
+<style>
+  .plant-card {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .body {
+    padding: 1.1rem 1.25rem 1.35rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .plant-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .botanical {
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin: 0;
+    margin-top: auto;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .facts div {
+    min-width: 0;
+  }
+
+  .facts dt {
+    font-size: 0.68rem;
+    font-weight: 650;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.15rem;
+  }
+
+  .facts dd {
+    margin: 0;
+    font-size: 0.86rem;
+    font-weight: 550;
+    font-family: var(--font-display);
+    line-height: 1.3;
+  }
+</style>

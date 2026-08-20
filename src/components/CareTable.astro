@@ -1,0 +1,113 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  care: CollectionEntry<'plants'>['data']['care'];
+}
+const { care } = Astro.props;
+
+const icons: Record<string, string> = {
+  light:
+    'M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-13a1 1 0 0 1-1-1V2a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1Zm0 18a1 1 0 0 1-1-1v-1a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1ZM4 13H3a1 1 0 1 1 0-2h1a1 1 0 1 1 0 2Zm18 0h-1a1 1 0 1 1 0-2h1a1 1 0 1 1 0 2ZM5.6 6.99a1 1 0 0 1-.7-.29l-.71-.7a1 1 0 1 1 1.41-1.42l.71.71a1 1 0 0 1-.71 1.7Zm12.8 12.8a1 1 0 0 1-.7-.29l-.71-.71a1 1 0 1 1 1.41-1.41l.71.7a1 1 0 0 1-.71 1.71Zm-12.8 0a1 1 0 0 1-.71-1.71l.71-.7a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1-.7.29ZM18.4 6.99a1 1 0 0 1-.71-1.7l.71-.71a1 1 0 1 1 1.41 1.41l-.7.71a1 1 0 0 1-.71.29Z',
+  water: 'M12 2.7c4 4.6 6.5 8.2 6.5 11.4A6.5 6.5 0 0 1 5.5 14C5.5 10.9 8 7.3 12 2.7Z',
+  humidity:
+    'M8 3.2c2.6 3 4.2 5.4 4.2 7.4A4.2 4.2 0 0 1 3.8 10.6c0-2 1.6-4.4 4.2-7.4Zm8 6c2.2 2.6 3.6 4.7 3.6 6.4a3.6 3.6 0 1 1-7.2 0c0-1.7 1.4-3.8 3.6-6.4Z',
+  temperature:
+    'M12 2a3 3 0 0 1 3 3v7.6a5 5 0 1 1-6 0V5a3 3 0 0 1 3-3Zm0 2a1 1 0 0 0-1 1v8.6l-.5.3a3 3 0 1 0 3 0l-.5-.3V5a1 1 0 0 0-1-1Z',
+  soil: 'M3 13h18a9 9 0 0 1-18 0Zm9-11c1.5 2.6 3.5 4.4 3.5 6.5a3.5 3.5 0 0 1-7 0C8.5 6.4 10.5 4.6 12 2Z',
+  fertilizer:
+    'M12 2c3.9 0 7 3.1 7 7 0 5-4.4 9.6-6.4 11.4a1 1 0 0 1-1.3 0C9.4 18.6 5 14 5 9c0-3.9 3.1-7 7-7Zm0 4.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Z',
+  repotting: 'M4 8h16l-1.6 11.2a2 2 0 0 1-2 1.8H7.6a2 2 0 0 1-2-1.8L4 8Zm2-5h12v3H6V3Z',
+  propagation:
+    'M11 22v-7.2c-3.4-.4-6-3.3-6-6.8V4h3.8C12.2 4 15 6.8 15 10.2V12a7 7 0 0 0 4-6.3V4h-2V2h4v3.7A9 9 0 0 1 13 14.6V22h-2Z',
+};
+
+const labels: Record<string, string> = {
+  light: 'Light',
+  water: 'Water',
+  humidity: 'Humidity',
+  temperature: 'Temperature',
+  soil: 'Soil',
+  fertilizer: 'Fertiliser',
+  repotting: 'Repotting',
+  propagation: 'Propagation',
+};
+
+const rows = Object.entries(care) as [keyof typeof care, { label: string; detail: string }][];
+---
+
+<div class="care-grid">
+  {
+    rows.map(([key, value]) => (
+      <div class="care-item">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20">
+            <path fill="currentColor" d={icons[key]} />
+          </svg>
+        </div>
+        <div class="text">
+          <h3>{labels[key]}</h3>
+          <p class="value">{value.label}</p>
+          <p class="detail">{value.detail}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .care-grid {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .care-item {
+    display: flex;
+    gap: 0.9rem;
+    padding: 1.25rem;
+    background: var(--bg-raised);
+  }
+
+  .icon {
+    flex: none;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent-on-soft);
+  }
+
+  .text {
+    min-width: 0;
+  }
+
+  .care-item h3 {
+    font-size: 0.7rem;
+    font-weight: 650;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.2rem;
+  }
+
+  .value {
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: 1.02rem;
+    line-height: 1.3;
+    margin-bottom: 0.35rem;
+  }
+
+  .detail {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+</style>

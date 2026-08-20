@@ -1,0 +1,479 @@
+---
+/**
+ * CSS recreation of the app's Identify / Guides screens, carrying Plantive
+ * branding. Built rather than screenshotted so it stays crisp at any density,
+ * follows the site theme, and adds ~0 KB of image weight.
+ */
+interface Props {
+  screen?: 'identify' | 'care';
+  class?: string;
+}
+const { screen = 'identify', class: className = '' } = Astro.props;
+
+const tabs = [
+  { id: 'identify', label: 'Identify', d: 'M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2' },
+  { id: 'guides', label: 'Guides', d: 'M4 5.5A2.5 2.5 0 0 1 6.5 3H12v16H6.5A2.5 2.5 0 0 0 4 21.5v-16ZM20 5.5A2.5 2.5 0 0 0 17.5 3H12v16h5.5a2.5 2.5 0 0 1 2.5 2.5v-16Z' },
+  { id: 'garden', label: 'Garden', d: 'M12 22v-7m0 0c-3 0-5-2-5-5 3 0 5 2 5 5Zm0 0c3 0 5-2 5-5-3 0-5 2-5 5Zm0-6c0-2 1-4 3-5-2-1-3-3-3-5-0 2-1 4-3 5 2 1 3 3 3 5Z' },
+  { id: 'pro', label: 'Pro', d: 'M12 2 9.2 8.6 2 9.2l5.5 4.8L5.8 21 12 17.3 18.2 21l-1.7-7 5.5-4.8-7.2-.6L12 2Z' },
+];
+const active = screen === 'identify' ? 'identify' : 'guides';
+---
+
+<div class={`phone ${className}`} role="img" aria-label={
+  screen === 'identify'
+    ? 'Plantive app identifying a fiddle leaf fig from the camera'
+    : 'Plantive app showing a watering and lighting schedule for a fiddle leaf fig'
+}>
+  <div class="frame">
+    <div class="notch"></div>
+    <div class="screen">
+      <div class="statusbar">
+        <span>9:41</span>
+        <span class="sb-right">
+          <svg viewBox="0 0 20 12" width="17" height="11" aria-hidden="true"
+            ><rect x="0" y="2" width="15" height="8" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.1"
+            ></rect><rect x="1.6" y="3.6" width="10" height="4.8" rx="1.1" fill="currentColor"></rect><path
+              d="M17 5v2"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"></path></svg
+          >
+        </span>
+      </div>
+
+      <div class="appbar">
+        <img src="/assets/logo-96.png" width="20" height="20" alt="" decoding="async" />
+        <span>Plantive</span>
+      </div>
+
+      {
+        screen === 'identify' ? (
+          <div class="viewport">
+            <div class="reticle">
+              <span class="c tl" /><span class="c tr" /><span class="c bl" /><span class="c br" />
+              <div class="scanline" />
+              <div class="subject">
+                <svg viewBox="0 0 100 100" aria-hidden="true">
+                  <path
+                    d="M48 94V50C40 40 30 34 18 30c10 10 16 20 18 32-10-8-18-12-28-14 10 8 18 18 22 30 8-2 12-2 18 0V26C50 16 60 8 74 4 64 14 58 24 56 36c8-8 16-12 26-14-10 8-16 18-20 30-4-2-8-2-14 0v42Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="result">
+              <span class="conf">98% match</span>
+              <p class="latin">Ficus lyrata</p>
+              <p class="common">Fiddle Leaf Fig</p>
+            </div>
+          </div>
+        ) : (
+          <div class="care-screen">
+            <div class="hero-card">
+              <span class="badge">My garden</span>
+              <p class="hc-title">Fiddle Leaf Fig</p>
+              <p class="hc-sub">Ficus lyrata · Indoors</p>
+            </div>
+            <div class="stat-row">
+              <div class="stat">
+                <span class="dot water" />
+                <p class="s-label">Watering</p>
+                <p class="s-value">Every 7 days</p>
+              </div>
+              <div class="stat">
+                <span class="dot sun" />
+                <p class="s-label">Lighting</p>
+                <p class="s-value">Bright indirect</p>
+              </div>
+            </div>
+            <div class="task">
+              <span class="check" />
+              <div>
+                <p class="t-title">Water today</p>
+                <p class="t-sub">Top 2" of soil is dry</p>
+              </div>
+            </div>
+          </div>
+        )
+      }
+
+      <div class="tabbar">
+        {
+          tabs.map((t) => (
+            <div class={`tab ${t.id === active ? 'on' : ''}`}>
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <path
+                  d={t.d}
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span>{t.label}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .phone {
+    width: min(100%, 275px);
+    filter: drop-shadow(0 30px 60px rgba(9, 30, 20, 0.28));
+  }
+
+  .frame {
+    position: relative;
+    background: #10201a;
+    border-radius: 38px;
+    padding: 9px;
+    aspect-ratio: 9 / 19.2;
+  }
+
+  .notch {
+    position: absolute;
+    top: 9px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 33%;
+    height: 20px;
+    background: #10201a;
+    border-radius: 0 0 14px 14px;
+    z-index: 3;
+  }
+
+  .screen {
+    height: 100%;
+    background: #f6f8f4;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: #14181a;
+    font-size: 10px;
+  }
+
+  .statusbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 16px 2px;
+    font-size: 9.5px;
+    font-weight: 650;
+    font-family: var(--font-display);
+    color: #14181a;
+  }
+
+  .sb-right {
+    display: flex;
+    align-items: center;
+  }
+
+  .appbar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 14px 6px;
+  }
+
+  .appbar img {
+    border-radius: 5px;
+  }
+
+  .appbar span {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 12px;
+    color: #14532d;
+    letter-spacing: -0.02em;
+  }
+
+  /* ---------------- Identify screen ---------------- */
+
+  .viewport {
+    flex: 1;
+    margin: 4px 10px 0;
+    border-radius: 18px;
+    background: linear-gradient(160deg, #b9cbb4 0%, #7d9a7c 45%, #4c6b52 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 14px 12px;
+  }
+
+  .reticle {
+    position: absolute;
+    inset: 16px 14px 60px;
+  }
+
+  .c {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2.2px solid rgba(255, 255, 255, 0.92);
+  }
+  .tl {
+    top: 0;
+    left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-radius: 8px 0 0 0;
+  }
+  .tr {
+    top: 0;
+    right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-radius: 0 8px 0 0;
+  }
+  .bl {
+    bottom: 0;
+    left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-radius: 0 0 0 8px;
+  }
+  .br {
+    bottom: 0;
+    right: 0;
+    border-left: 0;
+    border-top: 0;
+    border-radius: 0 0 8px 0;
+  }
+
+  .scanline {
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, transparent, #d7f5e0, transparent);
+    box-shadow: 0 0 12px 2px rgba(157, 235, 185, 0.55);
+    animation: scan 2.8s ease-in-out infinite;
+  }
+
+  @keyframes scan {
+    0%,
+    100% {
+      top: 8%;
+    }
+    50% {
+      top: 82%;
+    }
+  }
+
+  .subject {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .subject svg {
+    width: 54%;
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.25));
+  }
+
+  .result {
+    position: relative;
+    margin-top: auto;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(6px);
+    border-radius: 13px;
+    padding: 8px 11px 9px;
+  }
+
+  .conf {
+    display: inline-block;
+    background: #dcf0e2;
+    color: #0d3a26;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 8px;
+    letter-spacing: 0.03em;
+    padding: 2px 6px;
+    border-radius: 999px;
+    margin-bottom: 3px;
+  }
+
+  .latin {
+    font-style: italic;
+    font-size: 9px;
+    color: #5a6660;
+    line-height: 1.2;
+  }
+
+  .common {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  /* ---------------- Care screen ---------------- */
+
+  .care-screen {
+    flex: 1;
+    padding: 4px 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hero-card {
+    border-radius: 15px;
+    padding: 12px 12px 13px;
+    background: linear-gradient(150deg, #6f8f70, #3c5a45);
+    color: #fff;
+    aspect-ratio: 16 / 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .badge {
+    align-self: flex-start;
+    background: #dcf0e2;
+    color: #0d3a26;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 7.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2.5px 7px;
+    border-radius: 999px;
+    margin-bottom: auto;
+  }
+
+  .hc-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .hc-sub {
+    font-size: 9px;
+    opacity: 0.85;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+  }
+
+  .stat {
+    background: #eaeee7;
+    border-radius: 13px;
+    padding: 9px 10px 10px;
+  }
+
+  .dot {
+    display: block;
+    width: 17px;
+    height: 17px;
+    border-radius: 999px;
+    margin-bottom: 5px;
+  }
+  .dot.water {
+    background: #cfe3d6;
+    box-shadow: inset 0 0 0 3px #2e7d52;
+  }
+  .dot.sun {
+    background: #f3e4c8;
+    box-shadow: inset 0 0 0 3px #b4761f;
+  }
+
+  .s-label {
+    font-size: 7.5px;
+    font-weight: 650;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #5a6660;
+  }
+
+  .s-value {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 10.5px;
+    letter-spacing: -0.01em;
+  }
+
+  .task {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1px solid #e2e7dd;
+    border-radius: 13px;
+    padding: 9px 11px;
+  }
+
+  .check {
+    flex: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    border: 2px solid #2e7d52;
+    position: relative;
+  }
+
+  .check::after {
+    content: '';
+    position: absolute;
+    inset: 2.5px;
+    border-radius: 999px;
+    background: #2e7d52;
+  }
+
+  .t-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 10.5px;
+  }
+
+  .t-sub {
+    font-size: 8.5px;
+    color: #5a6660;
+  }
+
+  /* ---------------- Tab bar ---------------- */
+
+  .tabbar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    padding: 8px 8px 14px;
+    margin-top: 8px;
+    background: #eef2ea;
+    border-top: 1px solid #e2e7dd;
+  }
+
+  .tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 4px 0 3px;
+    border-radius: 999px;
+    color: #78847e;
+    font-size: 8px;
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+
+  .tab.on {
+    background: #dcf0e2;
+    color: #14532d;
+  }
+</style>

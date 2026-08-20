@@ -1,0 +1,107 @@
+---
+/**
+ * Lightweight generated card art. Each guide gets a tinted ground plus a leaf
+ * silhouette matching its foliage shape — so the index looks illustrated
+ * without shipping a single photograph.
+ */
+interface Props {
+  silhouette:
+    | 'monstera'
+    | 'heart'
+    | 'lance'
+    | 'round'
+    | 'spiky'
+    | 'trailing'
+    | 'frond'
+    | 'rosette';
+  hue?: number;
+  class?: string;
+}
+
+const { silhouette, hue = 140, class: className = '' } = Astro.props;
+
+const shapes: Record<Props['silhouette'], string> = {
+  // Split-leaf: an oval with wedges cut from both margins.
+  monstera:
+    'M50 8c22 0 36 18 36 40S72 92 50 92 14 70 14 48 28 8 50 8Zm2 10v14l16-9-16-5Zm0 20v14l20-6-20-8Zm0 20v13l17-3-17-10ZM46 18 30 23l16 9V18Zm0 20-20 8 20 6V38Zm0 20-17 10 17 3V58Z',
+  // Heart-shaped: philodendron / pothos foliage.
+  heart:
+    'M50 92C30 78 12 62 12 42 12 26 24 14 38 14c6 0 10 3 12 7 2-4 6-7 12-7 14 0 24 12 24 28 0 20-18 36-36 50Z',
+  // Long strap leaf: snake plant, dracaena.
+  lance: 'M50 6c10 22 14 42 14 56 0 18-6 30-14 32-8-2-14-14-14-32 0-14 4-34 14-56Z',
+  // Broad round leaf: rubber plant, peperomia.
+  round: 'M50 10c22 0 38 16 38 38S72 90 50 90 12 74 12 48 28 10 50 10Z',
+  // Spiky rosette: aloe, haworthia.
+  spiky:
+    'M50 92 42 60 22 74l14-24-26-4 26-8-16-20 22 12 8-32 8 32 22-12-16 20 26 8-26 4 14 24-20-14-8 32Z',
+  // Trailing vine: string of pearls, ivy.
+  trailing:
+    'M22 12c0 14 8 20 16 26s16 14 16 28-10 22-22 22c14 0 26-8 32-18 14-4 24-16 24-30 0-6-2-10-4-14 4 12 0 22-10 28 2-14-4-24-16-30S24 24 22 12Z',
+  // Feathered frond: fern, palm.
+  frond:
+    'M48 94V50C40 40 30 34 18 30c10 10 16 20 18 32-10-8-18-12-28-14 10 8 18 18 22 30 8-2 12-2 18 0V26C50 16 60 8 74 4 64 14 58 24 56 36c8-8 16-12 26-14-10 8-16 18-20 30-4-2-8-2-14 0v42Z',
+  // Tight rosette: echeveria, succulents.
+  rosette:
+    'M50 8c6 10 6 20 2 28 8-6 18-8 28-4-8 8-18 12-26 12 10 2 18 8 22 18-10 0-20-4-26-10 4 10 4 20 0 30-4-10-4-20 0-30-6 6-16 10-26 10 4-10 12-16 22-18-8 0-18-4-26-12 10-4 20-2 28 4-4-8-4-18 2-28Z',
+};
+
+const path = shapes[silhouette];
+---
+
+<div class={`leaf-art ${className}`} style={`--h:${hue}`} aria-hidden="true">
+  <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+    <path d={path} fill-rule="evenodd" />
+  </svg>
+</div>
+
+<style>
+  .leaf-art {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius) var(--radius) 0 0;
+    overflow: hidden;
+    background: linear-gradient(
+      145deg,
+      hsl(var(--h) 42% 92%) 0%,
+      hsl(calc(var(--h) + 22) 38% 84%) 100%
+    );
+    display: grid;
+    place-items: center;
+  }
+
+  .leaf-art svg {
+    width: 58%;
+    height: 58%;
+    transform: rotate(-8deg);
+    filter: drop-shadow(0 4px 10px hsl(var(--h) 35% 30% / 0.22));
+  }
+
+  .leaf-art path {
+    fill: hsl(var(--h) 40% 32%);
+    opacity: 0.9;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme='light'])) .leaf-art {
+      background: linear-gradient(
+        145deg,
+        hsl(var(--h) 28% 18%) 0%,
+        hsl(calc(var(--h) + 22) 26% 13%) 100%
+      );
+    }
+    :global(:root:not([data-theme='light'])) .leaf-art path {
+      fill: hsl(var(--h) 38% 62%);
+    }
+  }
+
+  :global(:root[data-theme='dark']) .leaf-art {
+    background: linear-gradient(
+      145deg,
+      hsl(var(--h) 28% 18%) 0%,
+      hsl(calc(var(--h) + 22) 26% 13%) 100%
+    );
+  }
+  :global(:root[data-theme='dark']) .leaf-art path {
+    fill: hsl(var(--h) 38% 62%);
+  }
+</style>

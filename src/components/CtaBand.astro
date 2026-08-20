@@ -1,0 +1,100 @@
+---
+import AppStoreButton from './AppStoreButton.astro';
+
+interface Props {
+  heading?: string;
+  body?: string;
+  source?: string;
+  compact?: boolean;
+}
+
+const {
+  heading = 'Not sure what plant you have?',
+  body = 'Point your camera at it. Plantive names the species in seconds and hands you the exact watering and light schedule it needs — free on iPhone.',
+  source = 'inline-cta',
+  compact = false,
+} = Astro.props;
+---
+
+<aside class={`cta-band ${compact ? 'compact' : ''}`}>
+  <div class="inner">
+    <img src="/assets/icon-192.png" width="72" height="72" alt="" class="icon" decoding="async" />
+    <div class="copy">
+      <h2>{heading}</h2>
+      <p>{body}</p>
+    </div>
+    <div class="action">
+      <AppStoreButton source={source} variant="light" />
+      <p class="meta">Free · iPhone · No account needed to scan</p>
+    </div>
+  </div>
+</aside>
+
+<style>
+  .cta-band {
+    background: linear-gradient(135deg, var(--green-900) 0%, var(--green-800) 55%, var(--green-700) 100%);
+    color: #fff;
+    border-radius: var(--radius-xl);
+    padding: clamp(1.75rem, 4vw, 2.75rem);
+    margin-block: clamp(2.5rem, 6vw, 4rem);
+    overflow: hidden;
+  }
+
+  .inner {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.25rem, 3vw, 2.25rem);
+    flex-wrap: wrap;
+  }
+
+  .icon {
+    border-radius: 22%;
+    flex: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+  }
+
+  .copy {
+    flex: 1 1 20rem;
+    min-width: 0;
+  }
+
+  .cta-band h2 {
+    color: #fff;
+    font-size: var(--step-2);
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-band p {
+    color: var(--green-200);
+    line-height: 1.6;
+    max-width: 52ch;
+  }
+
+  .action {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+    flex: none;
+  }
+
+  .meta {
+    font-size: 0.8rem !important;
+    color: var(--green-300) !important;
+  }
+
+  .compact {
+    padding: clamp(1.4rem, 3vw, 1.9rem);
+  }
+
+  .compact h2 {
+    font-size: var(--step-1);
+  }
+
+  @media (max-width: 720px) {
+    .icon {
+      width: 56px;
+      height: 56px;
+    }
+  }
+</style>

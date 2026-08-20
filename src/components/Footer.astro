@@ -1,0 +1,125 @@
+---
+import { APP, FOOTER_LINKS, SITE } from '../consts';
+import Logo from './Logo.astro';
+import AppStoreButton from './AppStoreButton.astro';
+
+const year = new Date().getFullYear();
+const isExternal = (href: string) => href.startsWith('http') || href.startsWith('mailto:');
+---
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="brand-col">
+        <Logo size={38} />
+        <p class="blurb">
+          {SITE.description}
+        </p>
+        <AppStoreButton source="footer" class="footer-cta" />
+      </div>
+
+      {
+        FOOTER_LINKS.map((group) => (
+          <nav class="link-col" aria-label={group.heading}>
+            <h2>{group.heading}</h2>
+            <ul>
+              {group.links.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    {...(isExternal(link.href) ? { rel: 'noopener', target: '_blank' } : {})}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        ))
+      }
+    </div>
+
+    <div class="baseline">
+      <p>
+        &copy; {year} {APP.developer}. Plantive is an independent plant identification and plant
+        care app.
+      </p>
+      <p class="fine">
+        Care advice on this site is general horticultural guidance, not professional or veterinary
+        advice. Always confirm toxicity information with a vet before letting pets near a plant.
+        Apple and App Store are trademarks of Apple Inc.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--bg-subtle);
+    border-top: 1px solid var(--border);
+    padding-block: clamp(2.75rem, 6vw, 4.5rem) 2rem;
+    margin-top: clamp(3rem, 8vw, 6rem);
+  }
+
+  .cols {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: minmax(15rem, 1.5fr) repeat(auto-fit, minmax(9rem, 1fr));
+  }
+
+  .blurb {
+    color: var(--text-muted);
+    font-size: 0.93rem;
+    line-height: 1.6;
+    margin-block: 0.9rem 1.4rem;
+    max-width: 34ch;
+  }
+
+  .link-col h2 {
+    font-size: 0.8rem;
+    font-weight: 650;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 0.9rem;
+  }
+
+  .link-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .link-col a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.93rem;
+    transition: color 0.15s ease;
+  }
+
+  .link-col a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  .baseline {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .baseline p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .fine {
+    font-size: 0.78rem !important;
+    opacity: 0.85;
+    max-width: 78ch;
+  }
+</style>
