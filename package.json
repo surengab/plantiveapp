@@ -9,6 +9,7 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name=plantiveapp --branch=main --commit-dirty=true",
     "astro": "astro"
   },
   "dependencies": {
@@ -18,5 +19,8 @@
     "astro": "^5.14.1",
     "sharp": "^0.34.4",
     "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "wrangler": "^4.125.0"
   }
 }

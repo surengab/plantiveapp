@@ -18,18 +18,31 @@ npm run preview  # serve dist/ locally
 
 ## Deployment
 
-Hosted on **Cloudflare Pages**, deployed automatically on push to `main`.
+Hosted on **Cloudflare Pages**, project `plantiveapp`
+([plantiveapp.pages.dev](https://plantiveapp.pages.dev)).
 
-| Setting | Value |
-| --- | --- |
-| Framework preset | Astro |
-| Build command | `npm run build` |
-| Build output directory | `dist` |
-| Node version | from `.node-version` (22) |
+```bash
+npm run deploy   # builds, then uploads dist/ to the production branch
+```
 
-`public/_headers` and `public/_redirects` are Cloudflare Pages config: long-lived
-caching for fingerprinted `/_astro/` assets, revalidated HTML, and a www → apex
-redirect so only one hostname gets indexed.
+This is a **Direct Upload** project, so pushing to GitHub does *not* redeploy —
+run the command above. Uploads are incremental; only changed files transfer.
+
+First-time setup on a new machine needs `npx wrangler login` once.
+
+> Cloudflare does not allow connecting a Git repo to an existing Direct Upload
+> project. To get deploy-on-push you have to create a *new* Git-connected
+> project (build command `npm run build`, output `dist`) and move the custom
+> domain across — everything but the `plantiveapp.pages.dev` hostname carries
+> over.
+
+`public/_headers` and `public/_redirects` are Cloudflare Pages config: immutable
+caching for fingerprinted `/_astro/` assets, revalidated HTML so content edits go
+live on the next request, baseline security headers, and a www → apex redirect so
+only one hostname gets indexed.
+
+`public/.nojekyll` is vestigial GitHub Pages insurance — harmless, and it costs
+nothing to keep in case Pages is ever used again.
 
 ## Adding content
 
