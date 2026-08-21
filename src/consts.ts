@@ -78,7 +78,7 @@ export const FOOTER_LINKS = [
       { label: 'About Plantive', href: '/about/' },
       { label: 'Privacy policy', href: '/privacy/' },
       { label: 'Terms of use', href: '/terms/' },
-      { label: 'Contact', href: `mailto:${APP.supportEmail}` },
+      { label: APP.supportEmail, href: `mailto:${APP.supportEmail}` },
     ],
   },
 ] as const;
