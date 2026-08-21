@@ -5,3 +5,8 @@
 # Redirect Rule instead.
 
 https://www.plantiveapp.com/*  https://plantiveapp.com/:splat  301
+
+# Cloudflare Pages strips .html extensions and 308-redirects to the bare path.
+# Google Search Console requires its verification file to return 200 at the
+# exact URL it was given, so rewrite (200) instead of letting Pages redirect.
+/googled3a3104e21d45d9e.html  /googled3a3104e21d45d9e  200

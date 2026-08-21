@@ -11,7 +11,9 @@ const isExternal = (href: string) => href.startsWith('http') || href.startsWith(
   <div class="wrap">
     <div class="cols">
       <div class="brand-col">
-        <Logo size={38} />
+        <a href="/" class="brand-link" aria-label="Plantive home">
+          <Logo size={38} />
+        </a>
         <p class="blurb">
           {SITE.description}
         </p>
@@ -65,6 +67,11 @@ const isExternal = (href: string) => href.startsWith('http') || href.startsWith(
     display: grid;
     gap: 2.5rem;
     grid-template-columns: minmax(15rem, 1.5fr) repeat(auto-fit, minmax(9rem, 1fr));
+  }
+
+  .brand-link {
+    display: inline-block;
+    text-decoration: none;
   }
 
   .blurb {
