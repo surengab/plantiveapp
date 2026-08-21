@@ -17,6 +17,9 @@ const isExternal = (href: string) => href.startsWith('http') || href.startsWith(
         <p class="blurb">
           {SITE.description}
         </p>
+        <p class="contact">
+          Email us at <a href={`mailto:${APP.supportEmail}`}>{APP.supportEmail}</a>
+        </p>
         <AppStoreButton source="footer" class="footer-cta" />
       </div>
 
@@ -78,8 +81,21 @@ const isExternal = (href: string) => href.startsWith('http') || href.startsWith(
     color: var(--text-muted);
     font-size: 0.93rem;
     line-height: 1.6;
-    margin-block: 0.9rem 1.4rem;
+    margin-block: 0.9rem 0.9rem;
     max-width: 34ch;
+  }
+
+  .contact {
+    color: var(--text-muted);
+    font-size: 0.93rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .contact a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+    word-break: break-word;
   }
 
   .link-col h2 {
