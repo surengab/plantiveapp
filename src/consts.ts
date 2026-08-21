@@ -14,6 +14,12 @@ export const SITE = {
   locale: 'en_US',
   lang: 'en',
   themeColor: '#14532d',
+  /**
+   * Google Search Console ownership token. Public by design — it only proves
+   * control of this site. Kept alongside the /googled…html file so verification
+   * survives if either method breaks.
+   */
+  googleSiteVerification: '9SZDJKni2zRuXtNdxtFCvHv5ri9bLrwtOeFG3-LLnHw',
 } as const;
 
 export const APP = {
