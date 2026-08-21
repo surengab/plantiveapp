@@ -1,5 +1,5 @@
 ---
-title: 'How to Repot a Houseplant: When, What Size, and the Right Mix'
+title: 'How to Repot a Houseplant: Timing, Pot Size and Soil'
 description: 'When a plant actually needs repotting, how to choose pot size and soil, the step-by-step method, and what to do about the sulk afterwards.'
 publishDate: 2026-08-04
 updatedDate: 2026-08-20

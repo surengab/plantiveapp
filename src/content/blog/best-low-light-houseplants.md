@@ -1,6 +1,6 @@
 ---
 title: '12 Best Low Light Houseplants That Genuinely Survive'
-description: 'Plants that actually tolerate dim rooms, ranked by how little light they need — plus an honest note on what "low light" really means and which popular picks do not qualify.'
+description: 'Plants that genuinely tolerate dim rooms, ranked by how little light they need, plus what "low light" really means and which popular picks do not qualify.'
 publishDate: 2026-07-28
 updatedDate: 2026-08-20
 category: 'Plant picks'

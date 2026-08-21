@@ -1,5 +1,5 @@
 ---
-title: 'Phalaenopsis Orchid Care: Watering, Reblooming and Root Health'
+title: 'Phalaenopsis Orchid Care: Watering, Reblooming, Roots'
 description: 'Moth orchid care made simple — how often to water, reading root colour, what to do after the flowers drop, and how to trigger a new flower spike.'
 heading: 'Phalaenopsis Orchid Care Guide'
 publishDate: 2026-07-04

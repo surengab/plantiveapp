@@ -11,7 +11,7 @@ const problems = (await getCollection('problems', (p) => !p.data.draft)).sort(
 
 const title = 'Houseplant Problems: Diagnose Symptoms and Fix Them';
 const description =
-  'Yellow leaves, brown tips, drooping stems, webbing or gnats? Start from the symptom, work through the likely causes in order, and apply the fix that actually matches.';
+  'Yellow leaves, brown tips, drooping stems, webbing or gnats? Start from the symptom, work through the likely causes in order, and apply the matching fix.';
 
 const trail = [{ label: 'Plant problems', href: '/problems/' }];
 

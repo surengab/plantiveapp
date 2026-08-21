@@ -1,6 +1,6 @@
 ---
 title: 'Heartleaf Philodendron Care: Watering, Light and Pruning'
-description: 'Heartleaf philodendron (Philodendron hederaceum) care — watering rhythm, low-light tolerance, how to keep vines full rather than leggy, and easy water propagation.'
+description: 'Heartleaf philodendron (Philodendron hederaceum) care: watering rhythm, low-light tolerance, keeping vines full rather than leggy, and easy propagation.'
 heading: 'Heartleaf Philodendron Care Guide'
 publishDate: 2026-06-28
 updatedDate: 2026-08-16

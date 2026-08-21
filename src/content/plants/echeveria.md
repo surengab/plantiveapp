@@ -1,5 +1,5 @@
 ---
-title: 'Echeveria Care: Sun, Watering and Stopping Stretched Rosettes'
+title: 'Echeveria Care: Sun, Water and Stopping Stretched Rosettes'
 description: 'Echeveria succulent care — how often to water, the sun it needs to stay compact and colourful, why rosettes stretch, and how to propagate from single leaves.'
 heading: 'Echeveria Care Guide'
 publishDate: 2026-07-07

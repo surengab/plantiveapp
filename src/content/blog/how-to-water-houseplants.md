@@ -1,6 +1,6 @@
 ---
 title: 'How to Water Houseplants Properly (Stop Using a Schedule)'
-description: 'Watering on a fixed schedule kills more houseplants than neglect. Here is the check-then-soak method, how often each plant type really needs water, and why drainage matters most.'
+description: 'Watering on a fixed schedule kills more houseplants than neglect. The check-then-soak method, how often each plant type needs water, and why drainage matters.'
 publishDate: 2026-07-05
 updatedDate: 2026-08-20
 category: 'Watering'

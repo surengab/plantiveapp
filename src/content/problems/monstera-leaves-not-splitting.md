@@ -1,6 +1,6 @@
 ---
 title: 'Monstera Leaves Not Splitting? Here Is Why and How to Fix It'
-description: 'Solid heart-shaped monstera leaves mean one of three things — too little light, a juvenile plant, or nothing to climb. How to tell which and trigger fenestration.'
+description: 'Solid heart-shaped monstera leaves mean one of three things: too little light, a juvenile plant, or nothing to climb. How to tell which, and fix it.'
 heading: 'Why Are My Monstera Leaves Not Splitting?'
 publishDate: 2026-08-02
 updatedDate: 2026-08-20

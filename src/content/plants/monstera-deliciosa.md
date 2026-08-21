@@ -1,6 +1,6 @@
 ---
 title: 'Monstera Deliciosa Care: Light, Water & Fenestration Guide'
-description: 'How to care for a Monstera deliciosa: exactly how often to water it, the light it needs to split its leaves, and fixes for yellowing, drooping and no fenestration.'
+description: 'How to care for a Monstera deliciosa: how often to water it, the light it needs to split its leaves, and fixes for yellowing, drooping and no fenestration.'
 heading: 'Monstera Deliciosa Care Guide'
 publishDate: 2026-06-04
 updatedDate: 2026-08-12

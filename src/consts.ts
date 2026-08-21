@@ -10,7 +10,7 @@ export const SITE = {
   /** Used as the <title> suffix and in structured data. */
   tagline: 'Plant Identifier & Plant Care App',
   description:
-    'Identify any plant, flower, tree or succulent from a photo in seconds, then get a watering and light schedule that actually keeps it alive. Free plant care guides plus the Plantive iPhone app.',
+    'Identify any plant, flower or succulent from a photo in seconds, then get the watering and light schedule it actually needs. Free guides plus the iPhone app.',
   locale: 'en_US',
   lang: 'en',
   themeColor: '#14532d',
