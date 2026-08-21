@@ -60,17 +60,12 @@ const graph = [
     description: SITE.description,
     publisher: { '@id': `${SITE.url}/#organization` },
     inLanguage: SITE.lang,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${SITE.url}/search/?q={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
-    },
+    // No SearchAction: the site has no search endpoint. Declaring one that
+    // 404s is an unbacked claim, the same failure mode as FAQ markup with no
+    // visible questions. Re-add only alongside a real /search/ page.
   },
   {
-    '@type': type === 'article' ? 'WebPage' : 'WebPage',
+    '@type': 'WebPage',
     '@id': `${canonicalUrl.href}#webpage`,
     url: canonicalUrl.href,
     name: title,
