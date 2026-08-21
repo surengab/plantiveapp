@@ -1,0 +1,106 @@
+{
+  "aloe-vera": {
+    "alt": "Aloe vera plant with thick, upright, spotted succulent leaves",
+    "author": "Dorian Wallender from Lake Havasu City, Arizona, USA",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Aloe_Vera_(15025287658).jpg",
+    "file": "Aloe Vera (15025287658).jpg"
+  },
+  "calathea": {
+    "alt": "Calathea leaf showing its distinctive feathered green pattern",
+    "author": "Tournasol7",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Goeppertia_makoyana_in_Lyon_Botanical_Garden_(2).jpg",
+    "file": "Goeppertia makoyana in Lyon Botanical Garden (2).jpg"
+  },
+  "echeveria": {
+    "alt": "Cluster of blue-green Echeveria rosettes",
+    "author": "Chhe (talk)",
+    "licence": "Public domain",
+    "licenceUrl": "",
+    "source": "https://commons.wikimedia.org/wiki/File:EcheveriaElegans.jpg",
+    "file": "EcheveriaElegans.jpg"
+  },
+  "fiddle-leaf-fig": {
+    "alt": "Fiddle leaf fig with large violin-shaped glossy leaves",
+    "author": "Eric Knight",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ficus_lyrata_440618779.jpg",
+    "file": "Ficus lyrata 440618779.jpg"
+  },
+  "heartleaf-philodendron": {
+    "alt": "Glossy heart-shaped leaf of a heartleaf philodendron",
+    "author": "Gilmar R. Ferreira",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Philodendron_hederaceum_-_Parque_Estadual_da_Serra_do_Mar_-_iNaturalist_69206043_(4).jpeg",
+    "file": "Philodendron hederaceum - Parque Estadual da Serra do Mar - iNaturalist 69206043 (4).jpeg"
+  },
+  "monstera-deliciosa": {
+    "alt": "Monstera deliciosa foliage with deeply split, fenestrated leaves",
+    "author": "Jungle Rebel from Brussels, Belgium",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Monstera_deliciosa_(23516285899).jpg",
+    "file": "Monstera deliciosa (23516285899).jpg"
+  },
+  "peace-lily": {
+    "alt": "Peace lily plant with glossy dark green lance-shaped leaves",
+    "author": "Rosina Peixoto",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Espatifilo.JPG",
+    "file": "Espatifilo.JPG"
+  },
+  "phalaenopsis-orchid": {
+    "alt": "White Phalaenopsis moth orchid flowers in bloom",
+    "author": "Orchi",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Phalaenopsis_amabilis_Orchi_198.jpg",
+    "file": "Phalaenopsis amabilis Orchi 198.jpg"
+  },
+  "pothos": {
+    "alt": "Pothos vine trailing with variegated heart-shaped leaves",
+    "author": "Jerzy Opioła",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Epipremum_aureaum_a1.JPG",
+    "file": "Epipremum aureaum a1.JPG"
+  },
+  "rubber-plant": {
+    "alt": "Rubber plant with thick glossy dark green leaves and a red new-growth sheath",
+    "author": "Felix E. Klee",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Ficus_elastica_243758901.jpg",
+    "file": "Ficus elastica 243758901.jpg"
+  },
+  "snake-plant": {
+    "alt": "Snake plant with tall upright banded sword-shaped leaves",
+    "author": "四角銅鑼",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Dracaena_trifasciata_177940008.jpg",
+    "file": "Dracaena trifasciata 177940008.jpg"
+  },
+  "spider-plant": {
+    "alt": "Spider plant with arching green and cream striped leaves",
+    "author": "Tony Rebelo",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chlorophytum_comosum_eastern_cape.jpg",
+    "file": "Chlorophytum comosum eastern cape.jpg"
+  },
+  "zz-plant": {
+    "alt": "ZZ plant stem with paired glossy dark green leaflets",
+    "author": "John Braggins",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Zamioculcas_zamiifolia_(Lodd.)_Engl._(AM_AK331827-2).jpg",
+    "file": "Zamioculcas zamiifolia (Lodd.) Engl. (AM AK331827-2).jpg"
+  }
+}

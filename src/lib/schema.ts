@@ -44,6 +44,7 @@ export function article({
   updatedDate,
   section,
   keywords,
+  image,
 }: {
   url: string;
   headline: string;
@@ -52,6 +53,8 @@ export function article({
   updatedDate?: Date;
   section?: string;
   keywords?: string[];
+  /** Root-relative path to the article's lead image, if it has one. */
+  image?: string;
 }) {
   return {
     '@type': 'Article',
@@ -67,6 +70,7 @@ export function article({
     inLanguage: SITE.lang,
     ...(section ? { articleSection: section } : {}),
     ...(keywords?.length ? { keywords: keywords.join(', ') } : {}),
+    ...(image ? { image: { '@type': 'ImageObject', url: abs(image), width: 900, height: 600 } } : {}),
   };
 }
 

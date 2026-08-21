@@ -15,6 +15,11 @@
 /assets/*
   Cache-Control: public, max-age=604800
 
+# Plant photos are keyed by slug rather than content hash, so they can be
+# replaced in place — cache hard but revalidate rather than marking immutable.
+/photos/*
+  Cache-Control: public, max-age=604800, must-revalidate
+
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 

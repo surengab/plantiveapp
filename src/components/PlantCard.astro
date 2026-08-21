@@ -1,16 +1,34 @@
 ---
 import LeafArt from './LeafArt.astro';
+import photos from '../data/plant-photos.json';
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
   plant: CollectionEntry<'plants'>;
+  /** First row of cards is above the fold; the rest can load lazily. */
+  eager?: boolean;
 }
-const { plant } = Astro.props;
+const { plant, eager = false } = Astro.props;
 const d = plant.data;
+const photo = (photos as Record<string, { alt: string }>)[plant.id];
 ---
 
 <a class="card plant-card" href={`/plant-care/${plant.id}/`}>
-  <LeafArt silhouette={d.silhouette} hue={d.hue} class="art" />
+  {
+    photo ? (
+      <img
+        class="art photo"
+        src={`/photos/${plant.id}-640.webp`}
+        width="640"
+        height="360"
+        alt={photo.alt}
+        loading={eager ? 'eager' : 'lazy'}
+        decoding="async"
+      />
+    ) : (
+      <LeafArt silhouette={d.silhouette} hue={d.hue} class="art" />
+    )
+  }
   <div class="body">
     <div class="tags">
       <span class={`pill pill-${d.difficulty}`}>{d.difficulty} care</span>
@@ -37,6 +55,13 @@ const d = plant.data;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+  }
+
+  .photo {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: var(--bg-subtle);
   }
 
   .body {

@@ -1,0 +1,59 @@
+---
+/**
+ * Attribution line for a Creative Commons photo. Every CC licence requires
+ * credit to be shown wherever the work appears, so this renders with the image
+ * rather than being tucked away on a separate page.
+ */
+interface Props {
+  author: string;
+  licence: string;
+  licenceUrl?: string;
+  source?: string;
+  class?: string;
+}
+const { author, licence, licenceUrl, source, class: className = '' } = Astro.props;
+const isPublicDomain = /public domain|cc0/i.test(licence);
+---
+
+<p class={`credit ${className}`}>
+  Photo{' '}
+  {
+    source ? (
+      <a href={source} rel="noopener nofollow" target="_blank">
+        {author}
+      </a>
+    ) : (
+      <span>{author}</span>
+    )
+  }
+  {' · '}
+  {
+    licenceUrl && !isPublicDomain ? (
+      <a href={licenceUrl} rel="license noopener nofollow" target="_blank">
+        {licence}
+      </a>
+    ) : (
+      <span>{licence}</span>
+    )
+  }
+  {' via Wikimedia Commons'}
+</p>
+
+<style>
+  .credit {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+    margin-top: 0.45rem;
+  }
+
+  .credit a {
+    color: var(--text-muted);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  .credit a:hover {
+    color: var(--accent);
+  }
+</style>

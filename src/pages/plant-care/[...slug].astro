@@ -6,6 +6,8 @@ import CareTable from '../../components/CareTable.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import LeafArt from '../../components/LeafArt.astro';
+import PhotoCredit from '../../components/PhotoCredit.astro';
+import photos from '../../data/plant-photos.json';
 import { APP } from '../../consts';
 import { breadcrumbs, article, faqPage, careHowTo } from '../../lib/schema';
 
@@ -27,6 +29,15 @@ const trail = [
   { label: 'Plant care guides', href: '/plant-care/' },
   { label: d.commonName },
 ];
+
+type Photo = {
+  alt: string;
+  author: string;
+  licence: string;
+  licenceUrl?: string;
+  source?: string;
+};
+const photo = (photos as Record<string, Photo>)[plant.id];
 
 // Related guides, skipping any slug that has not been written yet.
 const allPlants = await getCollection('plants', (p) => !p.data.draft);
@@ -57,6 +68,7 @@ const schema = [
     updatedDate: d.updatedDate,
     section: 'Plant care',
     keywords: d.keywords,
+    image: photo ? `/photos/${plant.id}-900.webp` : undefined,
   }),
   careHowTo({
     url,
@@ -80,6 +92,8 @@ const h2s = headings.filter((h) => h.depth === 2);
   type="article"
   publishDate={d.publishDate}
   updatedDate={d.updatedDate}
+  image={photo ? `/photos/${plant.id}-900.webp` : undefined}
+  imageAlt={photo?.alt}
   schema={schema}
 >
   <article>
@@ -109,7 +123,31 @@ const h2s = headings.filter((h) => h.depth === 2);
             )
           }
         </div>
-        <LeafArt silhouette={d.silhouette} hue={d.hue} class="head-art" />
+        <div class="head-media">
+          {
+            photo ? (
+              <>
+                <img
+                  class="head-photo"
+                  src={`/photos/${plant.id}-900.webp`}
+                  width="900"
+                  height="600"
+                  alt={photo.alt}
+                  fetchpriority="high"
+                  decoding="async"
+                />
+                <PhotoCredit
+                  author={photo.author}
+                  licence={photo.licence}
+                  licenceUrl={photo.licenceUrl}
+                  source={photo.source}
+                />
+              </>
+            ) : (
+              <LeafArt silhouette={d.silhouette} hue={d.hue} class="head-art" />
+            )
+          }
+        </div>
       </div>
     </header>
 
@@ -287,7 +325,20 @@ const h2s = headings.filter((h) => h.depth === 2);
     box-shadow: var(--shadow-md);
   }
 
+  .head-photo {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    background: var(--bg-subtle);
+  }
+
   @media (max-width: 859px) {
+    .head-media {
+      order: -1;
+      margin-bottom: 0.5rem;
+    }
     .head-grid :global(.head-art) {
       display: none;
     }
