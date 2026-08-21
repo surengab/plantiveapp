@@ -1,5 +1,5 @@
 ---
-import { NAV } from '../consts';
+import { APP, NAV } from '../consts';
 import Logo from './Logo.astro';
 import AppStoreButton from './AppStoreButton.astro';
 
@@ -9,7 +9,12 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
 
 <header class="site-header">
   <div class="wrap bar">
-    <a href="/" class="brand" aria-label="Plantive home">
+    <a
+      href={APP.appStoreUrl}
+      class="brand"
+      rel="noopener"
+      aria-label={`Download ${APP.name} on the App Store`}
+    >
       <Logo size={34} />
     </a>
 
