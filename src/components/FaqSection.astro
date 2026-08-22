@@ -1,4 +1,11 @@
 ---
+/**
+ * The email_off markers in the template fence this block from Cloudflare's
+ * Email Address Obfuscation. Answers are plain strings (they also feed the
+ * FAQPage JSON-LD), so an address written in prose would otherwise be rewritten
+ * into a /cdn-cgi/l/email-protection link that 404s — and shown to readers as
+ * "[email protected]".
+ */
 interface Props {
   faqs: { question: string; answer: string }[];
   heading?: string;
@@ -7,6 +14,7 @@ interface Props {
 const { faqs, heading = 'Frequently asked questions', id = 'faq' } = Astro.props;
 ---
 
+<!--email_off-->
 {
   faqs.length > 0 && (
     <section class="faq" id={id}>
@@ -35,6 +43,7 @@ const { faqs, heading = 'Frequently asked questions', id = 'faq' } = Astro.props
     </section>
   )
 }
+<!--/email_off-->
 
 <style>
   .faq {
