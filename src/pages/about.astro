@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CtaBand from '../components/CtaBand.astro';
+import EmailLink from '../components/EmailLink.astro';
 import { APP } from '../consts';
 import { breadcrumbs } from '../lib/schema';
 
@@ -90,7 +91,7 @@ const trail = [{ label: 'About', href: '/about/' }];
     <h2>Contact</h2>
     <p>
       Corrections, questions and feedback are all welcome at
-      <a href={`mailto:${APP.supportEmail}`}>{APP.supportEmail}</a>. If you spot something wrong in a
+      <EmailLink />. If you spot something wrong in a
       care guide, please tell us — we would rather fix it than have it sit there.
     </p>
     <p>

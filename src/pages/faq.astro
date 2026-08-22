@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import FaqSection from '../components/FaqSection.astro';
 import CtaBand from '../components/CtaBand.astro';
+import EmailLink from '../components/EmailLink.astro';
 import { APP } from '../consts';
 import { breadcrumbs, faqPage } from '../lib/schema';
 
@@ -96,7 +97,7 @@ const schema = [breadcrumbs(trail), faqPage(allFaqs, '/faq/')].filter(Boolean);
     <h1>Frequently Asked Questions</h1>
     <p class="lede">
       Questions about the app, plant care, and how to reach us. If your question is not here, email
-      <a href={`mailto:${APP.supportEmail}`}>{APP.supportEmail}</a>.
+      <EmailLink />.
     </p>
   </div>
 

@@ -1,0 +1,17 @@
+---
+/**
+ * Support email as a mailto link, fenced off from Cloudflare's Email Address
+ * Obfuscation. Without the email_off markers Cloudflare rewrites the href to
+ * /cdn-cgi/l/email-protection#… at the edge, which every crawler reports as a
+ * broken 404 link on all 37 pages.
+ */
+import { APP } from '../consts';
+
+interface Props {
+  label?: string;
+  class?: string;
+}
+
+const { label = APP.supportEmail, class: className } = Astro.props;
+---
+<!--email_off--><a href={`mailto:${APP.supportEmail}`} class={className}>{label}</a><!--/email_off-->

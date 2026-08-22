@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EmailLink from '../components/EmailLink.astro';
 import { APP } from '../consts';
 import { breadcrumbs } from '../lib/schema';
 
@@ -48,7 +49,7 @@ const trail = [{ label: 'Privacy policy', href: '/privacy/' }];
       <h2>Questions</h2>
       <p>
         For any privacy question, or to make a request about your data, email
-        <a href={`mailto:${APP.supportEmail}`}>{APP.supportEmail}</a>.
+        <EmailLink />.
       </p>
       <p>
         See also our <a href="/terms/">terms of use</a> and <a href="/support/">support page</a>.

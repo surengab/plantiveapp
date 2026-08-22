@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EmailLink from '../components/EmailLink.astro';
 import { APP } from '../consts';
 import { breadcrumbs } from '../lib/schema';
 
@@ -63,7 +64,7 @@ const trail = [{ label: 'Terms of use', href: '/terms/' }];
 
       <h2>Contact</h2>
       <p>
-        Questions about these terms: <a href={`mailto:${APP.supportEmail}`}>{APP.supportEmail}</a>.
+        Questions about these terms: <EmailLink />.
         See also our <a href="/privacy/">privacy policy</a>.
       </p>
     </div>
