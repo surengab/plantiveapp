@@ -142,3 +142,11 @@ const graph = [
 />
 
 <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })} is:inline />
+
+<!-- Ahrefs Web Analytics. Loaded async so it stays off the critical path. -->
+<script
+  src="https://analytics.ahrefs.com/analytics.js"
+  data-key={SITE.ahrefsKey}
+  async
+  is:inline
+></script>
