@@ -13,13 +13,13 @@ keywords:
   - best plants for north facing window
 faqs:
   - question: 'Can any plant survive with no natural light at all?'
-    answer: 'No. Every plant needs light to photosynthesise, and a genuinely windowless room will eventually kill even a ZZ plant or snake plant, though it may take months. If a room has no natural light, the answer is an inexpensive LED grow light on a timer for 10–12 hours a day, which will keep low-light species growing perfectly well.'
+    answer: 'No. Every plant needs light to photosynthesise, and a genuinely windowless room will eventually kill even a ZZ plant or snake plant, though it may take months. If a room has no natural light, the answer is an inexpensive LED grow light on a timer for 10-12 hours a day, which will keep low-light species growing perfectly well.'
   - question: 'What does low light actually mean?'
-    answer: 'It means a spot where you could not comfortably read a book at midday without turning on a lamp — typically several metres from a window, in a north-facing room, or in a corner away from the light source. It does not mean a dark room. Almost every plant sold as "low light" is really "tolerates less light than most", not "thrives in the dark".'
+    answer: 'It means a spot where you could not comfortably read a book at midday without turning on a lamp: typically several metres from a window, in a north-facing room, or in a corner away from the light source. It does not mean a dark room. Almost every plant sold as "low light" is really "tolerates less light than most", not "thrives in the dark".'
   - question: 'Do low light plants grow more slowly?'
     answer: 'Yes, substantially. A pothos in bright indirect light might produce a new leaf every week or two in summer; the same plant in a dim corner might manage one a month. The plant stays healthy, but you should expect slow growth and adjust watering accordingly, since soil in dim, cool spots dries far more slowly.'
   - question: 'Should I water low light plants less often?'
-    answer: 'Yes, considerably less. Less light means less photosynthesis, which means less water used, and dim corners are usually cooler with less air movement so soil dries slowly. Overwatering is by far the most common way low-light plants die — the plant is not using the water and it sits in the pot causing root rot.'
+    answer: 'Yes, considerably less. Less light means less photosynthesis, which means less water used, and dim corners are usually cooler with less air movement so soil dries slowly. Overwatering is by far the most common way low-light plants die, because the plant is not using the water and it sits in the pot causing root rot.'
 featured: true
 ---
 
@@ -45,7 +45,7 @@ Water every three to six weeks; less in winter. Full details in the [ZZ plant ca
 
 ### 2. Snake plant (*Dracaena trifasciata*)
 
-Nearly as tolerant and even more forgiving of neglect. Upright sword-shaped leaves suit narrow spaces. The one risk is overwatering — in a dim corner the soil dries very slowly, so wait until it is bone dry throughout.
+Nearly as tolerant and even more forgiving of neglect. Upright sword-shaped leaves suit narrow spaces. The one risk is overwatering. In a dim corner the soil dries very slowly, so wait until it is bone dry throughout.
 
 See the [snake plant care guide](/plant-care/snake-plant/).
 
@@ -73,7 +73,7 @@ See the [peace lily care guide](/plant-care/peace-lily/).
 
 ### 7. Spider plant (*Chlorophytum comosum*)
 
-Tolerates medium and lower light, and is non-toxic to cats and dogs — a rare combination on this list. Produces fewer plantlets in dim conditions.
+Tolerates medium and lower light, and is non-toxic to cats and dogs, a rare combination on this list. Produces fewer plantlets in dim conditions.
 
 See the [spider plant care guide](/plant-care/spider-plant/).
 
@@ -83,7 +83,7 @@ Patterned foliage in silver, cream and occasionally pink, which is unusual among
 
 ### 9. Dracaena (*Dracaena fragrans*, *D. marginata*)
 
-Upright and tree-like, useful for filling a corner. Sensitive to fluoride in tap water, so brown tips are common — use filtered water. Green forms tolerate lower light than variegated ones.
+Upright and tree-like, useful for filling a corner. Sensitive to fluoride in tap water, so brown tips are common, so use filtered water. Green forms tolerate lower light than variegated ones.
 
 ### 10. Parlour palm (*Chamaedorea elegans*)
 
@@ -95,35 +95,35 @@ Handles low light well but demands humidity, which makes it a better fit for a d
 
 ### 12. Lucky bamboo (*Dracaena sanderiana*)
 
-Not bamboo at all. Grows in water or soil, tolerates low light easily. Sensitive to tap water chemicals — use filtered or distilled, and change it every couple of weeks if growing in water.
+Not bamboo at all. Grows in water or soil, tolerates low light easily. Sensitive to tap water chemicals, so use filtered or distilled, and change it every couple of weeks if growing in water.
 
 ## What does not belong on these lists
 
 Frequently recommended, and wrong:
 
-- **Fiddle leaf fig** — a high-light plant. It declines steadily in dim rooms.
-- **Monstera deliciosa** — survives medium light but will never fenestrate without brightness.
-- **Calathea** — needs medium indirect light, not low. Its reputation for shade comes from "no direct sun", which is a different thing.
-- **Succulents and cacti** — need direct sun. In low light they stretch badly within weeks.
-- **Rubber plant** — tolerates medium light; in low light it drops its lower leaves.
+- **Fiddle leaf fig**: a high-light plant. It declines steadily in dim rooms.
+- **Monstera deliciosa**: survives medium light but will never fenestrate without brightness.
+- **Calathea**: needs medium indirect light, not low. Its reputation for shade comes from "no direct sun", which is a different thing.
+- **Succulents and cacti**: need direct sun. In low light they stretch badly within weeks.
+- **Rubber plant**: tolerates medium light; in low light it drops its lower leaves.
 
 ## Caring for plants in dim spots
 
 Two adjustments matter more than anything else:
 
-**Water much less.** This is the big one. Less light means less water used, and dim corners are usually cooler with poorer air movement. Soil that dried in a week on a windowsill may take three weeks in a corner. Overwatering is how most low-light plants actually die — check the soil rather than following any schedule.
+**Water much less.** This is the big one. Less light means less water used, and dim corners are usually cooler with poorer air movement. Soil that dried in a week on a windowsill may take three weeks in a corner. Overwatering is how most low-light plants actually die, so check the soil rather than following any schedule.
 
 **Feed less.** A slow-growing plant cannot use much fertiliser, and the excess accumulates as salts. Half strength, every other month during spring and summer, nothing in winter.
 
 Also worth doing:
 
 - **Rotate the pot** a quarter turn every couple of weeks so all sides get some light
-- **Wipe the leaves** monthly — dust meaningfully reduces the light reaching the leaf when there is little to spare
+- **Wipe the leaves** monthly, since dust meaningfully reduces the light reaching the leaf when there is little to spare
 - **Clean the windows** and open blinds fully
 - **Rotate plants** between a bright spot and the dim one every few weeks, if you have the option
 
 ## The grow light option
 
-If your brightest spot is still not enough, a basic LED grow light on a timer for 10–12 hours a day genuinely solves the problem. They cost very little to buy or run, and they open up plants that would otherwise be impossible.
+If your brightest spot is still not enough, a basic LED grow light on a timer for 10-12 hours a day genuinely solves the problem. They cost very little to buy or run, and they open up plants that would otherwise be impossible.
 
-For a windowless room it is not an enhancement — it is the only thing that works.
+For a windowless room it is not an enhancement. It is the only thing that works.

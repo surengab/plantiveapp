@@ -1,6 +1,6 @@
 ---
 title: 'Leggy Houseplants: Why Plants Stretch and How to Fix It'
-description: 'Long bare stems and widely spaced leaves mean one thing — not enough light. How to confirm it, fix the light, and prune a stretched plant back into shape.'
+description: 'Long bare stems and widely spaced leaves mean one thing: not enough light. How to confirm it, fix the light, and prune a stretched plant back into shape.'
 heading: 'Why Is My Plant Leggy and Stretched?'
 publishDate: 2026-07-27
 updatedDate: 2026-08-20
@@ -11,19 +11,19 @@ keywords:
   - how to fix leggy plants
 symptom: 'Long bare stems, widely spaced leaves'
 severity: medium
-quickAnswer: 'Legginess is almost always insufficient light. Move the plant closer to a window or add a grow light, then prune the stretched growth — it never re-compacts on its own.'
+quickAnswer: 'Legginess is almost always insufficient light. Move the plant closer to a window or add a grow light, then prune the stretched growth, because it never re-compacts on its own.'
 causes:
   - name: 'Not enough light'
     likelihood: 'most likely'
     tell: 'Long gaps between leaves, stems leaning hard toward the window, new leaves smaller and paler than old ones. Succulents show it most dramatically.'
-    fix: 'Move closer to a bright window or add an LED grow light for 10–12 hours a day. Then prune back the stretched growth to force compact regrowth.'
+    fix: 'Move closer to a bright window or add an LED grow light for 10-12 hours a day. Then prune back the stretched growth to force compact regrowth.'
   - name: 'Never pruned'
     likelihood: 'common'
     tell: 'A vining plant with a few very long stems and leaves only at the tips. The plant is healthy but shapeless.'
     fix: 'Cut every long stem back by a third, just above a node. Most plants branch from the cut, doubling the number of growing tips.'
   - name: 'Light from one direction only'
     likelihood: 'common'
-    tell: 'The plant is lopsided — full on the window side, bare on the room side.'
+    tell: 'The plant is lopsided, full on the window side and bare on the room side.'
     fix: 'Rotate the pot a quarter turn every week or two so all sides get equal exposure.'
   - name: 'Too much nitrogen fertiliser'
     likelihood: 'less common'
@@ -31,7 +31,7 @@ causes:
     fix: 'Stop feeding for a season and cut back to half strength, less often. Succulents need very little fertiliser.'
   - name: 'Natural growth habit'
     likelihood: 'less common'
-    tell: 'The species genuinely grows as a single tall stem — rubber plants, fiddle leaf figs, dracaenas and many palms do.'
+    tell: 'The species genuinely grows as a single tall stem, as rubber plants, fiddle leaf figs, dracaenas and many palms do.'
     fix: 'Prune the growing tip in spring to force branching, or accept and stake the natural form.'
 affectedPlants:
   - echeveria
@@ -41,13 +41,13 @@ affectedPlants:
   - rubber-plant
 faqs:
   - question: 'Will a stretched plant go back to normal if I move it into better light?'
-    answer: 'No. The elongated stem sections are permanent — a plant cannot shorten the gaps between leaves it has already grown. Better light only changes what happens next. To restore a compact shape you have to prune away the stretched growth, and the new growth that follows will come in tight if the light is now adequate.'
+    answer: 'No. The elongated stem sections are permanent, and a plant cannot shorten the gaps between leaves it has already grown. Better light only changes what happens next. To restore a compact shape you have to prune away the stretched growth, and the new growth that follows will come in tight if the light is now adequate.'
   - question: 'What is etiolation?'
     answer: 'Etiolation is the botanical term for the stretching response to insufficient light. The plant produces elongated, pale, weak stems as it invests everything into reaching a light source, at the expense of leaf size and colour. It is most visible in succulents, where a tight rosette turns into a tower, but it happens to every plant kept too far from a window.'
   - question: 'How much light do houseplants actually need?'
-    answer: 'Far more than most homes provide. Light intensity falls off with the square of the distance — a spot three metres from a window can have less than a tenth the light of a spot right beside it, even though both look bright to your eyes, because your eyes adjust and a plant cannot. A useful rule: if you could not comfortably read a book there at midday without a lamp, it is a low-light spot.'
+    answer: 'Far more than most homes provide. Light intensity falls off with the square of the distance, so a spot three metres from a window can have less than a tenth the light of a spot right beside it, even though both look bright to your eyes, because your eyes adjust and a plant cannot. A useful rule: if you could not comfortably read a book there at midday without a lamp, it is a low-light spot.'
   - question: 'Are grow lights worth it?'
-    answer: 'Yes, and they are cheaper than most people expect. A basic LED grow light running 10–12 hours a day on a timer costs very little to run and completely solves legginess in rooms with poor natural light. For succulents and high-light plants in northern climates it is often the difference between a plant that survives and one that actually looks good.'
+    answer: 'Yes, and they are cheaper than most people expect. A basic LED grow light running 10-12 hours a day on a timer costs very little to run and completely solves legginess in rooms with poor natural light. For succulents and high-light plants in northern climates it is often the difference between a plant that survives and one that actually looks good.'
 featured: false
 ---
 
@@ -55,7 +55,7 @@ A leggy plant has long bare stretches of stem with leaves spaced far apart, usua
 
 ## It is the light
 
-Plants have photoreceptors that measure both light quantity and quality. When light is insufficient, the plant redirects resources into stem elongation — a bet that growing taller will reach a better light source. The botanical term is **etiolation**.
+Plants have photoreceptors that measure both light quantity and quality. When light is insufficient, the plant redirects resources into stem elongation, a bet that growing taller will reach a better light source. The botanical term is **etiolation**.
 
 The trade-off is that the plant spends its energy on stem rather than leaves, so you also get:
 
@@ -79,11 +79,11 @@ A practical test: at midday, could you comfortably read a paperback there withou
 
 ### 1. Improve the light
 
-- Move the plant **closer to the window** — a metre makes a real difference
+- Move the plant **closer to the window**, where a metre makes a real difference
 - Choose an **east or south-facing** window where possible
 - **Clean the glass** and open blinds fully
 - **Rotate the pot** a quarter turn weekly so growth stays even
-- Add an **LED grow light** on a timer for 10–12 hours a day if natural light is genuinely insufficient
+- Add an **LED grow light** on a timer for 10-12 hours a day if natural light is genuinely insufficient
 
 Grow lights are the underrated answer. They are inexpensive to buy and run, and in a north-facing flat they are often the only thing that works.
 
@@ -105,11 +105,11 @@ Cut back to half strength, less frequently, and stop entirely in winter.
 
 ## When it is not a problem
 
-Some plants simply grow this way. Rubber plants, fiddle leaf figs, dracaenas and most palms naturally form a single upright stem with foliage at the top — that is their habit, not a complaint.
+Some plants simply grow this way. Rubber plants, fiddle leaf figs, dracaenas and most palms naturally form a single upright stem with foliage at the top. That is their habit, not a complaint.
 
 The distinction: on a naturally upright plant, the leaves at the top are **large and well-coloured**. On a light-starved plant, new leaves are **smaller and paler** than the old ones.
 
-If you want a branched shape from a naturally single-stemmed plant, prune the growing tip in spring — that works regardless of light.
+If you want a branched shape from a naturally single-stemmed plant, prune the growing tip in spring. That works regardless of light.
 
 ## Preventing it
 

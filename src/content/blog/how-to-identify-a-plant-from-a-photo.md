@@ -13,28 +13,28 @@ keywords:
   - what plant is this
 faqs:
   - question: 'How accurate are plant identification apps?'
-    answer: 'Accuracy depends far more on the photo than on the app. A sharp, well-lit close-up of a distinctive feature — a flower, a leaf against a plain background, or bark — identifies common cultivated and wild species reliably. A distant photo of a whole plant in poor light, or one crowded with other foliage, produces much weaker results. Cultivars within a species are also genuinely hard, since the differences are often subtle.'
+    answer: 'Accuracy depends far more on the photo than on the app. A sharp, well-lit close-up of a distinctive feature, such as a flower, a leaf against a plain background or bark, identifies common cultivated and wild species reliably. A distant photo of a whole plant in poor light, or one crowded with other foliage, produces much weaker results. Cultivars within a species are also genuinely hard, since the differences are often subtle.'
   - question: 'What is the best thing to photograph for plant identification?'
-    answer: 'Flowers first, if the plant has them — they carry the most diagnostic information. Otherwise photograph a single healthy leaf laid flat against a plain background, filling most of the frame, with the shape of the edge and the vein pattern clearly visible. For trees and shrubs, a close-up of the bark and a shot of the overall growth habit both add useful signal.'
+    answer: 'Flowers first, if the plant has them, since they carry the most diagnostic information. Otherwise photograph a single healthy leaf laid flat against a plain background, filling most of the frame, with the shape of the edge and the vein pattern clearly visible. For trees and shrubs, a close-up of the bark and a shot of the overall growth habit both add useful signal.'
   - question: 'Why did the app identify my plant as the wrong species?'
     answer: 'Usually one of four things: the photo included several plants at once, the subject was too small in the frame, the light was too dim or too harsh, or the plant is a cultivar that looks very close to a relative. Retake the photo with a single leaf or flower filling most of the frame in even natural light, and take two or three shots of different features to cross-check the result.'
   - question: 'Can an app tell me if a plant is poisonous?'
-    answer: 'It can tell you what species it believes the plant to be, and that species has known toxicity information attached. But never rely on an app alone for a safety decision. If a child or pet has eaten part of a plant, contact a poison control line or vet immediately and take the plant with you or send a photo — do not spend time identifying it yourself first.'
+    answer: 'It can tell you what species it believes the plant to be, and that species has known toxicity information attached. But never rely on an app alone for a safety decision. If a child or pet has eaten part of a plant, contact a poison control line or vet immediately and take the plant with you or send a photo. Do not spend time identifying it yourself first.'
 featured: false
 ---
 
-Plant identification from a photo works genuinely well now, but the results vary enormously with the photo. Most misidentifications are not the model failing — they are a photo that did not contain enough information to identify anything.
+Plant identification from a photo works genuinely well now, but the results vary enormously with the photo. Most misidentifications are not the model failing. They are a photo that did not contain enough information to identify anything.
 
 ## What identification actually looks at
 
 Identification models are trained on the features botanists use:
 
-- **Flower structure** — number of petals, arrangement, symmetry, colour
-- **Leaf shape** — outline, edge (smooth, toothed, lobed), tip and base
-- **Venation** — the vein pattern, which is often highly diagnostic
-- **Arrangement** — whether leaves sit opposite, alternate or whorled on the stem
+- **Flower structure**: number of petals, arrangement, symmetry, colour
+- **Leaf shape**: outline, edge (smooth, toothed, lobed), tip and base
+- **Venation**: the vein pattern, which is often highly diagnostic
+- **Arrangement**: whether leaves sit opposite, alternate or whorled on the stem
 - **Bark and stem texture** for woody plants
-- **Overall habit** — trailing, upright, rosette, climbing
+- **Overall habit**: trailing, upright, rosette, climbing
 
 Your photo needs to contain at least one of these clearly. A wide shot of a green bush in shade contains almost none of them.
 
@@ -48,7 +48,7 @@ The most common mistake is photographing a whole garden bed. If three species ar
 
 In priority order:
 
-- **Flowers** — the highest-information feature by a wide margin
+- **Flowers**: the highest-information feature by a wide margin
 - **A single leaf**, laid flat, edge and veins visible
 - **Fruit or seed pods**
 - **Bark**, for trees and shrubs
@@ -74,7 +74,7 @@ Photograph a leaf, then a flower, then the whole plant. Agreement across all thr
 
 An identification is a strong hypothesis, not a fact. Verify it:
 
-**Does the location make sense?** If you are in a temperate city and the result is a tropical rainforest species, it is probably wrong — unless the plant is in a heated conservatory.
+**Does the location make sense?** If you are in a temperate city and the result is a tropical rainforest species, it is probably wrong, unless the plant is in a heated conservatory.
 
 **Does the size match?** A result that grows to 40 ft when you are looking at a 12-inch houseplant suggests either a juvenile specimen or a misidentification.
 
@@ -86,7 +86,7 @@ An identification is a strong hypothesis, not a fact. Verify it:
 
 **Cultivars within a species.** There are hundreds of *Echeveria* cultivars and dozens of pothos varieties differing only in variegation pattern. Getting to genus and species is realistic; getting to the exact named cultivar often is not.
 
-**Juvenile plants.** Many species look nothing like their mature form. A young monstera has solid heart-shaped leaves that are easily mistaken for a philodendron — see [why monstera leaves do not split](/problems/monstera-leaves-not-splitting/).
+**Juvenile plants.** Many species look nothing like their mature form. A young monstera has solid heart-shaped leaves that are easily mistaken for a philodendron. See [why monstera leaves do not split](/problems/monstera-leaves-not-splitting/).
 
 **Plants out of season.** A deciduous shrub in winter with no leaves or flowers is difficult for anyone.
 
@@ -106,7 +106,7 @@ A few that come up constantly:
 | Spider plant vs airplane plant | Same plant, different common names |
 | Peace lily vs true lily | Peace lilies are aroids with a single white spathe; true lilies have six tepals and are far more toxic to cats |
 
-That last one matters. **Common names are unreliable** — the same name refers to different plants in different regions, and one plant may have a dozen names. Always work from the botanical name for anything involving toxicity or care.
+That last one matters. **Common names are unreliable.** The same name refers to different plants in different regions, and one plant may have a dozen names. Always work from the botanical name for anything involving toxicity or care.
 
 ## When identification is a safety question
 
@@ -116,6 +116,6 @@ Identification apps are a good research tool. They are not a diagnostic tool for
 
 ## Identifying with Plantive
 
-Plantive identifies plants, flowers, trees, succulents and houseplants from a photo, and pairs the result with the care information for that species — light, watering and general maintenance — so identification leads directly to knowing what to do next.
+Plantive identifies plants, flowers, trees, succulents and houseplants from a photo, and pairs the result with the care information for that species (light, watering and general maintenance) so identification leads directly to knowing what to do next.
 
 The photo advice above applies whichever tool you use: get close, isolate the subject, use even light, and photograph the most distinctive feature available.

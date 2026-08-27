@@ -24,11 +24,11 @@ causes:
   - name: 'Soil too dense'
     likelihood: 'common'
     tell: 'Heavy peat-based soil straight from the bag, compacted and slow to dry. Water sits on the surface before soaking in.'
-    fix: 'Repot into a mix with 20–40% perlite, pumice or bark, matched to what the species wants.'
+    fix: 'Repot into a mix with 20-40% perlite, pumice or bark, matched to what the species wants.'
   - name: 'Pot far too large'
     likelihood: 'common'
     tell: 'A small plant in a big pot. The volume of soil the roots do not occupy stays wet for weeks.'
-    fix: 'Size down. A pot should be only 1–2 inches wider than the root ball.'
+    fix: 'Size down. A pot should be only 1-2 inches wider than the root ball.'
   - name: 'Cold plus wet'
     likelihood: 'less common'
     tell: 'Problems started in winter, or the plant sits on a cold floor or windowsill. Growth has stopped but watering continued at summer frequency.'
@@ -45,11 +45,11 @@ affectedPlants:
   - phalaenopsis-orchid
 faqs:
   - question: 'Can a plant recover from root rot?'
-    answer: 'Often yes, if you catch it while some healthy root remains. Trim away every soft brown root, repot into fresh dry well-draining mix, and hold off watering for about a week. Recovery takes weeks to months and the plant may drop leaves while it rebuilds. If the entire root system and the stem base have gone soft, the plant cannot be saved — take healthy cuttings from the top instead.'
+    answer: 'Often yes, if you catch it while some healthy root remains. Trim away every soft brown root, repot into fresh dry well-draining mix, and hold off watering for about a week. Recovery takes weeks to months and the plant may drop leaves while it rebuilds. If the entire root system and the stem base have gone soft, the plant cannot be saved, so take healthy cuttings from the top instead.'
   - question: 'What does root rot smell like?'
-    answer: 'Sour, swampy or faintly like sewage — an unmistakably wrong smell coming from the soil or the roots when you unpot. Healthy soil smells earthy and clean. The odour comes from anaerobic bacteria thriving in waterlogged soil where oxygen has been driven out.'
+    answer: 'Sour, swampy or faintly like sewage, an unmistakably wrong smell coming from the soil or the roots when you unpot. Healthy soil smells earthy and clean. The odour comes from anaerobic bacteria thriving in waterlogged soil where oxygen has been driven out.'
   - question: 'How do I tell healthy roots from rotted ones?'
-    answer: 'Touch them. Healthy roots are firm and snap or resist when tugged, and are usually white, cream or pale tan. Rotted roots are brown or black, feel soft and slimy, and the outer sheath slides off between your fingers leaving a thin thread behind. Colour alone can mislead, since some species naturally have darker roots — firmness is the reliable test.'
+    answer: 'Touch them. Healthy roots are firm and snap or resist when tugged, and are usually white, cream or pale tan. Rotted roots are brown or black, feel soft and slimy, and the outer sheath slides off between your fingers leaving a thin thread behind. Colour alone can mislead, since some species naturally have darker roots. Firmness is the reliable test.'
   - question: 'Should I use hydrogen peroxide on root rot?'
     answer: 'It is optional and often overrated. A dilute solution of one part 3% hydrogen peroxide to three parts water can be poured over trimmed roots to kill surface pathogens and add a little oxygen, but it does not undo damage and it is no substitute for cutting rotted tissue away and fixing the drainage. The physical steps matter far more than any rinse.'
   - question: 'How long should I wait to water after treating root rot?'
@@ -57,7 +57,7 @@ faqs:
 featured: true
 ---
 
-Root rot is the single most common way houseplants die, and it is almost always survivable if you act early. The problem is that it happens underground — by the time the leaves tell you, the roots have been in trouble for weeks.
+Root rot is the single most common way houseplants die, and it is almost always survivable if you act early. The problem is that it happens underground, so by the time the leaves tell you, the roots have been in trouble for weeks.
 
 ## The counterintuitive signal
 
@@ -80,7 +80,7 @@ By stage 4 you should be unpotting immediately, not waiting.
 
 ## Confirming it
 
-Tip the plant out of its pot and look at the root ball. You are checking two things — firmness and smell.
+Tip the plant out of its pot and look at the root ball. You are checking two things: firmness and smell.
 
 | | Healthy | Rotted |
 | --- | --- | --- |
@@ -95,7 +95,7 @@ Firmness is the reliable test. Some species naturally have darker roots, so colo
 
 Work over newspaper and take your time.
 
-**1. Remove all the old soil.** Shake it off and rinse the roots under lukewarm water until you can see what you are dealing with. That soil is saturated and full of pathogens — none of it goes back in.
+**1. Remove all the old soil.** Shake it off and rinse the roots under lukewarm water until you can see what you are dealing with. That soil is saturated and full of pathogens, so none of it goes back in.
 
 **2. Cut away everything rotted.** Use clean, sharp scissors. Remove every soft, brown or slimy root, cutting back into firm healthy tissue. Be ruthless: leaving rotted material behind restarts the whole process. Wipe the blades with rubbing alcohol between cuts.
 
@@ -103,7 +103,7 @@ Work over newspaper and take your time.
 
 **4. Let the cuts dry.** For succulents, cacti and thick-rooted plants like ZZ and snake plants, leave them in open air for 24 hours so the cuts callus. For thin-rooted tropicals, an hour is enough.
 
-**5. Repot into fresh, dry mix.** Not damp — dry. Choose a pot only slightly larger than the reduced root ball, with drainage holes. Add perlite or bark to whatever mix the species prefers.
+**5. Repot into fresh, dry mix.** Not damp. Dry. Choose a pot only slightly larger than the reduced root ball, with drainage holes. Add perlite or bark to whatever mix the species prefers.
 
 **6. Wait before watering.** A week for most plants, up to two for succulents. Then water lightly and let the mix dry further than usual before the next round.
 
@@ -117,7 +117,7 @@ Watch for **new growth** as the sign it has taken. That can be one to three mont
 
 If the entire root system is mush and the stem is soft at the base, the plant is gone. Rot travelling up into the stem does not reverse.
 
-Salvage what you can: cut well above any softness into clean firm tissue, and root the top as a cutting. Many houseplants — pothos, philodendron, monstera, rubber plants — root readily in water, and you effectively restart the same plant.
+Salvage what you can: cut well above any softness into clean firm tissue, and root the top as a cutting. Many houseplants, including pothos, philodendron, monstera and rubber plants, root readily in water, and you effectively restart the same plant.
 
 ## Preventing the next one
 

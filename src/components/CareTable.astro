@@ -33,6 +33,17 @@ const labels: Record<string, string> = {
   propagation: 'Propagation',
 };
 
+/**
+ * Pillar guides for the rows that have one. Every species guide repeats these
+ * three topics, so this is where the depth lives: point at it from each guide
+ * rather than re-explaining watering and light thirteen times.
+ */
+const guides: Partial<Record<keyof typeof care, { href: string; text: string }>> = {
+  light: { href: '/blog/how-to-measure-light-for-houseplants/', text: 'How to measure light at home' },
+  water: { href: '/blog/how-to-water-houseplants/', text: 'How to water houseplants properly' },
+  repotting: { href: '/blog/how-to-repot-a-houseplant/', text: 'How to repot a houseplant' },
+};
+
 const rows = Object.entries(care) as [keyof typeof care, { label: string; detail: string }][];
 ---
 
@@ -49,6 +60,11 @@ const rows = Object.entries(care) as [keyof typeof care, { label: string; detail
           <h3>{labels[key]}</h3>
           <p class="value">{value.label}</p>
           <p class="detail">{value.detail}</p>
+          {guides[key] && (
+            <a class="care-guide-link" href={guides[key]!.href}>
+              {guides[key]!.text}
+            </a>
+          )}
         </div>
       </div>
     ))
@@ -109,5 +125,23 @@ const rows = Object.entries(care) as [keyof typeof care, { label: string; detail
     font-size: 0.88rem;
     color: var(--text-muted);
     line-height: 1.55;
+  }
+
+  .care-guide-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent-on-soft);
+    text-decoration: none;
+  }
+
+  .care-guide-link::after {
+    content: ' \2192';
+  }
+
+  .care-guide-link:hover,
+  .care-guide-link:focus-visible {
+    text-decoration: underline;
   }
 </style>

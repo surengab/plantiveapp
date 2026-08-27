@@ -1,6 +1,6 @@
 ---
 title: 'Spider Plant Care: Brown Tips, Babies and Pet-Safe Growing'
-description: 'Spider plant (Chlorophytum comosum) care — watering, why the tips go brown, how to root the plantlets, and why it is one of the safest plants for cats and dogs.'
+description: 'Spider plant (Chlorophytum comosum) care: watering, why the tips go brown, how to root the plantlets, and why it is one of the safest plants for cats and dogs.'
 heading: 'Spider Plant Care Guide'
 publishDate: 2026-06-20
 updatedDate: 2026-08-15
@@ -9,7 +9,7 @@ keywords:
   - spider plant brown tips
   - chlorophytum comosum care
   - spider plant babies
-  - pet safe houseplants
+  - spider plant propagation
 commonName: 'Spider Plant'
 botanicalName: 'Chlorophytum comosum'
 alsoKnownAs:
@@ -22,7 +22,7 @@ silhouette: trailing
 hue: 115
 difficulty: easy
 petSafe: true
-matureSize: '1–2 ft tall, with runners trailing 2–3 ft'
+matureSize: '1-2 ft tall, with runners trailing 2-3 ft'
 growthRate: fast
 toxicity: 'Non-toxic to cats and dogs. Cats are often attracted to the foliage; large quantities may cause mild stomach upset, but it is one of the safest common houseplants.'
 care:
@@ -30,26 +30,26 @@ care:
     label: 'Bright indirect'
     detail: 'Bright indirect light produces the strongest variegation and the most runners. Tolerates medium light with slower growth. Direct sun scorches the leaves.'
   water:
-    label: 'Every 7–10 days'
+    label: 'Every 7-10 days'
     detail: 'Let the top inch dry, then water thoroughly. Spider plants store water in thick tuberous roots and handle occasional neglect well.'
   humidity:
-    label: '40–60%'
+    label: '40-60%'
     detail: 'Average household humidity is fine. Higher humidity reduces the brown tips this plant is known for.'
   temperature:
-    label: '60–80°F (15–27°C)'
+    label: '60-80°F (15-27°C)'
     detail: 'Very adaptable. Keep above 50°F (10°C) and away from cold drafts.'
   soil:
     label: 'Standard well-draining potting mix'
     detail: 'Ordinary indoor mix with a little perlite. Not fussy, but the pot must drain.'
   fertilizer:
     label: 'Monthly in spring and summer'
-    detail: 'Half-strength balanced feed. Over-fertilising is a leading cause of brown tips — err on the light side.'
+    detail: 'Half-strength balanced feed. Over-fertilising is a leading cause of brown tips, so err on the light side.'
   repotting:
-    label: 'Every 1–2 years'
+    label: 'Every 1-2 years'
     detail: 'The thick white tuberous roots fill a pot fast and can crack plastic containers. Repot in spring or divide the clump.'
   propagation:
     label: 'Plantlets ("spiderettes")'
-    detail: 'Pin a plantlet into a small pot of soil while still attached to the runner. Once rooted in 2–3 weeks, snip the runner.'
+    detail: 'Pin a plantlet into a small pot of soil while still attached to the runner. Once rooted in 2-3 weeks, snip the runner.'
 troubleshooting:
   - symptom: 'Brown, crispy leaf tips'
     cause: 'Fluoride and chlorine in tap water, dry air, or over-fertilising'
@@ -75,7 +75,7 @@ faqs:
   - question: 'Why is my spider plant not producing babies?'
     answer: 'Three common reasons: not enough light, immaturity, or too big a pot. Spider plants flower and send out runners when they are mature and slightly root-bound, and they need bright indirect light to fuel it. A young plant in a generous pot will put its energy into roots and leaves instead.'
   - question: 'Should I cut the brown tips off my spider plant?'
-    answer: 'You can, purely for looks. Trim with clean scissors, cutting at a shallow angle to mimic the natural leaf point rather than straight across. The cut edge will not turn green again, and trimming does not fix the underlying cause — change the water and feeding first.'
+    answer: 'You can, purely for looks. Trim with clean scissors, cutting at a shallow angle to mimic the natural leaf point rather than straight across. The cut edge will not turn green again, and trimming does not fix the underlying cause, so change the water and feeding first.'
 related:
   - pothos
   - snake-plant
@@ -83,7 +83,7 @@ related:
 featured: true
 ---
 
-The spider plant is a good first houseplant and an even better one for a home with pets. It is fast, forgiving, non-toxic, and it produces free plants on long arching stems all summer. Its one recurring complaint — brown tips — has a specific and fixable cause.
+The spider plant is a good first houseplant and an even better one for a home with pets. It is fast, forgiving, non-toxic, and it produces free plants on long arching stems all summer. Its one recurring complaint, brown tips, has a specific and fixable cause.
 
 ## Brown tips: it is usually your water
 
@@ -92,7 +92,7 @@ Spider plants are unusually sensitive to **fluoride**, and to a lesser degree ch
 The fix is straightforward:
 
 - Use **filtered, distilled or rainwater**, or
-- Leave tap water in an open jug overnight — this off-gasses chlorine, though not fluoride
+- Leave tap water in an open jug overnight, which off-gasses chlorine though not fluoride
 - **Flush the pot** with plain water for a minute or two twice a year to leach out accumulated salts
 - **Feed at half strength**, no more than monthly in the growing season
 
@@ -102,9 +102,9 @@ Existing brown tips will not turn green again. Trim them with clean scissors at 
 
 ## Watering
 
-Let the top inch of soil dry, then water thoroughly until it drains from the bottom. That is usually every 7–10 days in spring and summer, and every 10–14 days in winter.
+Let the top inch of soil dry, then water thoroughly until it drains from the bottom. That is usually every 7-10 days in spring and summer, and every 10-14 days in winter.
 
-Spider plants store water in thick, white, tuberous roots — if you look at a root-bound one you will see them packed like fat noodles. That reserve means an occasional missed watering is genuinely fine. Chronic overwatering, on the other hand, rots those tubers.
+Spider plants store water in thick, white, tuberous roots. If you look at a root-bound one you will see them packed like fat noodles. That reserve means an occasional missed watering is genuinely fine. Chronic overwatering, on the other hand, rots those tubers.
 
 ## Light and variegation
 
@@ -118,7 +118,7 @@ Direct sun bleaches the leaves to a pale, washed-out yellow-green. Medium light 
 
 ## Growing the babies
 
-Those little plantlets dangling on runners — spiderettes — are the plant's whole charm, and they root very easily.
+Those little plantlets dangling on runners, the spiderettes, are the plant's whole charm, and they root very easily.
 
 **The reliable method:**
 
@@ -130,18 +130,18 @@ Those little plantlets dangling on runners — spiderettes — are the plant's w
 
 Because the runner keeps feeding it, this method almost never fails.
 
-**Water rooting** also works — stand a detached plantlet in a glass with the base submerged, change the water weekly, and pot it once roots are an inch long. Slightly less reliable, but easier to watch.
+**Water rooting** also works. Stand a detached plantlet in a glass with the base submerged, change the water weekly, and pot it once roots are an inch long. Slightly less reliable, but easier to watch.
 
 ## Why yours might not be making babies
 
 Spider plants flower and produce plantlets when they are **mature and slightly root-bound**, and only with enough light. If yours is leafy but barren:
 
 - Move it to brighter indirect light
-- Stop repotting it into bigger containers — a snug pot triggers flowering
+- Stop repotting it into bigger containers, since a snug pot triggers flowering
 - Give it a season; young plants simply are not ready
 
 ## Repotting and dividing
 
-Those tuberous roots fill a pot remarkably fast and can genuinely crack a plastic one. Repot every year or two in spring, moving up one size — or better, divide.
+Those tuberous roots fill a pot remarkably fast and can genuinely crack a plastic one. Repot every year or two in spring, moving up one size, or better still, divide.
 
 To divide, tip the plant out, cut down through the root mass with a clean knife to separate two or three clumps, and pot each separately. Each division should have a good share of both leaves and tuberous roots.

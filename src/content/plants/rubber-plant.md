@@ -1,6 +1,6 @@
 ---
 title: 'Rubber Plant Care: Light, Watering and Leaf Drop Fixes'
-description: 'Rubber plant (Ficus elastica) care — how often to water, the light it needs for burgundy colour, why leaves drop, and how to prune for a bushier shape.'
+description: 'Rubber plant (Ficus elastica) care: how often to water, the light it needs for burgundy colour, why leaves drop, and how to prune for a bushier shape.'
 heading: 'Rubber Plant Care Guide'
 publishDate: 2026-06-26
 updatedDate: 2026-08-15
@@ -22,7 +22,7 @@ silhouette: round
 hue: 350
 difficulty: easy
 petSafe: false
-matureSize: '6–10 ft tall indoors'
+matureSize: '6-10 ft tall indoors'
 growthRate: moderate
 toxicity: 'Milky latex sap irritates skin and causes mouth irritation, drooling and vomiting in cats and dogs. Wear gloves when pruning.'
 care:
@@ -30,22 +30,22 @@ care:
     label: 'Bright indirect'
     detail: 'Bright indirect light keeps growth compact and deepens the burgundy tones of varieties like Ruby and Burgundy. Tolerates medium light with slower, leggier growth.'
   water:
-    label: 'Every 7–14 days'
+    label: 'Every 7-14 days'
     detail: 'Water when the top 2 inches are dry. Rubber plants are noticeably more drought-tolerant than fiddle leaf figs.'
   humidity:
-    label: '40–60%'
+    label: '40-60%'
     detail: 'Average indoor humidity suits it. Wipe the large leaves monthly to remove dust rather than misting.'
   temperature:
-    label: '60–80°F (15–27°C)'
+    label: '60-80°F (15-27°C)'
     detail: 'Keep above 55°F (13°C) and away from cold drafts, which trigger sudden leaf drop.'
   soil:
     label: 'Well-draining potting mix'
-    detail: 'Standard indoor mix with 20–30% perlite or bark for drainage.'
+    detail: 'Standard indoor mix with 20-30% perlite or bark for drainage.'
   fertilizer:
     label: 'Monthly in spring and summer'
     detail: 'Balanced liquid feed at half strength. Stop entirely from late autumn through winter.'
   repotting:
-    label: 'Every 2–3 years'
+    label: 'Every 2-3 years'
     detail: 'Move up one pot size in spring. Keeping it slightly root-bound limits height if you do not want a tree.'
   propagation:
     label: 'Stem cuttings or air layering'
@@ -71,11 +71,11 @@ troubleshooting:
     problemSlug: 'brown-leaf-tips'
 faqs:
   - question: 'How often should I water a rubber plant?'
-    answer: 'Every 7–14 days in spring and summer and every two to three weeks in winter, watering thoroughly once the top two inches of soil are dry. Rubber plants tolerate drying out better than most ficus and dislike constantly damp soil, so check the soil rather than following a fixed schedule.'
+    answer: 'Every 7-14 days in spring and summer and every two to three weeks in winter, watering thoroughly once the top two inches of soil are dry. Rubber plants tolerate drying out better than most ficus and dislike constantly damp soil, so check the soil rather than following a fixed schedule.'
   - question: 'Why is my rubber plant dropping leaves?'
-    answer: 'Ficus elastica sheds leaves in response to change — a move to a new room, a cold draft, a heating vent switching on, or repotting. It also drops lower leaves when overwatered. Check the soil first; if it is drying properly, the cause is environmental and the plant will settle once you leave it in one stable spot.'
+    answer: 'Ficus elastica sheds leaves in response to change: a move to a new room, a cold draft, a heating vent switching on, or repotting. It also drops lower leaves when overwatered. Check the soil first; if it is drying properly, the cause is environmental and the plant will settle once you leave it in one stable spot.'
   - question: 'How do I make my rubber plant bushier?'
-    answer: 'Prune the growing tip. In spring, cut the main stem just above a leaf node, removing several inches. The plant responds by pushing two or three new branches from below the cut. Wear gloves — the milky sap irritates skin — and blot the cut with a damp cloth to stop the bleeding.'
+    answer: 'Prune the growing tip. In spring, cut the main stem just above a leaf node, removing several inches. The plant responds by pushing two or three new branches from below the cut. Wear gloves, because the milky sap irritates skin, and blot the cut with a damp cloth to stop the bleeding.'
   - question: 'Why is my burgundy rubber plant turning green?'
     answer: 'Insufficient light. The deep red and burgundy pigments in cultivars like Ruby, Burgundy and Abidjan develop only under bright light. In a dim spot the plant produces plain green chlorophyll-rich leaves instead. Move it within a few feet of a bright window and the new growth will colour up again.'
   - question: 'Is a rubber plant toxic to pets?'
@@ -91,7 +91,7 @@ The rubber plant is the fiddle leaf fig's easy-going relative. Same architectura
 
 ## Watering
 
-Water thoroughly when the top two inches of soil are dry — usually every 7 to 14 days in spring and summer, and every two to three weeks in winter.
+Water thoroughly when the top two inches of soil are dry, usually every 7 to 14 days in spring and summer, and every two to three weeks in winter.
 
 Rubber plants have a wider margin than most ficus. They handle drying out further than a fiddle leaf fig would tolerate, and they signal thirst by letting the leaves droop slightly. What they do not tolerate is sitting in wet soil, which shows up as yellowing lower leaves that drop.
 
@@ -99,7 +99,7 @@ Pour until water runs from the drainage holes, then let it drain fully.
 
 ## Light and leaf colour
 
-Bright indirect light is the sweet spot. It keeps the internodes short so the plant stays compact rather than stretching, and — for the coloured cultivars — it develops the pigment.
+Bright indirect light is the sweet spot. It keeps the internodes short so the plant stays compact rather than stretching, and for the coloured cultivars it develops the pigment.
 
 Varieties like **'Ruby'**, **'Burgundy'**, **'Tineke'** and **'Abidjan'** are sold for their red, cream and near-black tones. Those pigments are light-dependent. Put a Ruby in a dim corner and within a few months it will be producing ordinary green leaves.
 
@@ -127,7 +127,7 @@ A rubber plant naturally grows as a single upright stem. If you want a fuller, b
 4. Blot the cut with a damp cloth until the sap stops.
 5. Within a few weeks, two or three new shoots emerge below the cut.
 
-Save the top section as a cutting — it roots readily.
+Save the top section as a cutting. It roots readily.
 
 ## Propagation
 

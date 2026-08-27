@@ -20,7 +20,7 @@ export function breadcrumbs(trail: { label: string; href?: string }[]) {
 }
 
 /**
- * FAQPage. Only emit when the questions are genuinely visible on the page —
+ * FAQPage. Only emit when the questions are genuinely visible on the page.
  * Google demotes pages whose FAQ markup has no on-page counterpart.
  */
 export function faqPage(faqs: { question: string; answer: string }[], url: string) {
@@ -138,7 +138,7 @@ export function careHowTo({
   };
 }
 
-/** ItemList for hub pages — helps Google understand the collection structure. */
+/** ItemList for hub pages. Helps Google understand the collection structure. */
 export function itemList(url: string, name: string, items: { name: string; href: string }[]) {
   return {
     '@type': 'ItemList',

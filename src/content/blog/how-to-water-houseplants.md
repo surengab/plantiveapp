@@ -13,11 +13,11 @@ keywords:
   - bottom watering plants
 faqs:
   - question: 'How often should I water my houseplants?'
-    answer: 'There is no single answer, and that is the point — water frequency depends on the species, pot size and material, light level, temperature, humidity and season. The same plant may need water weekly in summer and every three weeks in winter. Check the soil on a regular schedule instead of watering on one, and water only when that particular plant is ready.'
+    answer: 'There is no single answer, and that is the point. Water frequency depends on the species, pot size and material, light level, temperature, humidity and season. The same plant may need water weekly in summer and every three weeks in winter. Check the soil on a regular schedule instead of watering on one, and water only when that particular plant is ready.'
   - question: 'Is it better to water from the top or the bottom?'
     answer: 'Top watering is fine for most plants and has the advantage of flushing accumulated fertiliser salts out through the drainage holes. Bottom watering is better for plants prone to crown rot such as African violets and succulents, for rehydrating soil that has gone hydrophobic, and for keeping the surface dry to discourage fungus gnats. Many people use bottom watering routinely and top water every few months to flush.'
   - question: 'Should I use tap water on my houseplants?'
-    answer: 'For most plants, yes — ordinary tap water is fine. A handful of species are genuinely sensitive to fluoride and hard-water minerals, including spider plants, calatheas, dracaenas and prayer plants, and these do noticeably better on filtered, distilled or rainwater. Leaving tap water out overnight off-gasses chlorine but does nothing about fluoride or dissolved hardness.'
+    answer: 'For most plants, yes. Ordinary tap water is fine. A handful of species are genuinely sensitive to fluoride and hard-water minerals, including spider plants, calatheas, dracaenas and prayer plants, and these do noticeably better on filtered, distilled or rainwater. Leaving tap water out overnight off-gasses chlorine but does nothing about fluoride or dissolved hardness.'
   - question: 'What is the best time of day to water houseplants?'
     answer: 'Morning is marginally best, because it gives any splashed foliage time to dry before nightfall, which reduces fungal problems. In practice the difference indoors is small and consistency matters far more than timing. Avoid watering succulents in the evening in a cool room, where wet soil overnight raises the risk of rot.'
 featured: true
@@ -40,27 +40,27 @@ Two identical pothos, one on a bright windowsill in terracotta and one in a plas
 
 ## The method: check, then soak
 
-**Step 1 — check the soil.** Push your index finger into the soil up to the second knuckle, about two inches. That is the depth that matters; the surface dries within a day of watering and tells you nothing.
+**Step 1: check the soil.** Push your index finger into the soil up to the second knuckle, about two inches. That is the depth that matters; the surface dries within a day of watering and tells you nothing.
 
-**Step 2 — decide by species.**
+**Step 2: decide by species.**
 
 | Plant type | Water when |
 | --- | --- |
 | Succulents, cacti, snake plants, ZZ plants | Soil completely dry to the bottom |
-| Aroids — monstera, pothos, philodendron | Top 2 inches dry |
-| Ficus — fiddle leaf fig, rubber plant | Top 2 inches dry |
+| Aroids (monstera, pothos, philodendron) | Top 2 inches dry |
+| Ficus (fiddle leaf fig, rubber plant) | Top 2 inches dry |
 | Ferns, calatheas, peace lilies | Top 1 inch dry, never fully dry |
 | Orchids in bark | Roots have gone silvery |
 
-**Step 3 — soak thoroughly.** When you do water, water properly. Pour slowly and evenly across the surface until water runs freely from the drainage holes. This wets the entire root ball, including the deeper roots that do most of the work.
+**Step 3: soak thoroughly.** When you do water, water properly. Pour slowly and evenly across the surface until water runs freely from the drainage holes. This wets the entire root ball, including the deeper roots that do most of the work.
 
-**Step 4 — drain completely.** Let it finish draining and empty the saucer or cachepot. A pot standing in water is the fastest route to [root rot](/problems/root-rot/).
+**Step 4: drain completely.** Let it finish draining and empty the saucer or cachepot. A pot standing in water is the fastest route to [root rot](/problems/root-rot/).
 
 ## The mistake almost everyone makes
 
 **A little water, often.**
 
-A small splash every few days wets only the top inch. The deep roots stay permanently dry, while the surface stays permanently damp — which invites [fungus gnats](/problems/fungus-gnats/) and surface mould at the same time as the plant slowly dehydrates.
+A small splash every few days wets only the top inch. The deep roots stay permanently dry, while the surface stays permanently damp, which invites [fungus gnats](/problems/fungus-gnats/) and surface mould at the same time as the plant slowly dehydrates.
 
 The correct pattern is the opposite: **less frequently, much more thoroughly.**
 
@@ -68,7 +68,7 @@ The correct pattern is the opposite: **less frequently, much more thoroughly.**
 
 Checking soil is not the same as being disorganised. Give yourself a routine:
 
-1. Pick a day — Sunday morning works for most people.
+1. Pick a day. Sunday morning works for most people.
 2. Check every plant. Finger in the soil, two inches down.
 3. Water only the ones that are ready.
 4. Note which ones were, so you learn each plant's pace.
@@ -77,7 +77,7 @@ Within a month you will know that the fern needs water every visit, the monstera
 
 ## Bottom watering
 
-Standing a pot in a tray of water for 20–30 minutes and letting it wick up from below has real advantages:
+Standing a pot in a tray of water for 20-30 minutes and letting it wick up from below has real advantages:
 
 - **Even wetting** of the whole root ball, with no dry pockets
 - **Keeps the surface dry**, which discourages fungus gnats
@@ -88,7 +88,7 @@ The one downside is that fertiliser salts accumulate rather than flushing out. I
 
 ## Seasonal adjustment
 
-This catches out more people than any other single factor. From roughly November to February, most houseplants slow dramatically — less light, cooler temperatures, minimal growth. They use far less water.
+This catches out more people than any other single factor. From roughly November to February, most houseplants slow dramatically: less light, cooler temperatures, minimal growth. They use far less water.
 
 Continuing a summer watering routine through winter is one of the most reliable ways to cause root rot.
 
@@ -115,7 +115,7 @@ Alongside the soil check, the plant itself gives signals:
 
 **Overwatered:** yellowing lower leaves, soft limp foliage, damp soil days after watering, fungus gnats, a sour smell.
 
-The trap is that both can produce wilting. Always feel the soil before reacting — the full method is in [overwatering vs underwatering](/problems/overwatering-vs-underwatering/).
+The trap is that both can produce wilting. Always feel the soil before reacting. The full method is in [overwatering vs underwatering](/problems/overwatering-vs-underwatering/).
 
 ## Drainage is not optional
 

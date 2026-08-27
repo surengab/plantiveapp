@@ -7,7 +7,7 @@
  *
  * PICKS are indexes into /tmp/candidates.json, chosen by looking at the contact
  * sheet. Automated ranking was tried twice and produced botanical engravings,
- * herbarium sheets and a photograph of a book page — for an identification site
+ * herbarium sheets and a photograph of a book page, and for an identification site
  * the image has to be judged by eye, so that judgement is recorded here.
  */
 import sharp from 'sharp';
@@ -100,7 +100,7 @@ for (const [slug, index] of Object.entries(PICKS)) {
     source: cand.source,
     file: cand.title,
   };
-  console.log(`✓ ${slug} — ${cand.licence} — ${cand.author.slice(0, 45)}`);
+  console.log(`✓ ${slug}: ${cand.licence}, ${cand.author.slice(0, 45)}`);
 }
 
 await writeFile(META_PATH, JSON.stringify(meta, null, 2) + '\n');

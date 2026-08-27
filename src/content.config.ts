@@ -26,7 +26,7 @@ const faqSchema = z
 
 /**
  * Per-species care guides. The structured `care` block drives the care table,
- * the at-a-glance cards and the HowTo/Article structured data — so a new plant
+ * the at-a-glance cards and the HowTo/Article structured data, so a new plant
  * is a single markdown file with no template work.
  */
 const plants = defineCollection({

@@ -15,13 +15,13 @@ export const SITE = {
   lang: 'en',
   themeColor: '#14532d',
   /**
-   * Google Search Console ownership token. Public by design — it only proves
+   * Google Search Console ownership token. Public by design: it only proves
    * control of this site. Kept alongside the /googled…html file so verification
    * survives if either method breaks.
    */
   googleSiteVerification: '9SZDJKni2zRuXtNdxtFCvHv5ri9bLrwtOeFG3-LLnHw',
   /**
-   * Ahrefs Web Analytics site key. Public by design — it identifies the site,
+   * Ahrefs Web Analytics site key. Public by design: it identifies the site,
    * not the account. Doubles as Ahrefs' ownership verification for the domain.
    */
   ahrefsKey: 'l7lBgyq4L7EQcUFudfMMFQ',

@@ -34,7 +34,7 @@ export async function GET(context) {
   ].sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
 
   return rss({
-    title: `${SITE.name} — Plant Care Guides`,
+    title: `${SITE.name}: Plant Care Guides`,
     description: SITE.description,
     site: context.site ?? SITE.url,
     items,

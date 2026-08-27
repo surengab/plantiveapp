@@ -1,6 +1,6 @@
 ---
 title: 'Why Is My Plant Drooping? Diagnose Wilting in 5 Minutes'
-description: 'A drooping plant might be thirsty — or drowning. Check the soil before you water, because the two causes look identical and need opposite treatment.'
+description: 'A drooping plant might be thirsty, or drowning. Check the soil before you water, because the two causes look identical and need opposite treatment.'
 heading: 'Why Is My Plant Drooping?'
 publishDate: 2026-07-30
 updatedDate: 2026-08-20
@@ -11,11 +11,11 @@ keywords:
   - plant droopy after repotting
 symptom: 'Drooping or wilting leaves'
 severity: medium
-quickAnswer: 'Check the soil before watering. Dry soil means thirst — water and it recovers in hours. Wet soil means root rot, and watering again makes it worse.'
+quickAnswer: 'Check the soil before watering. Dry soil means thirst, so water and it recovers in hours. Wet soil means root rot, and watering again makes it worse.'
 causes:
   - name: 'Thirst'
     likelihood: 'most likely'
-    tell: 'Soil dry two inches down, pot feels light, soil may have shrunk from the pot edge. The plant perks up within 2–4 hours of watering.'
+    tell: 'Soil dry two inches down, pot feels light, soil may have shrunk from the pot edge. The plant perks up within 2-4 hours of watering.'
     fix: 'Water thoroughly until it drains from the bottom. If water runs straight through, bottom-water for 20 minutes to rehydrate the root ball.'
   - name: 'Root rot from overwatering'
     likelihood: 'common'
@@ -28,7 +28,7 @@ causes:
   - name: 'Temperature stress'
     likelihood: 'common'
     tell: 'Plant sits near a radiator, air-conditioning vent, or drafty door. Wilting fluctuates through the day.'
-    fix: 'Move it away from the heat or cold source. Most houseplants want a steady 65–80°F (18–27°C).'
+    fix: 'Move it away from the heat or cold source. Most houseplants want a steady 65-80°F (18-27°C).'
   - name: 'Root-bound'
     likelihood: 'less common'
     tell: 'Roots circling out of the drainage holes, water running straight through, plant needs watering every day or two.'
@@ -43,8 +43,8 @@ affectedPlants:
   - calathea
   - fiddle-leaf-fig
 faqs:
-  - question: 'My plant is drooping — should I water it?'
-    answer: 'Check the soil first, always. Push a finger two inches in. If it is dry, water thoroughly and the plant should recover within a few hours. If it is damp, do not water — the wilting is being caused by rotted roots that cannot absorb water, and adding more will make it worse. This single check prevents the most common fatal mistake in houseplant care.'
+  - question: 'My plant is drooping. Should I water it?'
+    answer: 'Check the soil first, always. Push a finger two inches in. If it is dry, water thoroughly and the plant should recover within a few hours. If it is damp, do not water, because the wilting is being caused by rotted roots that cannot absorb water, and adding more will make it worse. This single check prevents the most common fatal mistake in houseplant care.'
   - question: 'How long does a plant take to recover from wilting?'
     answer: 'A thirsty plant usually stands back up within two to four hours of a thorough watering, and looks completely normal by the next day. Recovery from root rot takes weeks to months and involves visible leaf loss along the way. Transplant shock typically resolves in one to three weeks. If a watered plant has not responded within 24 hours, thirst was not the cause.'
   - question: 'Why is my plant drooping after repotting?'
@@ -54,7 +54,7 @@ faqs:
 featured: false
 ---
 
-A drooping plant is asking for attention, but not necessarily for water. The instinct to reach for the watering can is right about half the time — and wrong in a way that kills plants the other half.
+A drooping plant is asking for attention, but not necessarily for water. The instinct to reach for the watering can is right about half the time, and wrong in a way that kills plants the other half.
 
 ## Do this before anything else
 
@@ -69,7 +69,7 @@ That is the whole diagnosis for most cases, and it takes ten seconds.
 
 This is the part that catches people out. Roots need oxygen as much as water. Waterlogged soil drives the air out; roots suffocate and begin to rot; a rotted root system cannot absorb water at all.
 
-The plant is genuinely dehydrated — while standing in wet soil. Every symptom points to thirst, and watering it accelerates the collapse.
+The plant is genuinely dehydrated, while standing in wet soil. Every symptom points to thirst, and watering it accelerates the collapse.
 
 If the soil is wet and the plant is drooping, treat it as [root rot](/problems/root-rot/) and unpot it to check.
 
@@ -77,7 +77,7 @@ If the soil is wet and the plant is drooping, treat it as [root rot](/problems/r
 
 ### Transplant shock
 
-If drooping started within a few days of repotting, this is almost certainly it. Repotting breaks fine root hairs — the structures doing most of the actual absorption — so for a while the roots cannot supply what the leaves are losing.
+If drooping started within a few days of repotting, this is almost certainly it. Repotting breaks fine root hairs, the structures doing most of the actual absorption, so for a while the roots cannot supply what the leaves are losing.
 
 **What to do:** nothing dramatic. Keep the plant out of direct sun, hold conditions steady, water lightly. Most plants recover in one to three weeks. Do not repot again, do not fertilise, do not move it repeatedly.
 
@@ -87,7 +87,7 @@ A plant next to a radiator loses water from its leaves faster than roots can sup
 
 Tell-tale sign: the drooping varies through the day, worse when the heating is on or the door is used.
 
-**What to do:** move it. Most houseplants want a steady 65–80°F (18–27°C), away from vents, radiators and drafty glass.
+**What to do:** move it. Most houseplants want a steady 65-80°F (18-27°C), away from vents, radiators and drafty glass.
 
 ### Root-bound
 
@@ -97,20 +97,20 @@ If a plant needs water every day or two, water runs straight through the pot in 
 
 ### Hydrophobic soil
 
-Soil that has dried out completely can start repelling water. You water, it seems to drain fine, and the plant stays wilted — because the water ran down the gap between soil and pot without wetting the root ball at all.
+Soil that has dried out completely can start repelling water. You water, it seems to drain fine, and the plant stays wilted, because the water ran down the gap between soil and pot without wetting the root ball at all.
 
-**What to do:** stand the pot in a tray of water for 20–30 minutes so it wicks up from below. Then drain fully.
+**What to do:** stand the pot in a tray of water for 20-30 minutes so it wicks up from below. Then drain fully.
 
 ## Plants that droop as a habit
 
 Some plants are simply dramatic about it, and it is useful to know which:
 
-- **Peace lily** — collapses completely when thirsty, fully upright within hours of watering
-- **Pothos** — leaves go soft and vines sag, recovers quickly
-- **Fittonia (nerve plant)** — faints spectacularly, recovers just as fast
-- **Hydrangea** and many flowering plants — wilt in afternoon heat and recover by evening even with adequate water
+- **Peace lily**: collapses completely when thirsty, fully upright within hours of watering
+- **Pothos**: leaves go soft and vines sag, recovers quickly
+- **Fittonia (nerve plant)**: faints spectacularly, recovers just as fast
+- **Hydrangea** and many flowering plants: wilt in afternoon heat and recover by evening even with adequate water
 
-For these, mild wilting is a usable watering cue. Just do not let it get severe or happen repeatedly — each episode damages fine roots and produces permanent brown leaf edges.
+For these, mild wilting is a usable watering cue. Just do not let it get severe or happen repeatedly, since each episode damages fine roots and produces permanent brown leaf edges.
 
 ## Reading the recovery
 
@@ -118,9 +118,9 @@ The response to watering tells you whether you diagnosed correctly:
 
 | Response | What it means |
 | --- | --- |
-| Upright within 2–4 hours | It was thirsty. Correct call. |
+| Upright within 2-4 hours | It was thirsty. Correct call. |
 | No change after 24 hours | Not thirst. Check roots. |
 | Worse after watering | Root rot. Unpot immediately. |
-| Slow improvement over 1–3 weeks | Transplant shock, resolving normally. |
+| Slow improvement over 1-3 weeks | Transplant shock, resolving normally. |
 
 If you are still unsure whether you are dealing with too much water or too little, the five checks in [overwatering vs underwatering](/problems/overwatering-vs-underwatering/) will settle it.

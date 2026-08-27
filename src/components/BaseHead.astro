@@ -23,7 +23,7 @@ const {
   description,
   canonical,
   image = '/og-default.png',
-  imageAlt = 'Plantive — identify any plant from a photo and get a care schedule that works',
+  imageAlt = 'Plantive: identify any plant from a photo and get a care schedule that works',
   type = 'website',
   publishDate,
   updatedDate,
@@ -132,13 +132,14 @@ const graph = [
 <link rel="icon" href="/assets/icon-192.png" type="image/png" sizes="192x192" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
-<link rel="alternate" type="application/rss+xml" title={`${SITE.name} — plant care articles`} href="/rss.xml" />
+<link rel="alternate" type="application/rss+xml" title={`${SITE.name}: plant care articles`} href="/rss.xml" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
+  rel="preload"
+  href="/fonts/outfit-latin-var.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
 />
 
 <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })} is:inline />

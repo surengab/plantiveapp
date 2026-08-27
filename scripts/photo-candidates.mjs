@@ -3,7 +3,7 @@
  * contact sheet at /tmp/candidates.png so they can be judged by eye.
  *
  * Restricted to Commons category members and biased toward iNaturalist-sourced
- * files, which are real field photographs with community-verified IDs — the
+ * files, which are real field photographs with community-verified IDs, the
  * single most effective filter against botanical engravings and herbarium sheets.
  */
 import sharp from 'sharp';

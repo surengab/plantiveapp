@@ -11,7 +11,7 @@
  * Licence handling: CC BY / public-domain files are preferred over CC BY-SA,
  * because we resize the originals and share-alike would otherwise attach to the
  * derivative. Whatever is chosen, the credit line is stored alongside the image
- * and rendered on the page — attribution is a condition of every CC licence.
+ * and rendered on the page, since attribution is a condition of every CC licence.
  *
  * Outputs:
  *   public/photos/<slug>-{640,1200}.webp
@@ -32,7 +32,7 @@ const FORCE = process.argv.includes('--force');
 /**
  * Wikipedia article to pull the lead image from. Several guides cover a genus
  * ("Goeppertia spp."), where the genus article often leads with a herbarium
- * scan — so these point at the representative species people actually own.
+ * scan, so these point at the representative species people actually own.
  */
 const OVERRIDES = {
   'aloe-vera': 'Aloe vera',
@@ -63,7 +63,7 @@ function licenceRank(short = '') {
   if (l.includes('cc0') || l.includes('public domain')) return 0;
   if (l.startsWith('cc by') && !l.includes('sa')) return 1;
   if (l.includes('cc by-sa')) return 2;
-  return 9; // unknown / non-free — rejected below
+  return 9; // unknown / non-free, rejected below
 }
 
 async function api(params) {
@@ -75,7 +75,7 @@ async function api(params) {
 
 /**
  * Wikipedia's lead image for a species article. Editors curate these to be
- * representative of the plant, which raw Commons search emphatically does not —
+ * representative of the plant, which raw Commons search emphatically does not,
  * search ranks on text match, so it happily returns herbarium sheets, annotated
  * diagrams and 19th-century botanical paintings.
  */
@@ -173,7 +173,7 @@ async function findPhoto(botanicalName, commonName) {
 
       const title = p.title.replace(/^File:/, '');
       // Skip herbarium sheets, diagrams, distribution maps and close-up
-      // pathology shots — none of them help someone identify a houseplant.
+      // pathology shots, none of which help someone identify a houseplant.
       if (/herbari|map|distribution|diagram|illustration|drawing|seed|botanical plate/i.test(title))
         continue;
 
@@ -216,7 +216,7 @@ const files = (await readdir(join(root, 'src', 'content', 'plants'))).filter((f)
 for (const file of files) {
   const slug = file.replace(/\.md$/, '');
   if (meta[slug] && !FORCE) {
-    console.log(`· ${slug} — already have it`);
+    console.log(`· ${slug}: already have it`);
     continue;
   }
 
@@ -228,7 +228,7 @@ for (const file of files) {
   process.stdout.write(`→ ${slug} (${query}) `);
   const hit = await findPhoto(query, commonName);
   if (!hit) {
-    console.log('— NO SUITABLE IMAGE FOUND');
+    console.log('NO SUITABLE IMAGE FOUND');
     continue;
   }
 
@@ -252,7 +252,7 @@ for (const file of files) {
     licenceUrl: hit.licenceUrl,
     source: hit.descriptionUrl,
   };
-  console.log(`✓ ${hit.licence} — ${hit.author.slice(0, 40)}`);
+  console.log(`✓ ${hit.licence}: ${hit.author.slice(0, 40)}`);
 }
 
 await writeFile(META_PATH, JSON.stringify(meta, null, 2) + '\n');

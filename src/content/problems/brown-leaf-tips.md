@@ -1,6 +1,6 @@
 ---
 title: 'Brown Leaf Tips on Houseplants: Causes and How to Fix Them'
-description: 'Crispy brown tips usually mean dry air, tap water minerals or over-fertilising — not underwatering. Here is how to tell which one, and how to stop it recurring.'
+description: 'Crispy brown tips usually mean dry air, tap water minerals or over-fertilising, not underwatering. Here is how to tell which one, and how to stop it recurring.'
 heading: 'Brown Leaf Tips: What They Mean'
 publishDate: 2026-07-12
 updatedDate: 2026-08-18
@@ -11,12 +11,12 @@ keywords:
   - fluoride damage plants
 symptom: 'Brown, crispy leaf tips'
 severity: low
-quickAnswer: 'Brown tips are usually low humidity or mineral build-up from tap water — not thirst. Switch to filtered water, raise humidity, and flush the pot to leach out salts.'
+quickAnswer: 'Brown tips are usually low humidity or mineral build-up from tap water, not thirst. Switch to filtered water, raise humidity, and flush the pot to leach out salts.'
 causes:
   - name: 'Low humidity'
     likelihood: 'most likely'
     tell: 'Worse in winter with heating on. Affects thin-leaved tropicals like calathea, fern, peace lily and spider plant first. Multiple plants affected at once.'
-    fix: 'Run a humidifier near the plants, or group them together. Aim for 50% or above. Misting does not work — the effect lasts minutes.'
+    fix: 'Run a humidifier near the plants, or group them together. Aim for 50% or above. Misting does not work, because the effect lasts minutes.'
   - name: 'Minerals in tap water'
     likelihood: 'most likely'
     tell: 'Tips brown evenly across the plant. Common in hard-water areas and with fluoridated supplies. Spider plants, calatheas, dracaenas and prayer plants are the most sensitive.'
@@ -46,7 +46,7 @@ faqs:
   - question: 'Do brown tips mean I am underwatering?'
     answer: 'Usually not, which is why people so often make the problem worse by watering more. Brown tips most often come from dry air, minerals in tap water, or excess fertiliser salts. Genuine underwatering normally produces widespread wilting and whole crispy leaves rather than neat browning confined to the tips.'
   - question: 'Should I cut the brown tips off?'
-    answer: 'You can, purely for appearance. Use clean scissors and cut at a shallow angle following the natural taper of the leaf, leaving a thin sliver of brown rather than cutting into green tissue. The cut edge will not turn green again, and trimming does nothing to address the cause — so fix the water, humidity or feeding first.'
+    answer: 'You can, purely for appearance. Use clean scissors and cut at a shallow angle following the natural taper of the leaf, leaving a thin sliver of brown rather than cutting into green tissue. The cut edge will not turn green again, and trimming does nothing to address the cause, so fix the water, humidity or feeding first.'
   - question: 'Why do my spider plant and calathea get brown tips when other plants do not?'
     answer: 'Because they are unusually sensitive to fluoride and dissolved minerals. Spider plants, calatheas, dracaenas, prayer plants and cordylines all accumulate these compounds at their leaf tips, where water evaporates and the salts stay behind and burn the tissue. Sturdier plants like pothos and snake plants tolerate the same tap water without complaint.'
   - question: 'Does misting help with brown tips?'
@@ -54,11 +54,11 @@ faqs:
 featured: true
 ---
 
-Brown crispy tips are the most misdiagnosed houseplant symptom. The instinct is to water more, and for most cases that is the wrong move — sometimes actively harmful.
+Brown crispy tips are the most misdiagnosed houseplant symptom. The instinct is to water more, and for most cases that is the wrong move, and sometimes an actively harmful one.
 
 ## What brown tips actually are
 
-The tip of a leaf is the end of the plumbing. Water travels from roots to leaf and evaporates from the surface; whatever was dissolved in that water — minerals, fertiliser salts, fluoride — stays behind, and it concentrates furthest from the source.
+The tip of a leaf is the end of the plumbing. Water travels from roots to leaf and evaporates from the surface; whatever was dissolved in that water (minerals, fertiliser salts, fluoride) stays behind, and it concentrates furthest from the source.
 
 That is why tips go first. It is also why the three most common causes are all about **what is in the water and the air**, not how much water you give.
 
@@ -75,13 +75,13 @@ That is why tips go first. It is also why the three most common causes are all a
 
 ## Low humidity
 
-Most tropical houseplants evolved at 60–90% humidity. A heated home in winter runs at 25–35%. The plant loses water from its leaves faster than roots can supply it, and the tips desiccate.
+Most tropical houseplants evolved at 60-90% humidity. A heated home in winter runs at 25-35%. The plant loses water from its leaves faster than roots can supply it, and the tips desiccate.
 
 **What works:**
 
 - **A humidifier** near the plants. The only genuinely effective fix.
-- **Grouping plants together** — collective transpiration raises local humidity measurably.
-- **A pebble tray** — a shallow tray of stones and water under the pot. Modest but real.
+- **Grouping plants together**: collective transpiration raises local humidity measurably.
+- **A pebble tray**: a shallow tray of stones and water under the pot. Modest but real.
 
 **What does not work:** misting. The humidity spike lasts minutes, and wet foliage overnight invites fungal spotting.
 
@@ -95,11 +95,11 @@ Some species are markedly sensitive to fluoride and hard-water minerals:
 - Cordylines
 - Peace lilies
 
-For these, switch to **filtered, distilled or rainwater**. Note that leaving tap water out overnight only off-gasses chlorine — it does nothing about fluoride or dissolved hardness, which are the bigger culprits.
+For these, switch to **filtered, distilled or rainwater**. Note that leaving tap water out overnight only off-gasses chlorine. It does nothing about fluoride or dissolved hardness, which are the bigger culprits.
 
 ## Over-fertilising
 
-Fertiliser is salt. Apply more than the plant uses and it accumulates in the soil, raising the concentration around the roots until they struggle to take up water at all — and the tips burn.
+Fertiliser is salt. Apply more than the plant uses and it accumulates in the soil, raising the concentration around the roots until they struggle to take up water at all, and the tips burn.
 
 Look for a **white or yellowish crust** on the soil surface or around the drainage holes. That is the confirmation.
 

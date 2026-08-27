@@ -1,6 +1,6 @@
 ---
 title: 'Phalaenopsis Orchid Care: Watering, Reblooming, Roots'
-description: 'Moth orchid care made simple — how often to water, reading root colour, what to do after the flowers drop, and how to trigger a new flower spike.'
+description: 'Moth orchid care made simple: how often to water, reading root colour, what to do after the flowers drop, and how to trigger a new flower spike.'
 heading: 'Phalaenopsis Orchid Care Guide'
 publishDate: 2026-07-04
 updatedDate: 2026-08-17
@@ -22,22 +22,22 @@ silhouette: round
 hue: 320
 difficulty: moderate
 petSafe: true
-matureSize: '1–2 ft tall with arching flower spikes'
+matureSize: '1-2 ft tall with arching flower spikes'
 growthRate: slow
 toxicity: 'Non-toxic to cats and dogs. Safe for pet households.'
 care:
   light:
     label: 'Bright indirect'
-    detail: 'An east-facing windowsill is close to perfect. Leaves should be a medium grassy green — dark green means too little light.'
+    detail: 'An east-facing windowsill is close to perfect. Leaves should be a medium grassy green, since dark green means too little light.'
   water:
-    label: 'Every 7–10 days'
+    label: 'Every 7-10 days'
     detail: 'Soak the bark thoroughly, then let it dry almost completely. Water by root colour, not by calendar: silvery-green roots are thirsty, bright green are hydrated.'
   humidity:
-    label: '50–70%'
+    label: '50-70%'
     detail: 'Higher humidity helps, especially in winter. A pebble tray or nearby humidifier is enough.'
   temperature:
-    label: '65–80°F (18–27°C)'
-    detail: 'Needs a 10–15°F night-time drop in autumn to trigger a new flower spike.'
+    label: '65-80°F (18-27°C)'
+    detail: 'Needs a 10-15°F night-time drop in autumn to trigger a new flower spike.'
   soil:
     label: 'Bark chips, never soil'
     detail: 'Phalaenopsis are epiphytes growing on tree bark. Potting soil suffocates and rots the roots within weeks.'
@@ -45,18 +45,18 @@ care:
     label: 'Weakly, weekly'
     detail: 'A quarter-strength balanced orchid feed at most waterings during active growth, then a plain water flush monthly to clear salts.'
   repotting:
-    label: 'Every 1–2 years'
+    label: 'Every 1-2 years'
     detail: 'Repot into fresh bark after flowering, once the old bark breaks down into fine dark crumbs that hold too much water.'
   propagation:
     label: 'Keiki (baby plants)'
     detail: 'Occasionally a plantlet forms on an old flower spike. Detach and pot it once it has two or three roots over 2 inches long.'
 troubleshooting:
   - symptom: 'Leaves limp, leathery and wrinkled'
-    cause: 'Root loss — usually from overwatering, occasionally from severe drought'
+    cause: 'Root loss, usually from overwatering and occasionally from severe drought'
     fix: 'Unpot and inspect. Healthy roots are firm and green or silver; dead ones are brown, flat and papery. Trim the dead ones and repot into fresh bark.'
   - symptom: 'Flowers dropped and the spike turned brown'
     cause: 'Normal end of the blooming cycle'
-    fix: 'Cut a fully brown spike off at the base. If the spike is still green, cut just above the second node from the bottom — it may branch and rebloom.'
+    fix: 'Cut a fully brown spike off at the base. If the spike is still green, cut just above the second node from the bottom, where it may branch and rebloom.'
   - symptom: 'No new flowers for over a year'
     cause: 'Not enough light, or no autumn temperature drop'
     fix: 'Move to an east window and give it several weeks of nights around 60°F (15°C) in autumn. That night-time drop is what triggers spiking.'
@@ -70,13 +70,13 @@ troubleshooting:
     problemSlug: 'yellow-leaves-on-houseplants'
 faqs:
   - question: 'How often should I water a Phalaenopsis orchid?'
-    answer: 'Roughly every 7–10 days, but judge by the roots rather than the calendar. Through a clear pot, hydrated roots look bright green and thirsty roots look silvery-grey. When most roots have gone silver, take the pot to the sink and run tepid water through the bark for a minute, then let it drain completely. Never leave water sitting in the crown or the cachepot.'
+    answer: 'Roughly every 7-10 days, but judge by the roots rather than the calendar. Through a clear pot, hydrated roots look bright green and thirsty roots look silvery-grey. When most roots have gone silver, take the pot to the sink and run tepid water through the bark for a minute, then let it drain completely. Never leave water sitting in the crown or the cachepot.'
   - question: 'How do I get my orchid to rebloom?'
-    answer: 'Two things trigger a new spike: enough light, and a drop in night-time temperature. Keep the plant on an east-facing windowsill year-round, then in autumn give it four to six weeks where nights fall to around 60°F (15°C) — a windowsill away from heating usually does it naturally. Feed weakly through the growing season and a new spike typically appears within a couple of months.'
+    answer: 'Two things trigger a new spike: enough light, and a drop in night-time temperature. Keep the plant on an east-facing windowsill year-round, then in autumn give it four to six weeks where nights fall to around 60°F (15°C). A windowsill away from heating usually does it naturally. Feed weakly through the growing season and a new spike typically appears within a couple of months.'
   - question: 'What do I do after my orchid flowers fall off?'
-    answer: 'Look at the spike. If it has turned brown and dry, cut it off at the base — the plant will grow a fresh one. If it is still green, cut just above the second node up from the bottom; Phalaenopsis often branch from that node and produce a second flush of flowers within a few months. Either way, keep watering and feeding normally.'
+    answer: 'Look at the spike. If it has turned brown and dry, cut it off at the base and the plant will grow a fresh one. If it is still green, cut just above the second node up from the bottom; Phalaenopsis often branch from that node and produce a second flush of flowers within a few months. Either way, keep watering and feeding normally.'
   - question: 'Why are my orchid leaves limp and wrinkled?'
-    answer: 'Wrinkled leaves mean the plant cannot take up water, which almost always means it has lost roots. Counterintuitively, the usual cause is overwatering rather than underwatering — rotted roots cannot absorb anything. Unpot it, trim away every brown papery root, and repot into fresh coarse bark. Recovery takes months but is common.'
+    answer: 'Wrinkled leaves mean the plant cannot take up water, which almost always means it has lost roots. Counterintuitively, the usual cause is overwatering rather than underwatering, because rotted roots cannot absorb anything. Unpot it, trim away every brown papery root, and repot into fresh coarse bark. Recovery takes months but is common.'
   - question: 'Can I plant an orchid in normal potting soil?'
     answer: 'No. Phalaenopsis are epiphytes that grow clinging to tree bark with their roots exposed to air. Potting soil holds moisture against them and suffocates them, and root rot follows within weeks. Use coarse orchid bark, ideally in a clear plastic pot so you can monitor root colour.'
 related:
@@ -110,7 +110,7 @@ This is the single most useful skill for keeping orchids alive, and the clear po
 | Brown, soft, mushy | Rotted | Repot and trim immediately |
 | Brown, flat, papery | Dead and dried | Trim at next repot |
 
-To water: take the pot to the sink and run tepid water through the bark for about a minute so everything is soaked. Let it drain completely. Tip out any water caught in the crown where the leaves meet — water sitting there overnight causes crown rot, which is usually fatal.
+To water: take the pot to the sink and run tepid water through the bark for about a minute so everything is soaked. Let it drain completely. Tip out any water caught in the crown where the leaves meet, because water sitting there overnight causes crown rot, which is usually fatal.
 
 Do **not** use the ice cube method. It is convenient and widely repeated, but cold water shocks tropical roots and a cube provides far too little water to soak the bark.
 
@@ -120,21 +120,21 @@ Bright but indirect. An east-facing windowsill with gentle morning sun is close 
 
 Read the leaves to check:
 
-- **Medium, grassy green** — light is right
-- **Dark, deep green** — too little light; this is the most common reason orchids never rebloom
-- **Yellowish-green or with reddish tinges** — a bit too much light
-- **White or tan patches** — sunburn; move it out of direct sun
+- **Medium, grassy green**: light is right
+- **Dark, deep green**: too little light; this is the most common reason orchids never rebloom
+- **Yellowish-green or with reddish tinges**: a bit too much light
+- **White or tan patches**: sunburn; move it out of direct sun
 
 ## Getting it to rebloom
 
 This is where most people give up, and it is more mechanical than it seems. Phalaenopsis need two things:
 
 1. **Enough light year-round.** A dark-green-leaved orchid will not spike no matter what else you do.
-2. **A night-time temperature drop in autumn.** Four to six weeks with nights around 60°F (15°C) and days 10–15°F warmer triggers spike initiation.
+2. **A night-time temperature drop in autumn.** Four to six weeks with nights around 60°F (15°C) and days 10-15°F warmer triggers spike initiation.
 
 In practice, leaving the orchid on a windowsill away from radiators through autumn provides that drop naturally. A new spike usually emerges within one to two months, and flowers open several weeks after that.
 
-Feed weakly and regularly through the growing season — a quarter-strength orchid fertiliser at most waterings — and flush with plain water monthly to prevent salt build-up in the bark.
+Feed weakly and regularly through the growing season, using a quarter-strength orchid fertiliser at most waterings, and flush with plain water monthly to prevent salt build-up in the bark.
 
 ## What to do when flowers drop
 
@@ -156,4 +156,4 @@ Repot every one to two years, after flowering, when the bark has broken down int
 
 ## Keikis
 
-Occasionally a Phalaenopsis produces a **keiki** — a baby plant on an old flower spike, complete with its own leaves and roots. Leave it attached until it has two or three roots at least two inches long, then cut the spike either side of it and pot it into fine bark. It is a genetic clone of the parent.
+Occasionally a Phalaenopsis produces a **keiki**, a baby plant on an old flower spike, complete with its own leaves and roots. Leave it attached until it has two or three roots at least two inches long, then cut the spike either side of it and pot it into fine bark. It is a genetic clone of the parent.

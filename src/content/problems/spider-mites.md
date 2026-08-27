@@ -11,7 +11,7 @@ keywords:
   - stippled leaves pest
 symptom: 'Fine webbing and stippled leaves'
 severity: high
-quickAnswer: 'Isolate the plant now — spider mites spread fast. Shower it thoroughly, then treat with insecticidal soap or neem every 5 days for three weeks to catch each new hatch.'
+quickAnswer: 'Isolate the plant now, because spider mites spread fast. Shower it thoroughly, then treat with insecticidal soap or neem every 5 days for three weeks to catch each new hatch.'
 causes:
   - name: 'Hot, dry air'
     likelihood: 'most likely'
@@ -36,17 +36,17 @@ affectedPlants:
   - pothos
 faqs:
   - question: 'How do I know it is spider mites and not something else?'
-    answer: 'Two checks confirm it. First, look for fine stippling — tiny pale dots across the leaf surface where mites have pierced individual cells. Second, hold a sheet of white paper under a leaf and tap the leaf sharply: mites fall off and appear as slow-moving specks the size of a grain of pepper. Visible webbing between stems and leaf joints confirms an advanced infestation.'
+    answer: 'Two checks confirm it. First, look for fine stippling, meaning tiny pale dots across the leaf surface where mites have pierced individual cells. Second, hold a sheet of white paper under a leaf and tap the leaf sharply: mites fall off and appear as slow-moving specks the size of a grain of pepper. Visible webbing between stems and leaf joints confirms an advanced infestation.'
   - question: 'How long does it take to get rid of spider mites?'
     answer: 'At least three weeks of consistent treatment. The life cycle runs about 7 to 14 days depending on temperature, and eggs are unaffected by most sprays, so you must treat every five days across three weeks to catch each generation as it hatches. Stopping when the plant looks better is the most common reason infestations return.'
   - question: 'Does misting prevent spider mites?'
-    answer: 'It helps slightly but is not a treatment. Spider mites thrive in dry air, so raising ambient humidity above 50% genuinely makes conditions less favourable — but misting only lifts humidity for a few minutes at a time. A humidifier is far more effective. Once mites are established, humidity alone will not clear them.'
+    answer: 'It helps slightly but is not a treatment. Spider mites thrive in dry air, so raising ambient humidity above 50% genuinely makes conditions less favourable, but misting only lifts humidity for a few minutes at a time. A humidifier is far more effective. Once mites are established, humidity alone will not clear them.'
   - question: 'Should I throw the plant away?'
     answer: 'Not usually. Most infestations are treatable with three weeks of consistent effort. Consider discarding only when the plant is severely damaged, heavily webbed across most of its foliage, and sitting near a large collection you would risk infecting. If you do discard it, bag the plant before carrying it through the house so mites do not brush off onto others.'
 featured: false
 ---
 
-Spider mites are the most damaging common houseplant pest, and the most easily missed. They are about 0.4 mm long — you can see them, but only if you know to look. By the time webbing is obvious, the population is in the thousands.
+Spider mites are the most damaging common houseplant pest, and the most easily missed. They are about 0.4 mm long, so you can see them, but only if you know to look. By the time webbing is obvious, the population is in the thousands.
 
 ## Confirming it
 
@@ -54,7 +54,7 @@ Spider mites are the most damaging common houseplant pest, and the most easily m
 
 **The paper test.** The definitive check. Hold a sheet of white paper under a leaf and tap the leaf sharply two or three times. Mites fall off and show up as specks the size of ground pepper, moving slowly across the paper. Dust does not move.
 
-**The webbing.** Fine silk strands where the leaf meets the stem, between leaves, or across new growth. This means an advanced infestation — act immediately.
+**The webbing.** Fine silk strands where the leaf meets the stem, between leaves, or across new growth. This means an advanced infestation, so act immediately.
 
 **Where to look:** undersides of leaves, leaf joints, and new growth. Use your phone camera zoomed in if your eyes will not resolve them.
 
@@ -62,7 +62,7 @@ Spider mites are the most damaging common houseplant pest, and the most easily m
 
 Before you treat anything, **move the plant away from every other plant.** Spider mites travel on air currents, on your sleeves, and along touching leaves. A single infested plant in a collection becomes five infested plants in a fortnight.
 
-Check the neighbours it was touching too — they are probably already carrying mites.
+Check the neighbours it was touching too. They are probably already carrying mites.
 
 ## The treatment
 
@@ -78,13 +78,13 @@ For a large plant, wipe every leaf on both sides with a damp cloth.
 
 Choose one:
 
-- **Insecticidal soap** — effective, gentle, widely available. Coats and desiccates soft-bodied mites on contact.
-- **Neem oil** — also disrupts feeding and reproduction, with some residual effect. Mix per the label with a drop of dish soap as an emulsifier.
-- **Rubbing alcohol solution** — one part 70% isopropyl to three parts water. Cheap and effective. Test on one leaf first, as some plants react.
+- **Insecticidal soap**: effective, gentle, widely available. Coats and desiccates soft-bodied mites on contact.
+- **Neem oil**: also disrupts feeding and reproduction, with some residual effect. Mix per the label with a drop of dish soap as an emulsifier.
+- **Rubbing alcohol solution**: one part 70% isopropyl to three parts water. Cheap and effective. Test on one leaf first, as some plants react.
 
 Spray until the leaves are dripping, **especially the undersides**, plus the stems and the soil surface. Anything you miss is where the survivors will be.
 
-**Repeat every five days for three weeks.** This is the part that matters. Eggs are unaffected by these sprays, and they hatch every few days — the schedule is designed to kill each new generation before it can lay.
+**Repeat every five days for three weeks.** This is the part that matters. Eggs are unaffected by these sprays, and they hatch every few days, so the schedule is designed to kill each new generation before it can lay.
 
 Spray in the evening or out of direct sun; oil and soap on sunlit leaves can scorch them.
 
@@ -95,7 +95,7 @@ Spider mites explode in **hot, dry air**, which is exactly what a heated home in
 - Raise humidity above 50% with a humidifier
 - Move the plant away from radiators and heating vents
 - Space plants so their leaves do not touch
-- Wipe leaves monthly — dust is shelter
+- Wipe leaves monthly, since dust is shelter
 
 ## What not to bother with
 
@@ -110,4 +110,4 @@ Spider mites explode in **hot, dry air**, which is exactly what a heated home in
 - **Keep humidity up in winter.** The single biggest environmental lever.
 - **Check plants coming in from outdoors** in autumn especially carefully.
 
-If leaves are yellowing and you are not sure whether mites are the cause, work through the other possibilities in [why plant leaves turn yellow](/problems/yellow-leaves-on-houseplants/) — stippled yellowing looks quite different from the even yellowing of overwatering.
+If leaves are yellowing and you are not sure whether mites are the cause, work through the other possibilities in [why plant leaves turn yellow](/problems/yellow-leaves-on-houseplants/). Stippled yellowing looks quite different from the even yellowing of overwatering.

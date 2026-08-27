@@ -11,12 +11,12 @@ keywords:
   - how to make monstera split
 symptom: 'Solid leaves with no holes or splits'
 severity: low
-quickAnswer: 'Fenestration needs bright indirect light, plant maturity and something to climb. Move it within 3–5 ft of a bright window and give it a moss pole.'
+quickAnswer: 'Fenestration needs bright indirect light, plant maturity and something to climb. Move it within 3-5 ft of a bright window and give it a moss pole.'
 causes:
   - name: 'Not enough light'
     likelihood: 'most likely'
     tell: 'The plant is more than 8 ft from a window or in a room where you would need a lamp at midday. New leaves are the same size or smaller than old ones.'
-    fix: 'Move to within 3–6 ft of an east or south-facing window, filtered through a sheer curtain if the sun is direct. Fenestration follows within a few new leaves.'
+    fix: 'Move to within 3-6 ft of an east or south-facing window, filtered through a sheer curtain if the sun is direct. Fenestration follows within a few new leaves.'
   - name: 'The plant is still juvenile'
     likelihood: 'most likely'
     tell: 'A small plant, bought within the last year or two, with solid heart-shaped leaves under about 8 inches across.'
@@ -37,17 +37,17 @@ affectedPlants:
   - monstera-deliciosa
 faqs:
   - question: 'At what age do monstera leaves start splitting?'
-    answer: 'Typically when the plant is one to three years old and the leaves reach roughly 8 to 10 inches across. Age matters less than size and light — a well-lit monstera fenestrates sooner than a dim one of the same age. The first splits usually appear as shallow notches at the leaf margin before developing into full splits and then interior holes on later leaves.'
+    answer: 'Typically when the plant is one to three years old and the leaves reach roughly 8 to 10 inches across. Age matters less than size and light, and a well-lit monstera fenestrates sooner than a dim one of the same age. The first splits usually appear as shallow notches at the leaf margin before developing into full splits and then interior holes on later leaves.'
   - question: 'Will old solid leaves develop holes later?'
     answer: 'No. Each leaf emerges with its fenestration pattern already determined, and it does not change afterwards. Improving light and support affects only the leaves that have yet to unfurl. Judge whether your fix worked by watching new growth, not by waiting for existing leaves to change.'
   - question: 'Does a moss pole really make a difference?'
     answer: 'Yes, and more than most people expect. Monsteras are hemiepiphytes that climb tree trunks in the wild, producing progressively larger and more fenestrated leaves the higher they get. Giving the aerial roots something to grip triggers that mature growth pattern. A monstera on a pole typically produces noticeably bigger, more split leaves within a season compared with one left to sprawl.'
   - question: 'Why does my monstera have splits but no holes?'
-    answer: 'That is the normal progression. Monsteras develop marginal splits first, then interior holes as the plant matures further. Continued bright light, climbing support and regular feeding through the growing season will get you there — the holes typically appear on leaves produced after the plant has been fenestrating reliably for a while.'
+    answer: 'That is the normal progression. Monsteras develop marginal splits first, then interior holes as the plant matures further. Continued bright light, climbing support and regular feeding through the growing season will get you there. The holes typically appear on leaves produced after the plant has been fenestrating reliably for a while.'
 featured: false
 ---
 
-Solid, heart-shaped monstera leaves are disappointing when you bought the plant for the splits. The good news is that the causes are few and all of them are fixable — or resolve on their own with time.
+Solid, heart-shaped monstera leaves are disappointing when you bought the plant for the splits. The good news is that the causes are few and all of them are fixable, or resolve on their own with time.
 
 ## What fenestration actually is
 
@@ -66,7 +66,7 @@ The most common reason by a distance. Producing large fenestrated leaves is ener
 
 **How to tell:** the plant is more than about 8 ft from a window, or in a spot where you would need a lamp to read comfortably at midday. New leaves are the same size as, or smaller than, the old ones.
 
-**The fix:** move it to within 3–6 ft of an east or south-facing window. If the sun is directly on the leaves at midday, filter it with a sheer curtain — direct sun through glass scorches monstera leaves.
+**The fix:** move it to within 3-6 ft of an east or south-facing window. If the sun is directly on the leaves at midday, filter it with a sheer curtain, because direct sun through glass scorches monstera leaves.
 
 Expect a few new leaves before you see a change; the plant needs to build reserves first.
 
@@ -76,11 +76,11 @@ Monsteras go through a juvenile phase producing solid, heart-shaped leaves that 
 
 **How to tell:** small plant, bought within the last year or two, leaves under about 8 inches across.
 
-**The fix:** patience, plus good light — which speeds the transition substantially. The first splits usually appear as shallow notches at the leaf edge, developing into full splits on later leaves, and interior holes later still.
+**The fix:** patience, plus good light, which speeds the transition substantially. The first splits usually appear as shallow notches at the leaf edge, developing into full splits on later leaves, and interior holes later still.
 
 ## Cause 3: nothing to climb
 
-This is the one most people miss. Monsteras are **hemiepiphytes** — they germinate on the forest floor, find a tree, and climb it, producing progressively larger and more fenestrated leaves as they ascend.
+This is the one most people miss. Monsteras are **hemiepiphytes**. They germinate on the forest floor, find a tree, and climb it, producing progressively larger and more fenestrated leaves as they ascend.
 
 A monstera sprawling sideways out of a pot on a shelf is, as far as the plant is concerned, still on the forest floor.
 
@@ -89,7 +89,7 @@ A monstera sprawling sideways out of a pot on a shelf is, as far as the plant is
 **The fix:** give it a **moss pole, coir pole or wooden plank**.
 
 1. Insert the pole at the back of the pot, pushing it firmly to the base.
-2. Tie the main stem to it loosely with soft plant ties — snug enough to hold, loose enough not to constrict.
+2. Tie the main stem to it loosely with soft plant ties, snug enough to hold but loose enough not to constrict.
 3. Keep a moss pole lightly damp so aerial roots grip and grow into it.
 4. Continue tying as it grows upward.
 
@@ -101,14 +101,14 @@ A plant that has run out of root space and nutrients cannot support large leaves
 
 **How to tell:** same pot for three or more years, roots circling out of the drainage holes, and new leaves noticeably smaller than older ones.
 
-**The fix:** repot one size up in spring into a chunky aroid mix — roughly 40% potting soil, 30% orchid bark, 20% perlite, 10% coco coir. Feed monthly at half strength from March through September.
+**The fix:** repot one size up in spring into a chunky aroid mix: roughly 40% potting soil, 30% orchid bark, 20% perlite, 10% coco coir. Feed monthly at half strength from March through September.
 
 ## Cause 5: it is not a Monstera deliciosa
 
 Worth ruling out, because plant labelling is inconsistent.
 
 - **Rhaphidophora tetrasperma**, sold as "mini monstera" or "monstera minima", is a different genus. It does fenestrate, but the leaves stay much smaller.
-- **Monstera adansonii** produces oval leaves with interior holes but no marginal splits — that is its normal appearance, not a problem.
+- **Monstera adansonii** produces oval leaves with interior holes but no marginal splits. That is its normal appearance, not a problem.
 - **Philodendron hederaceum**, frequently confused with a young monstera, has heart-shaped leaves and **never** fenestrates at any age.
 
 If your plant has thin, soft, perfectly heart-shaped leaves and trails rather than climbs, check whether you actually have a [heartleaf philodendron](/plant-care/heartleaf-philodendron/).

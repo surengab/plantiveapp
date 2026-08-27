@@ -1,6 +1,6 @@
 ---
 title: 'Why Are My Plant Leaves Turning Yellow? 7 Causes and Fixes'
-description: 'Yellow leaves on a houseplant have seven likely causes. Work through them in order of probability — starting with the soil test that settles it in ten seconds.'
+description: 'Yellow leaves on a houseplant have seven likely causes. Work through them in order of probability, starting with the soil test that settles it in ten seconds.'
 heading: 'Why Are My Plant Leaves Turning Yellow?'
 publishDate: 2026-07-10
 updatedDate: 2026-08-18
@@ -40,7 +40,7 @@ causes:
   - name: 'Shock from a recent change'
     likelihood: 'rare'
     tell: 'Yellowing began within two weeks of repotting, a move, or a sharp temperature change.'
-    fix: 'Keep conditions stable and wait. Do not repot again or change the routine — most plants adjust within a month.'
+    fix: 'Keep conditions stable and wait. Do not repot again or change the routine. Most plants adjust within a month.'
 affectedPlants:
   - pothos
   - monstera-deliciosa
@@ -59,7 +59,7 @@ faqs:
 featured: true
 ---
 
-Yellow leaves are the most common houseplant complaint there is, and the frustrating part is that opposite problems produce nearly identical symptoms. Work through the causes in order — they are ranked by how often each actually turns out to be the answer.
+Yellow leaves are the most common houseplant complaint there is, and the frustrating part is that opposite problems produce nearly identical symptoms. Work through the causes in order. They are ranked by how often each actually turns out to be the answer.
 
 ## Start here: the soil test
 
@@ -77,7 +77,7 @@ The position of the yellowing narrows things down considerably:
 
 | Where | Most likely cause |
 | --- | --- |
-| Oldest, lowest leaves only, one at a time | Natural ageing — normal |
+| Oldest, lowest leaves only, one at a time | Natural ageing, normal |
 | Lower and inner leaves, several at once | Overwatering |
 | Whole plant evenly, pale and washed out | Nutrient deficiency or low light |
 | Between the veins, veins stay green | Iron or magnesium deficiency |
@@ -86,7 +86,7 @@ The position of the yellowing narrows things down considerably:
 
 ## Overwatering, the usual culprit
 
-More houseplants are killed by kindness than neglect. Constantly wet soil drives out the air that roots need, they suffocate and begin to rot, and a damaged root system cannot move water or nutrients — so the leaves yellow.
+More houseplants are killed by kindness than neglect. Constantly wet soil drives out the air that roots need, they suffocate and begin to rot, and a damaged root system cannot move water or nutrients, so the leaves yellow.
 
 **Confirming it:** soil damp several days after watering, yellowing on lower and inner leaves, leaves soft rather than crisp, sometimes a sour smell.
 
@@ -94,7 +94,7 @@ More houseplants are killed by kindness than neglect. Constantly wet soil drives
 
 1. Stop watering. Let the top two inches dry completely.
 2. Check the pot has drainage holes and that they are not blocked.
-3. Empty the saucer or cachepot — never let the pot stand in water.
+3. Empty the saucer or cachepot, and never let the pot stand in water.
 4. If the soil is still wet after a week, unpot and check the roots.
 5. Repot into a chunkier mix with added perlite or bark if the soil is dense.
 
@@ -106,7 +106,7 @@ Less common indoors but very common in plants that have become root-bound, where
 
 **Confirming it:** soil bone dry and pulled away from the pot edge, leaves yellowing then going crisp and papery, whole plant possibly drooping.
 
-**Fixing it:** water thoroughly until it drains from the bottom. If water runs straight through in seconds, bottom-water instead — stand the pot in a tray of water for 20 minutes and let it wick up until the surface darkens.
+**Fixing it:** water thoroughly until it drains from the bottom. If water runs straight through in seconds, bottom-water instead: stand the pot in a tray of water for 20 minutes and let it wick up until the surface darkens.
 
 ## When it is simply age
 
@@ -122,7 +122,7 @@ Suspect this in a plant that has been in the same soil for two or more years.
 - **Yellow between green veins** on older leaves → magnesium deficiency
 - **Uniform pale yellow-green** across the whole plant → nitrogen deficiency
 
-The fix for all three is the same at the household level: feed with a balanced liquid fertiliser at half strength through the growing season, and refresh the soil. Do not feed a plant you suspect of root rot — damaged roots cannot take up nutrients and the added salts make things worse.
+The fix for all three is the same at the household level: feed with a balanced liquid fertiliser at half strength through the growing season, and refresh the soil. Do not feed a plant you suspect of root rot, because damaged roots cannot take up nutrients and the added salts make things worse.
 
 ## Checking for pests
 
@@ -137,4 +137,4 @@ Isolate any affected plant from its neighbours, shower it in the sink, and treat
 
 ## After you fix it
 
-Judge your diagnosis by **new growth**, not by the old leaves. Yellow leaves will not turn green again — but if the fix is right, the leaves that emerge over the following weeks will come in healthy and stay that way.
+Judge your diagnosis by **new growth**, not by the old leaves. Yellow leaves will not turn green again, but if the fix is right, the leaves that emerge over the following weeks will come in healthy and stay that way.

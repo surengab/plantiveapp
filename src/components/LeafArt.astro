@@ -5,7 +5,7 @@
  * shipping a single photograph.
  *
  * Shapes are composed from primitives (ellipses, rotated copies) rather than
- * hand-authored bezier paths — easier to reason about and they render cleanly
+ * hand-authored bezier paths, easier to reason about and they render cleanly
  * at every size.
  */
 interface Props {
@@ -27,7 +27,7 @@ const { silhouette, hue = 140, class: className = '' } = Astro.props;
 const stem = (d: string, w = 3) =>
   `<path d="${d}" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round"/>`;
 
-/** Lobes mirrored either side of a central midrib — the split-leaf look. */
+/** Lobes mirrored either side of a central midrib, the split-leaf look. */
 const lobes = (rows: [cy: number, dx: number, rx: number, ry: number, rot: number][]) =>
   rows
     .flatMap(([cy, dx, rx, ry, rot]) => [
@@ -55,7 +55,7 @@ const blades = (angles: number[], baseY: number, tipY: number, halfWidth: number
 
 /**
  * Monstera: one broad leaf with slits masked out of the margins, which is how
- * fenestration actually looks — rather than separate lobes on a stalk.
+ * fenestration actually looks, rather than separate lobes on a stalk.
  */
 const monsteraCuts = [
   [30, -26],
@@ -74,7 +74,7 @@ const shapes: Record<Props['silhouette'], string> = {
     `<ellipse cx="50" cy="46" rx="35" ry="40" fill="#fff"/>` +
     monsteraCuts +
     // Painted back over the cuts so the midrib stays continuous, as it does on
-    // a real leaf — otherwise the slits sever the blade into floating bands.
+    // a real leaf; otherwise the slits sever the blade into floating bands.
     `<ellipse cx="50" cy="46" rx="5" ry="40" fill="#fff"/>` +
     `</mask></defs>` +
     stem('M50 99V80') +

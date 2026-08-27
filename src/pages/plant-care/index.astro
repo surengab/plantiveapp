@@ -27,7 +27,7 @@ const faqs = [
   {
     question: 'How often should I water my houseplants?',
     answer:
-      'There is no single answer — it depends on the species, pot size and material, light, temperature and season. The same plant may need water weekly in July and every three weeks in January. Check the soil on a regular schedule rather than watering on one, and use each species guide for the depth of dryness that particular plant wants.',
+      'There is no single answer. It depends on the species, pot size and material, light, temperature and season. The same plant may need water weekly in July and every three weeks in January. Check the soil on a regular schedule rather than watering on one, and use each species guide for the depth of dryness that particular plant wants.',
   },
   {
     question: 'Which houseplants are easiest for a complete beginner?',
@@ -37,12 +37,12 @@ const faqs = [
   {
     question: 'Which of these plants are safe for cats and dogs?',
     answer:
-      'Spider plants, calatheas and prayer plants, Phalaenopsis orchids and echeveria succulents are all non-toxic. Most of the popular aroids — pothos, monstera, philodendron, peace lily and ZZ plant — contain calcium oxalate crystals that cause painful mouth irritation in pets, as do aloe vera and rubber plants.',
+      'Spider plants, calatheas and prayer plants, Phalaenopsis orchids and echeveria succulents are all non-toxic. Most of the popular aroids (pothos, monstera, philodendron, peace lily and ZZ plant) contain calcium oxalate crystals that cause painful mouth irritation in pets, as do aloe vera and rubber plants.',
   },
   {
     question: 'Why do my plants keep dying?',
     answer:
-      'Overwatering and insufficient light account for the large majority of houseplant deaths. Both are easy to correct once identified: check soil moisture before watering rather than following a schedule, and be honest about how much light a spot genuinely gets — if you could not read a book there at midday without a lamp, it is a low-light position.',
+      'Overwatering and insufficient light account for the large majority of houseplant deaths. Both are easy to correct once identified: check soil moisture before watering rather than following a schedule, and be honest about how much light a spot genuinely gets. If you could not read a book there at midday without a lamp, it is a low-light position.',
   },
 ];
 
@@ -62,7 +62,7 @@ const schema = [
     <Breadcrumbs trail={trail} />
     <h1>Plant Care Guides</h1>
     <p class="lede">
-      Species-specific care for the houseplants people actually own — how often to water, how much
+      Species-specific care for the houseplants people actually own: how often to water, how much
       light they really need, and the problems each one is prone to before they start.
     </p>
 
@@ -76,6 +76,11 @@ const schema = [
 
   <section class="section-tight" id="all">
     <div class="wrap">
+      <h2>Every plant care guide</h2>
+      <p class="sub">
+        Watering intervals, light needs, soil, propagation and the problems each species is prone
+        to. Pick the plant you own.
+      </p>
       <div class="grid grid-3">
         {plants.map((plant) => <PlantCard plant={plant} />)}
       </div>
@@ -145,7 +150,7 @@ const schema = [
     <CtaBand
       source="plant-care-hub"
       heading="Not sure which of these you have?"
-      body="Scan it with Plantive and get the species name plus its care schedule in seconds — free on iPhone."
+      body="Scan it with Plantive and get the species name plus its care schedule in seconds, free on iPhone."
     />
     <div class="wrap-prose faq-wrap">
       <FaqSection faqs={faqs} heading="Plant care questions" />
