@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600" role="img" aria-labelledby="title desc">
+  <title id="title">Fungus gnats: two places to act</title>
+  <desc id="desc">An adult above the soil beside a yellow sticky trap, and a pale larva below the soil. Monitor adults and manage the breeding source.</desc>
+  <rect width="900" height="600" rx="24" fill="#f4f5ed"/>
+  <g font-family="Arial, sans-serif" fill="#183b30">
+    <text x="44" y="64" font-size="36" font-weight="700">Fungus gnats: two places to act</text>
+    <text x="44" y="105" font-size="25">Monitor the flies. Address the soil.</text>
+    <rect x="32" y="136" width="836" height="206" rx="16" fill="#e3eddc"/>
+    <text x="65" y="186" font-size="30" font-weight="700">ADULTS</text>
+    <text x="65" y="233" font-size="28">Yellow sticky traps</text>
+    <text x="65" y="274" font-size="26">help track activity</text>
+    <rect x="734" y="163" width="90" height="130" rx="8" fill="#f4cd4c" stroke="#b68d22" stroke-width="3"/>
+    <path d="M779 293v49" stroke="#88654b" stroke-width="7"/>
+    <g transform="translate(590 245)" fill="none" stroke="#263a32" stroke-width="4" stroke-linecap="round">
+      <path d="M-5 -8C-82 -82 -95 -13 -13 6M5 -8C82 -82 95 -13 13 6" fill="#ffffff" fill-opacity=".7"/>
+      <path d="M-8 0L-49 -21L-63 -14M-9 10L-57 16L-67 34M-8 20L-32 49L-49 60M8 0L49 -21L63 -14M9 10L57 16L67 34M8 20L32 49L49 60"/>
+      <ellipse cx="0" cy="10" rx="10" ry="30" fill="#263a32"/>
+      <circle cy="-25" r="10" fill="#263a32"/>
+      <path d="M-5 -32L-24 -59M5 -32L24 -59"/>
+    </g>
+    <rect x="32" y="354" width="836" height="207" rx="16" fill="#dccbb6"/>
+    <text x="65" y="403" font-size="30" font-weight="700">LARVAE IN SOIL</text>
+    <text x="65" y="450" font-size="28">Manage moisture</text>
+    <text x="65" y="491" font-size="26">Use a labeled larval</text>
+    <text x="65" y="528" font-size="26">treatment if needed</text>
+    <path d="M548 490C565 433 613 425 646 458S710 510 741 458" fill="none" stroke="#9d8a70" stroke-width="30" stroke-linecap="round"/>
+    <path d="M548 490C565 433 613 425 646 458S710 510 741 458" fill="none" stroke="#f8f5df" stroke-width="22" stroke-linecap="round"/>
+    <ellipse cx="742" cy="457" rx="15" ry="12" transform="rotate(-35 742 457)" fill="#443b2d"/>
+    <text x="864" y="586" font-size="19" text-anchor="end" fill="#586354">Plantive · Illustration, not to scale</text>
+  </g>
+</svg>

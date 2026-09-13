@@ -1,0 +1,22 @@
+---
+import PhotoCredit from './PhotoCredit.astro';
+import photos from '../data/plant-photos.json';
+
+interface Props {
+  image: { src: string; alt: string; caption: string; creditSlug?: string };
+}
+const { image } = Astro.props;
+const credit = image.creditSlug ? photos[image.creditSlug as keyof typeof photos] : undefined;
+---
+
+<figure class="article-image">
+  <img src={image.src} alt={image.alt} width="900" height="600" decoding="async" />
+  <figcaption>{image.caption}</figcaption>
+  {credit && <PhotoCredit {...credit} />}
+</figure>
+
+<style>
+  .article-image { margin: 1.5rem 0 2rem; }
+  img { width: 100%; height: auto; border-radius: var(--radius); }
+  figcaption { margin-top: .7rem; color: var(--text-muted); font-size: .88rem; line-height: 1.5; }
+</style>

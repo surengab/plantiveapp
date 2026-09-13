@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import CtaBand from '../../components/CtaBand.astro';
+import ArticleImage from '../../components/ArticleImage.astro';
 import { breadcrumbs, article, faqPage } from '../../lib/schema';
 
 export async function getStaticPaths() {
@@ -37,6 +38,7 @@ const schema = [
     updatedDate: d.updatedDate,
     section: d.category,
     keywords: d.keywords,
+    image: d.image?.src,
   }),
   faqPage(d.faqs, url),
 ].filter(Boolean);
@@ -54,6 +56,10 @@ const h2s = headings.filter((h) => h.depth === 2);
   type="article"
   publishDate={d.publishDate}
   updatedDate={d.updatedDate}
+  image={d.image?.src}
+  imageAlt={d.image?.alt}
+  imageWidth={d.image ? 900 : undefined}
+  imageHeight={d.image ? 600 : undefined}
   schema={schema}
 >
   <article>
@@ -63,6 +69,7 @@ const h2s = headings.filter((h) => h.depth === 2);
       <h1>{d.heading ?? d.title}</h1>
       <p class="lede">{d.excerpt}</p>
       <p class="byline">
+        By <a href="/about/">Plantive</a> ·
         Published {fmt(d.publishDate)}
         {d.updatedDate && ` · Updated ${fmt(d.updatedDate)}`}
         {d.readingTime && ` · ${d.readingTime} min read`}
@@ -71,6 +78,7 @@ const h2s = headings.filter((h) => h.depth === 2);
 
     <div class="wrap body-grid">
       <div class="prose">
+        {d.image && <ArticleImage image={d.image} />}
         <Content />
       </div>
 

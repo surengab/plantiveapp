@@ -94,6 +94,8 @@ const h2s = headings.filter((h) => h.depth === 2);
   updatedDate={d.updatedDate}
   image={photo ? `/photos/${plant.id}-900.webp` : undefined}
   imageAlt={photo?.alt}
+  imageWidth={photo ? 900 : undefined}
+  imageHeight={photo ? 600 : undefined}
   schema={schema}
 >
   <article>

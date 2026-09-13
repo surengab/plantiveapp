@@ -10,6 +10,13 @@ const seo = {
   heading: z.string().optional(),
   publishDate: z.coerce.date(),
   updatedDate: z.coerce.date().optional(),
+  image: z.object({
+    src: z.string(),
+    alt: z.string(),
+    caption: z.string(),
+    /** Reuse the existing licensed photo attribution. */
+    creditSlug: z.string().optional(),
+  }).optional(),
   /** Extra terms this page targets; rendered into the related-search block. */
   keywords: z.array(z.string()).default([]),
   draft: z.boolean().default(false),
@@ -108,6 +115,7 @@ const problems = defineCollection({
       )
       .default([]),
     affectedPlants: z.array(z.string()).default([]),
+    related: z.array(z.string()).default([]),
     faqs: faqSchema,
     featured: z.boolean().default(false),
   }),

@@ -1,116 +1,101 @@
 ---
-title: 'How to Get Rid of Fungus Gnats in Houseplants for Good'
-description: 'Fungus gnats breed in damp topsoil. Kill the larvae, trap the adults and dry the surface: the three-part method that actually breaks the cycle in two weeks.'
-heading: 'How to Get Rid of Fungus Gnats'
+title: 'How to Get Rid of Fungus Gnats in Houseplants'
+description: 'Tiny black flies in plant soil? Identify fungus gnats, monitor adults with sticky traps and tackle larvae in damp potting mix. Includes a treatment checklist.'
+heading: 'How to Get Rid of Fungus Gnats in Houseplants'
 publishDate: 2026-07-21
-updatedDate: 2026-08-19
+updatedDate: 2026-09-13
+image:
+  src: /illustrations/fungus-gnat-control.webp
+  alt: 'Diagram showing adult fungus gnats above soil and larvae in soil, with different controls for each stage'
+  caption: 'Illustration, not to scale: sticky traps monitor flying adults; moisture management and an appropriate larval treatment address the soil stage.'
 keywords:
-  - fungus gnats houseplants
   - how to get rid of fungus gnats
-  - little black flies in plant soil
-  - soil gnats treatment
-symptom: 'Small black flies around the soil'
+  - fungus gnats in houseplants
+  - tiny black flies in plant soil
+  - fungus gnat larvae
+symptom: 'Tiny black flies around plant soil'
 severity: low
-quickAnswer: 'Fungus gnats breed in wet topsoil. Let the top 2 inches dry between waterings, add yellow sticky traps for the adults, and treat the soil with BTI to kill the larvae.'
+quickAnswer: 'Confirm the flies are fungus gnats, then address the damp potting mix where larvae develop. Use yellow sticky traps to monitor adults. If needed, choose a larval treatment labeled for fungus gnats on indoor potted plants, such as an appropriate Bti product.'
 causes:
-  - name: 'Consistently damp topsoil'
-    likelihood: 'most likely'
-    tell: 'The surface of the soil is always dark and moist. Gnats appear within weeks of a change in watering habits, or in winter when plants dry more slowly.'
-    fix: 'Let the top 2 inches dry fully between waterings. Larvae cannot survive in dry soil, and this alone breaks most infestations.'
-  - name: 'Contaminated bagged potting mix'
+  - name: 'Potting mix staying damp'
     likelihood: 'common'
-    tell: 'Gnats appeared within a week or two of repotting, or of bringing a new plant home.'
-    fix: 'Isolate new plants for two weeks. Store opened bags of soil sealed and dry, since gnats lay eggs in moist stored mix.'
-  - name: 'Organic debris on the soil surface'
+    tell: 'Flies appear when you disturb a pot and its surface stays moist between waterings.'
+    fix: 'Check drainage, empty standing water and adjust watering to the species. Let the surface dry where the plant tolerates it.'
+  - name: 'An overlooked breeding source'
     likelihood: 'common'
-    tell: 'Fallen leaves, spent flowers or decomposing mulch sitting on the soil. Larvae feed on decaying organic matter.'
-    fix: 'Clear all dead material off the soil surface and keep it clear.'
-  - name: 'Bottom-watering never drying the surface'
-    likelihood: 'less common'
-    tell: 'You bottom-water, so the top stays dry, yet gnats persist because the pot is never allowed to dry out overall.'
-    fix: 'Extend the interval between waterings and add a layer of sand or grit on top as a physical barrier.'
+    tell: 'Adult catches keep rising despite treating one pot.'
+    fix: 'Check nearby plants, newly purchased pots, damp stored potting mix and fallen plant debris. Label traps so you can compare pots.'
 affectedPlants:
   - peace-lily
   - calathea
   - pothos
   - heartleaf-philodendron
+related:
+  - overwatering-vs-underwatering
+  - root-rot
+  - drooping-wilting-plant
 faqs:
-  - question: 'Are fungus gnats harmful to plants?'
-    answer: 'The adults are harmless and simply annoying. The larvae feed mostly on decaying organic matter in the soil, but in heavy infestations they also chew fine root hairs, which stunts growth and hits seedlings and cuttings hardest. Established plants rarely suffer real damage. The bigger issue is that a gnat problem is usually telling you the soil is staying too wet.'
+  - question: 'Are fungus gnats harmful to houseplants?'
+    answer: 'Adults are mainly a nuisance. Larvae live in the growing medium and can damage roots, with seedlings and young cuttings especially vulnerable.'
   - question: 'How long does it take to get rid of fungus gnats?'
-    answer: 'About two to four weeks if you treat both stages. The life cycle runs roughly 17 to 21 days from egg to adult, so you have to keep the pressure on through at least one full generation. Sticky traps catch adults while drying the soil and applying BTI kills the larvae, and doing only one of the two is why infestations drag on for months.'
-  - question: 'Does cinnamon or hydrogen peroxide kill fungus gnats?'
-    answer: 'Both help a little, neither is a complete answer. A 1:4 solution of 3% hydrogen peroxide to water kills larvae on contact when you drench the soil, but it breaks down within minutes so it does not stop the next hatch. Cinnamon has mild antifungal properties that reduce the fungal growth larvae feed on. Use them alongside drying the soil and BTI, not instead.'
-  - question: 'Will fungus gnats go away on their own?'
-    answer: 'Only if the conditions that created them change. As long as the topsoil stays damp, the population sustains itself indefinitely, since each female lays up to 200 eggs. Letting the soil surface dry between waterings is usually enough to collapse the cycle on its own, but it has to be sustained for several weeks.'
-featured: false
+    answer: 'Allow several weeks for monitoring and control. Different life stages can already be present, so a few trap catches after treatment do not by themselves show that it failed.'
+  - question: 'Do yellow sticky traps get rid of fungus gnats?'
+    answer: 'They catch adults and help locate active pots. They do not treat larvae in the potting mix, so use them alongside management of the breeding source.'
+  - question: 'Should I use hydrogen peroxide or cinnamon for fungus gnats?'
+    answer: 'This guide does not recommend a homemade drench or cinnamon recipe. Start with moisture management and monitoring; if a treatment is needed, use a product labeled for the pest and indoor use.'
+featured: true
 ---
 
-Fungus gnats are more nuisance than threat, but they multiply fast and they are stubborn if you only treat the flies you can see. The adults you swat are perhaps 10% of the population. The rest are eggs and larvae in the top inch of soil.
+Tiny black flies around a houseplant often point to fungus gnats, but identify the source before treating every pot. A fly around a fruit bowl or drain may need a different solution.
 
-Break the cycle at both stages and they are gone in two to four weeks.
+## What do fungus gnats and their larvae look like?
 
-## Why they are there
+Adults are small, dark, delicate flies with long legs and antennae. They often rest or move near potting mix. Larvae are pale or translucent, wormlike, and have a dark head. The [UC Integrated Pest Management guide](https://ipm.ucanr.edu/home-and-landscape/fungus-gnats/) includes reference photographs for comparing an actual insect.
 
-Fungus gnat larvae eat fungi and decaying organic matter in damp soil. They need **moisture in the top inch or two** to survive. A female lays up to 200 eggs, which hatch in about three days; larvae feed for two weeks, pupate, and emerge as adults that live about a week and immediately lay again.
+Use a close, focused photo of a trapped adult if you need help identifying it. The illustration above explains where to act; it is not a substitute for a specimen photograph.
 
-That roughly three-week cycle is why a problem seems to vanish and return: you killed the adults, and the next generation hatched.
+## A checklist for getting rid of fungus gnats
 
-The presence of gnats is itself diagnostic, because it usually means the soil is staying wetter than the plant needs.
+### 1. Find the active pots
 
-## The three-part fix
+Put a dated yellow sticky card close to each suspect pot, following the trap instructions. Give each pot a name or number. Comparing catches is more useful than counting every fly in the room.
 
-Do all three at once. Any one alone drags on for months.
+Check new plants and nearby pots too. Remove fallen leaves and other decaying material from the surface. Keep unused potting mix covered and dry.
 
-### 1. Dry the surface
+### 2. Correct persistent moisture
 
-This is the most important step, and often sufficient on its own.
+Check for water trapped in a decorative outer pot and blocked drainage holes. Adjust watering to the species and the actual moisture in the pot. Surface drying can reduce favorable breeding conditions, but do not force a moisture-loving plant into a severe wilt.
 
-Let the **top two inches of soil dry completely** between waterings. Larvae desiccate and die; eggs fail to hatch.
+If you are unsure whether the plant is too wet or too dry, use the [overwatering versus underwatering guide](/problems/overwatering-vs-underwatering/). A gnat sighting alone does not diagnose [root rot](/problems/root-rot/).
 
-Practically:
+### 3. Treat larvae when needed
 
-- Extend the interval between waterings for every affected plant
-- Switch to bottom-watering so the surface stays dry while roots still drink
-- Clear fallen leaves and spent flowers off the soil
-- Add a half-inch layer of **coarse sand, fine grit or horticultural pumice** on top, which dries almost instantly and is a physical barrier against egg-laying
+An appropriate product containing **Bacillus thuringiensis subsp. israelensis (Bti)** is one option for larvae. Products and formulations differ: check that the label covers fungus gnats and indoor potted plants, and follow its dose and repeat-treatment directions. Do not substitute a generic mosquito-product recipe.
 
-For plants that genuinely need consistent moisture, like calatheas and ferns, the sand-topping approach does most of the work.
+Beneficial nematodes may be another option where suitable products are available. [Colorado State University Extension](https://extension.colostate.edu/resource/fungus-gnats-as-houseplant-and-indoor-pests/) explains larval controls and why trapping adults alone leaves the soil stage untreated.
 
-### 2. Trap the adults
+### 4. Track the trend
 
-**Yellow sticky traps** laid flat on the soil surface or stuck on short skewers. Adults are strongly attracted to yellow and land on the traps rather than laying more eggs.
+Use the same trap placement and observation interval so the counts are comparable. Record this for each affected pot:
 
-This does not solve the problem. It suppresses the breeding population while the soil dries, and gives you a clear read on whether numbers are falling.
+| Record | Your note |
+| --- | --- |
+| Pot and date | For example, living-room pothos, September 13 |
+| Trap observation | New adults since the previous check |
+| Moisture before watering | Surface and deeper mix checked separately |
+| Action taken | Drainage change or product used according to its label |
+| Plant condition | New growth, wilting or yellowing |
 
-A shallow dish of apple cider vinegar with a drop of dish soap also catches adults, though it works better on fruit flies than fungus gnats.
+This log is a practical way to see whether a single pot remains active. Falling catches are encouraging; a large increase means it is time to recheck the source and identification.
 
-### 3. Kill the larvae with BTI
+## Why do fungus gnats keep coming back?
 
-*Bacillus thuringiensis israelensis* is a soil bacterium that produces a toxin lethal to gnat and mosquito larvae, and harmless to plants, pets and people.
+Eggs, larvae, pupae and adults can overlap in the same collection. Colorado State describes a life cycle of roughly three to four weeks under typical warm indoor conditions. A one-day treatment cannot be judged by whether all flying adults disappear that evening.
 
-It is sold as **mosquito bits** or **mosquito dunks**. To use it:
+If activity continues, check the record: was the larval treatment appropriate, was it repeated as directed, and were nearby breeding sources missed? If you cannot confirm the insect or control it, take a specimen or clear photographs to a local extension service.
 
-1. Steep a handful of mosquito bits in a gallon of water for 30 minutes.
-2. Strain, and use the water to water your plants normally.
-3. Repeat with every watering for three to four weeks.
+## What not to change blindly
 
-This is the single most effective larval treatment available to home growers and is worth buying if drying alone is not working.
+Avoid replacing all your plants' soil just because you see one fly. Likewise, bottom-watering does not prove that the rest of the pot is dry. Check the actual conditions before making another change.
 
-## Partial measures
-
-These come up constantly and are worth calibrating:
-
-- **Hydrogen peroxide drench** (one part 3% peroxide to four parts water) kills larvae on contact and adds a little oxygen to the soil. It breaks down within minutes, so it does nothing about the next hatch. Useful as a knockdown, not a cure.
-- **Cinnamon** on the soil surface has mild antifungal properties and reduces the fungal growth larvae feed on. A small help.
-- **Neem drench** works but is slower and messier than BTI.
-- **Repotting into fresh soil** feels decisive but usually fails, because larvae are already in the root ball and go with the plant.
-
-## Preventing the next infestation
-
-- **Quarantine new plants** for two weeks away from your collection.
-- **Store potting mix sealed and dry.** Open bags left damp in a shed are a common source.
-- **Keep soil surfaces clear** of fallen leaves and debris.
-- **Let plants dry appropriately.** Most houseplants want the top two inches dry before rewatering, and doing that consistently prevents fungus gnats as a side effect.
-
-If gnats keep coming back to one particular plant despite everything, treat that as a signal about its watering routine rather than a pest problem. It is likely being watered more than it needs, and [root rot](/problems/root-rot/) may be developing under the surface.
+Once the infestation is under control, use the species-specific [plant care guides](/plant-care/) to set a watering routine that suits the plant and your home.

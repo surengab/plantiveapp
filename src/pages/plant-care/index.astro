@@ -14,7 +14,7 @@ const plants = (await getCollection('plants', (p) => !p.data.draft)).sort((a, b)
 const easy = plants.filter((p) => p.data.difficulty === 'easy');
 const petSafe = plants.filter((p) => p.data.petSafe);
 const lowLight = plants.filter((p) =>
-  /low|medium/i.test(p.data.care.light.label)
+  /low/i.test(p.data.care.light.label)
 );
 
 const title = 'Plant Care Guides: Watering, Light & Troubleshooting';
@@ -37,7 +37,7 @@ const faqs = [
   {
     question: 'Which of these plants are safe for cats and dogs?',
     answer:
-      'Spider plants, calatheas and prayer plants, Phalaenopsis orchids and echeveria succulents are all non-toxic. Most of the popular aroids (pothos, monstera, philodendron, peace lily and ZZ plant) contain calcium oxalate crystals that cause painful mouth irritation in pets, as do aloe vera and rubber plants.',
+      'Spider plants, calatheas, Phalaenopsis orchids and echeveria are listed as non-toxic to cats and dogs. Pothos, monstera, philodendron, peace lily and ZZ plant contain irritating calcium oxalate crystals. Aloe vera and rubber plants are also unsuitable for pets, but their toxic compounds differ. Check the botanical name against a veterinary reference; non-toxic does not mean a plant should be eaten.',
   },
   {
     question: 'Why do my plants keep dying?',

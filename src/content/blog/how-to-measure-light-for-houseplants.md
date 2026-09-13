@@ -2,7 +2,7 @@
 title: 'How to Measure Light in Your Home for Houseplants'
 description: 'Bright indirect light explained properly: what each light level means in real rooms, three ways to measure it without buying anything, and which plants match.'
 publishDate: 2026-07-14
-updatedDate: 2026-08-20
+updatedDate: 2026-09-13
 category: 'Light'
 excerpt: '"Bright indirect light" is the most repeated and least explained instruction in plant care. Here is what it actually means in your rooms.'
 readingTime: 6
@@ -114,6 +114,7 @@ Plants report their own light conditions:
 **Too little:**
 - Long bare stretches of stem between leaves, or [legginess](/problems/leggy-stretched-houseplants/)
 - New leaves smaller than old ones
+- [Monstera leaves with fewer splits or holes](/problems/monstera-leaves-not-splitting/) than earlier growth
 - Variegation fading to plain green
 - Growth stalled for months
 - Leaning hard toward the window

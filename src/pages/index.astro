@@ -17,17 +17,21 @@ const plants = [...allPlants]
   .sort((a, b) => Number(b.data.featured) - Number(a.data.featured))
   .slice(0, 6);
 
+const featuredProblems = ['monstera-leaves-not-splitting', 'fungus-gnats', 'overwatering-vs-underwatering', 'root-rot', 'drooping-wilting-plant', 'yellow-leaves-on-houseplants'];
 const problems = [...allProblems]
-  .sort((a, b) => Number(b.data.featured) - Number(a.data.featured))
+  .sort((a, b) => {
+    const rank = (id: string) => featuredProblems.includes(id) ? featuredProblems.indexOf(id) : featuredProblems.length;
+    return rank(a.id) - rank(b.id);
+  })
   .slice(0, 6);
 
 const posts = (await getCollection('blog', (p) => !p.data.draft))
   .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
   .slice(0, 3);
 
-const title = 'Plantive: Plant Identifier & Plant Care App for iPhone';
+const title = 'Plant Identifier & Care App for iPhone | Plantive';
 const description =
-  'Identify any plant, flower or succulent from a photo in seconds, then get the watering and light schedule it actually needs. Free guides plus the iPhone app.';
+  'Identify plants, flowers and succulents from a photo with Plantive for iPhone. Get species names and care guidance, plus free plant care and troubleshooting guides.';
 
 const features = [
   {
@@ -56,7 +60,7 @@ const steps = [
   {
     n: '01',
     title: 'Take a photo',
-    body: 'Get close, fill the frame with one leaf or flower, and use even natural light. That single habit does more for accuracy than anything else.',
+    body: 'Get close, fill the frame with one leaf or flower, and use even natural light. Check that the distinctive features are in focus.',
   },
   {
     n: '02',
@@ -89,7 +93,7 @@ const faqs = [
   {
     question: 'How accurate is photo-based plant identification?',
     answer:
-      'Accuracy depends far more on the photo than on the app. A close, well-lit shot of a flower or a single leaf identifies common species reliably. Distant photos, poor light, several plants in frame, or damaged foliage all reduce accuracy. Distinguishing named cultivars within a species is also hard for any tool.',
+      'Accuracy depends on the plant, the tool and the evidence in the photo. Use a clear image of one subject, then compare the suggested name with its leaves, flowers and growth habit. Similar species and named cultivars may need more evidence than a single image provides.',
   },
   {
     question: 'Can I use Plantive to check whether a plant is safe for my pet?',
@@ -109,11 +113,10 @@ const schema = [mobileApp(), faqPage(faqs, '/')].filter(Boolean);
         <p class="pill hero-pill">
           <span class="dot"></span> Free on iPhone · iOS {APP.minimumOsVersion}+
         </p>
-        <h1>Know exactly what<br /><span class="accent">plant that is</span></h1>
+        <h1>Identify plants<br /><span class="accent">from a photo</span></h1>
         <p class="lede">
-          Point your camera at any plant, flower, tree or succulent. Plantive identifies the species
-          in seconds and gives you the watering and light schedule it actually needs, so it survives
-          past its first month.
+          Plantive is a plant identifier and care app for iPhone. Photograph a plant, flower,
+          tree or succulent to find its name, then learn its watering and light needs.
         </p>
         <div class="hero-cta">
           <AppStoreButton source="hero" />
@@ -121,7 +124,7 @@ const schema = [mobileApp(), faqPage(faqs, '/')].filter(Boolean);
         </div>
         <ul class="hero-meta">
           <li>No account needed to scan</li>
-          <li>{guideCount} free care guides</li>
+          <li>{guideCount} care and troubleshooting guides</li>
           <li>Works offline once saved</li>
         </ul>
       </div>
@@ -187,7 +190,7 @@ const schema = [mobileApp(), faqPage(faqs, '/')].filter(Boolean);
       <p class="how-note">
         Want the photography detail? Read <a href="/blog/how-to-identify-a-plant-from-a-photo/"
           >how to identify a plant from a photo</a
-        >. Most misidentifications are photo problems, not app problems.
+        >, including a flower-photo example and a checklist for verifying the result.
       </p>
     </div>
   </section>

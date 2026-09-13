@@ -8,6 +8,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
+    "check:seo": "node scripts/check-seo.mjs",
     "preview": "astro preview",
     "deploy": "npm run build && wrangler pages deploy dist --project-name=plantiveapp --branch=main --commit-dirty=true",
     "astro": "astro"

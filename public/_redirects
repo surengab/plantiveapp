@@ -1,10 +1,7 @@
 # Cloudflare Pages redirect rules.
-# Consolidates www onto the apex so Google indexes one hostname, matching the
-# canonical URLs and the sitemap. Requires www.plantiveapp.com to be attached to
-# the Pages project as a custom domain; otherwise do it with a Cloudflare
-# Redirect Rule instead.
-
-https://www.plantiveapp.com/*  https://plantiveapp.com/:splat  301
+# Hostname redirects require a Cloudflare Redirect Rule or Bulk Redirect;
+# Pages _redirects only supports paths as sources, not domain-level rules.
+# https://developers.cloudflare.com/pages/how-to/www-redirect/
 
 # Cloudflare Pages strips .html extensions and 308-redirects to the bare path.
 # Google Search Console requires its verification file to return 200 at the

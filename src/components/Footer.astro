@@ -74,6 +74,12 @@ const isExternal = (href: string) => href.startsWith('http');
     grid-template-columns: minmax(15rem, 1.5fr) repeat(auto-fit, minmax(9rem, 1fr));
   }
 
+  @media (max-width: 600px) {
+    .cols {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
   .brand-link {
     display: inline-block;
     text-decoration: none;

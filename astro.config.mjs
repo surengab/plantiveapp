@@ -1,4 +1,5 @@
 // @ts-check
+import { execFileSync } from 'node:child_process';
 import { readFileSync, readdirSync } from 'node:fs';
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
@@ -31,7 +32,40 @@ const newestUnder = (/** @type {string} */ prefix) =>
     .filter(([url]) => url.startsWith(prefix))
     .reduce((max, [, d]) => (d > max ? d : max), new Date(0));
 
+/**
+ * Static pages have no frontmatter date, so use the last commit that touched
+ * their source. Falling back to the build clock would re-stamp them on every
+ * deploy, and a lastmod that moves when the page did not is exactly the kind
+ * Google learns to ignore -- across the whole file, not just those URLs.
+ */
 const buildDate = new Date();
+
+/** @param {string} file */
+function lastCommitDate(file) {
+  try {
+    const out = execFileSync('git', ['log', '-1', '--format=%cI', '--', file], {
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim();
+    return out ? new Date(out) : buildDate;
+  } catch {
+    return buildDate; // no git available (shallow CI checkout, tarball build)
+  }
+}
+
+/** Route -> source file, for the pages that are not content collections. */
+const STATIC_PAGES = {
+  '/': 'src/pages/index.astro',
+  '/about/': 'src/pages/about.astro',
+  '/faq/': 'src/pages/faq.astro',
+  '/privacy/': 'src/pages/privacy.astro',
+  '/support/': 'src/pages/support.astro',
+  '/terms/': 'src/pages/terms.astro',
+};
+
+const staticDates = new Map(
+  Object.entries(STATIC_PAGES).map(([route, file]) => [route, lastCommitDate(file)])
+);
 
 // https://astro.build/config
 export default defineConfig({
@@ -49,6 +83,7 @@ export default defineConfig({
         const hub = /^\/(plant-care|problems|blog)\/$/.test(path);
         item.lastmod = (
           contentDates.get(path) ??
+          staticDates.get(path) ??
           (hub ? newestUnder(path) : buildDate)
         ).toISOString();
 

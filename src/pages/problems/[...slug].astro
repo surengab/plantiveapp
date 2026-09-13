@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import CtaBand from '../../components/CtaBand.astro';
+import ArticleImage from '../../components/ArticleImage.astro';
 import { breadcrumbs, article, faqPage } from '../../lib/schema';
 
 export async function getStaticPaths() {
@@ -28,7 +29,10 @@ const affected = d.affectedPlants
   .filter((p): p is CollectionEntry<'plants'> => Boolean(p));
 
 const allProblems = await getCollection('problems', (p) => !p.data.draft);
-const others = allProblems.filter((p) => p.id !== problem.id).slice(0, 3);
+const relatedProblems = d.related
+  .map((slug) => allProblems.find((p) => p.id === slug && p.id !== problem.id))
+  .filter((p): p is CollectionEntry<'problems'> => Boolean(p));
+const others = [...relatedProblems, ...allProblems.filter((p) => p.id !== problem.id && !d.related.includes(p.id))].slice(0, 3);
 
 const schema = [
   breadcrumbs(trail),
@@ -40,6 +44,7 @@ const schema = [
     updatedDate: d.updatedDate,
     section: 'Plant problems',
     keywords: d.keywords,
+    image: d.image?.src,
   }),
   faqPage(d.faqs, url),
 ].filter(Boolean);
@@ -57,6 +62,10 @@ const h2s = headings.filter((h) => h.depth === 2);
   type="article"
   publishDate={d.publishDate}
   updatedDate={d.updatedDate}
+  image={d.image?.src}
+  imageAlt={d.image?.alt}
+  imageWidth={d.image ? 900 : undefined}
+  imageHeight={d.image ? 600 : undefined}
   schema={schema}
 >
   <article>
@@ -64,6 +73,7 @@ const h2s = headings.filter((h) => h.depth === 2);
       <Breadcrumbs trail={trail} />
       <span class={`sev sev-${d.severity}`}>{d.severity} severity</span>
       <h1>{d.heading ?? d.title}</h1>
+      <p class="dates">Published by <a href="/about/">Plantive</a> · {d.updatedDate ? `Updated ${fmt(d.updatedDate)}` : `Published ${fmt(d.publishDate)}`}</p>
 
       <div class="quick-answer">
         <p class="qa-label">Short answer</p>
@@ -102,6 +112,7 @@ const h2s = headings.filter((h) => h.depth === 2);
     <!-- ---------------- Body ---------------- -->
     <div class="wrap body-grid">
       <div class="prose">
+        {d.image && <ArticleImage image={d.image} />}
         <Content />
       </div>
 
@@ -165,7 +176,7 @@ const h2s = headings.filter((h) => h.depth === 2);
       </section>
 
       <p class="dates">
-        Published {fmt(d.publishDate)}{d.updatedDate && ` · Last reviewed ${fmt(d.updatedDate)}`}
+        Published {fmt(d.publishDate)}{d.updatedDate && ` · Updated ${fmt(d.updatedDate)}`}
       </p>
     </div>
   </article>
@@ -179,6 +190,12 @@ const h2s = headings.filter((h) => h.depth === 2);
   .prob-head h1 {
     margin-block: 0.65rem 1.5rem;
     font-size: var(--step-4);
+  }
+
+  .prob-head .dates {
+    border-top: 0;
+    padding-top: 0;
+    margin: -0.5rem 0 1.25rem;
   }
 
   .sev {
