@@ -39,6 +39,9 @@ const schema = [
     section: d.category,
     keywords: d.keywords,
     image: d.image?.src,
+    author: d.author,
+    reviewer: d.reviewer,
+    references: d.references,
   }),
   faqPage(d.faqs, url),
 ].filter(Boolean);
@@ -69,9 +72,11 @@ const h2s = headings.filter((h) => h.depth === 2);
       <h1>{d.heading ?? d.title}</h1>
       <p class="lede">{d.excerpt}</p>
       <p class="byline">
-        By <a href="/about/">Plantive</a> ·
+        {d.author ? 'By ' : 'Published by '}
+        {d.author?.url ? <a href={d.author.url}>{d.author.name}</a> : d.author?.name ?? <a href="/about/">Plantive</a>} ·
         Published {fmt(d.publishDate)}
         {d.updatedDate && ` · Updated ${fmt(d.updatedDate)}`}
+        {d.reviewer && <> · Reviewed by {d.reviewer.url ? <a href={d.reviewer.url}>{d.reviewer.name}</a> : d.reviewer.name}</>}
         {d.readingTime && ` · ${d.readingTime} min read`}
       </p>
     </header>
@@ -80,6 +85,23 @@ const h2s = headings.filter((h) => h.depth === 2);
       <div class="prose">
         {d.image && <ArticleImage image={d.image} />}
         <Content />
+        {
+          d.references.length > 0 && (
+            <section class="references" aria-labelledby="references-heading">
+              <h2 id="references-heading">Sources and further reading</h2>
+              <ul>
+                {d.references.map((reference) => (
+                  <li>
+                    <a href={reference.url} rel="external noopener">
+                      {reference.title}
+                    </a>
+                    {reference.publisher && ` — ${reference.publisher}`}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
       </div>
 
       <aside class="side">
@@ -105,7 +127,7 @@ const h2s = headings.filter((h) => h.depth === 2);
         <FaqSection faqs={d.faqs} />
       </div>
 
-      <CtaBand source={`blog-${post.id}`} />
+      <CtaBand source="article-cta" />
 
       <section class="section-tight">
         <h2 class="h-sec">More from the blog</h2>

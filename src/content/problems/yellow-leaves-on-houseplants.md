@@ -1,9 +1,16 @@
 ---
 title: 'Why Are My Plant Leaves Turning Yellow? 7 Causes and Fixes'
-description: 'Yellow leaves on a houseplant have seven likely causes. Work through them in order of probability, starting with the soil test that settles it in ten seconds.'
+description: 'Yellow houseplant leaves can have several causes. Use the soil, leaf pattern, roots, light and pests to narrow the possibilities before choosing a fix.'
 heading: 'Why Are My Plant Leaves Turning Yellow?'
 publishDate: 2026-07-10
-updatedDate: 2026-08-18
+updatedDate: 2026-09-20
+references:
+  - title: 'Diagnosing Houseplant Problems Related to Poor Culture'
+    url: 'https://yardandgarden.extension.iastate.edu/how-to/diagnosing-houseplant-problems-related-poor-culture'
+    publisher: 'Iowa State University Extension and Outreach'
+  - title: 'Diagnose Indoor Plant Problems'
+    url: 'https://extension.umd.edu/resource/diagnose-indoor-plant-problems'
+    publisher: 'University of Maryland Extension'
 keywords:
   - yellow leaves houseplant
   - why are my plant leaves turning yellow
@@ -11,7 +18,7 @@ keywords:
   - overwatering yellow leaves
 symptom: 'Leaves turning yellow'
 severity: medium
-quickAnswer: 'Overwatering causes yellow leaves far more often than anything else. Push a finger two inches into the soil: if it is damp, stop watering and let it dry out.'
+quickAnswer: 'Check the potting mix first. Persistently wet soil points toward root stress, while very dry soil, low light, pests, nutrients and normal leaf ageing can produce similar yellowing.'
 causes:
   - name: 'Overwatering'
     likelihood: 'most likely'
@@ -59,23 +66,23 @@ faqs:
 featured: true
 ---
 
-Yellow leaves are the most common houseplant complaint there is, and the frustrating part is that opposite problems produce nearly identical symptoms. Work through the causes in order. They are ranked by how often each actually turns out to be the answer.
+Yellow leaves are a common houseplant complaint, and opposite problems can produce similar symptoms. Use the soil, leaf pattern and recent changes to narrow the possibilities, and inspect roots when the evidence points below the surface.
 
 ## Start here: the soil test
 
 Before anything else, push your index finger two inches into the soil.
 
-- **Damp** → go to overwatering. This is the answer roughly six times out of ten.
+- **Persistently damp** → investigate overwatering, drainage and root health.
 - **Bone dry, soil shrunk from the pot edge** → go to underwatering.
 - **Slightly moist, neither extreme** → water is probably not your problem; look at light, age and pests.
 
-This single test eliminates most of the possibilities in ten seconds, and it is far more reliable than judging by leaf appearance.
+This first check separates a dry root ball from a persistently wet one, but it does not diagnose every cause on its own.
 
 ## Where on the plant matters
 
 The position of the yellowing narrows things down considerably:
 
-| Where | Most likely cause |
+| Where | Possibilities to check |
 | --- | --- |
 | Oldest, lowest leaves only, one at a time | Natural ageing, normal |
 | Lower and inner leaves, several at once | Overwatering |
@@ -84,9 +91,9 @@ The position of the yellowing narrows things down considerably:
 | New growth at the tips | Serious root problem or nutrient lockout |
 | Speckled or stippled patches | Pests |
 
-## Overwatering, the usual culprit
+## When the soil stays wet
 
-More houseplants are killed by kindness than neglect. Constantly wet soil drives out the air that roots need, they suffocate and begin to rot, and a damaged root system cannot move water or nutrients, so the leaves yellow.
+Constantly wet mix limits air around roots and can encourage root rot. A damaged root system may then struggle to move water and nutrients, which can contribute to yellowing and wilting.
 
 **Confirming it:** soil damp several days after watering, yellowing on lower and inner leaves, leaves soft rather than crisp, sometimes a sour smell.
 
@@ -114,15 +121,15 @@ If your plant is putting out healthy new growth and one old bottom leaf has slow
 
 The distinction that matters: **one leaf at a time, from the bottom, while new growth thrives** is ageing. **Several leaves at once, anywhere on the plant** is a problem.
 
-## Nutrient deficiency
+## Possible nutrient deficiency
 
-Suspect this in a plant that has been in the same soil for two or more years.
+Consider nutrients only after checking roots, watering, light and the normal color pattern of the species. Similar yellowing patterns can have different causes.
 
 - **Yellow between green veins** on newer leaves → iron deficiency, often from soil pH being too high
 - **Yellow between green veins** on older leaves → magnesium deficiency
 - **Uniform pale yellow-green** across the whole plant → nitrogen deficiency
 
-The fix for all three is the same at the household level: feed with a balanced liquid fertiliser at half strength through the growing season, and refresh the soil. Do not feed a plant you suspect of root rot, because damaged roots cannot take up nutrients and the added salts make things worse.
+Avoid diagnosing a specific deficiency from leaf color alone. If the roots are healthy and the plant has not been fed or repotted for a long time, follow the fertilizer label or seek a soil test rather than applying repeated doses. Do not fertilize a plant with suspected root rot.
 
 ## Checking for pests
 

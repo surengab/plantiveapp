@@ -10,7 +10,7 @@ export const SITE = {
   /** Used as the <title> suffix and in structured data. */
   tagline: 'Plant Identifier & Plant Care App',
   description:
-    'Identify any plant, flower or succulent from a photo in seconds, then get the watering and light schedule it actually needs. Free guides plus the iPhone app.',
+    'Identify plants, flowers and succulents from a photo, then explore watering and light guidance. Free guides plus the iPhone app.',
   locale: 'en_US',
   lang: 'en',
   themeColor: '#14532d',
@@ -42,13 +42,54 @@ export const APP = {
   minimumOsVersion: '17.0',
   fileSizeMb: 15.3,
   version: '1.2',
-  contentRating: '12+',
+  contentRating: '13+',
   supportEmail: 'contact@deductify.org',
   privacyUrl:
     'https://docs.google.com/document/d/1aArtFTt3BBX7Ft_YmQlOsRMgu3PcTHXK4G0mEpcTcjM',
   termsUrl:
     'https://docs.google.com/document/d/1lY8Z_TE3wIUNrO6oh_VBa-9Tc_n3oxA0yO7c9g8UeDM',
 } as const;
+
+export type ContentGroup = 'home' | 'plant-care' | 'problems' | 'blog' | 'other';
+
+const APP_STORE_CAMPAIGNS: Record<ContentGroup, string> = {
+  home: 'website-home',
+  'plant-care': 'website-plant-care',
+  problems: 'website-problems',
+  blog: 'website-blog',
+  other: 'website-other',
+};
+
+const appleProviderToken = import.meta.env.PUBLIC_APPLE_PROVIDER_TOKEN?.trim();
+
+if (appleProviderToken && !/^\d+$/.test(appleProviderToken)) {
+  throw new Error('PUBLIC_APPLE_PROVIDER_TOKEN must contain digits only.');
+}
+
+export function contentGroupForPath(pathname: string): ContentGroup {
+  if (pathname === '/') return 'home';
+  if (pathname.startsWith('/plant-care/')) return 'plant-care';
+  if (pathname.startsWith('/problems/')) return 'problems';
+  if (pathname.startsWith('/blog/')) return 'blog';
+  return 'other';
+}
+
+/** Apple campaign links are added only when App Store Connect supplies a provider token. */
+export function appStoreUrl(contentGroup: ContentGroup): string {
+  if (!appleProviderToken) return APP.appStoreUrl;
+
+  const url = new URL(APP.appStoreUrl);
+  url.searchParams.set('pt', appleProviderToken);
+  url.searchParams.set('ct', APP_STORE_CAMPAIGNS[contentGroup]);
+  url.searchParams.set('mt', '8');
+  return url.href;
+}
+
+/** Safari Smart App Banner attribution uses the same stable content-group campaign tokens. */
+export function smartAppBannerContent(contentGroup: ContentGroup): string {
+  if (!appleProviderToken) return `app-id=${APP.appStoreId}`;
+  return `app-id=${APP.appStoreId}, affiliate-data=pt=${appleProviderToken}&ct=${APP_STORE_CAMPAIGNS[contentGroup]}&mt=8`;
+}
 
 /** Primary navigation, also emitted as a SiteNavigationElement in structured data. */
 export const NAV = [

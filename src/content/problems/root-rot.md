@@ -3,7 +3,14 @@ title: 'Root Rot in Houseplants: How to Identify and Save Your Plant'
 description: 'How to spot root rot before it kills a houseplant, what healthy roots look like, and the step-by-step rescue: trim, dry, repot and hold off watering.'
 heading: 'Root Rot: Identify It and Save the Plant'
 publishDate: 2026-07-15
-updatedDate: 2026-08-18
+updatedDate: 2026-09-20
+references:
+  - title: 'Root Rots of Houseplants'
+    url: 'https://yardandgarden.extension.iastate.edu/article/2014/02-14/rootrot.html'
+    publisher: 'Iowa State University Extension and Outreach'
+  - title: 'Root Rots of Indoor Plants'
+    url: 'https://www.extension.umd.edu/resource/root-rots-indoor-plants'
+    publisher: 'University of Maryland Extension'
 keywords:
   - root rot houseplant
   - how to fix root rot
@@ -11,12 +18,12 @@ keywords:
   - root rot signs
 symptom: 'Root rot'
 severity: high
-quickAnswer: 'Unpot the plant now. Healthy roots are firm and pale; rotted roots are brown, mushy and smell sour. Cut every rotted root away, repot into fresh dry mix, and do not water for a week.'
+quickAnswer: 'If a plant wilts while the potting mix remains wet, inspect the roots. Healthy roots are firm; rotted roots are soft and discolored. Remove affected tissue, use a clean container and well-drained mix, then avoid keeping the root zone saturated.'
 causes:
   - name: 'Overwatering'
     likelihood: 'most likely'
     tell: 'Soil damp for more than a week after watering. Wilting despite wet soil. Yellow lower leaves, soft stems at the soil line.'
-    fix: 'Unpot immediately. Trim all soft brown roots, repot into fresh dry well-draining mix, and wait a week before watering.'
+    fix: 'Inspect the roots, remove soft discolored tissue with clean tools, and repot healthy sections in fresh, well-drained mix. Resume watering according to the species and remaining root system.'
   - name: 'No drainage holes'
     likelihood: 'most likely'
     tell: 'Decorative pot with a sealed base, or a saucer that is never emptied. Water pools invisibly at the bottom of the pot.'
@@ -50,24 +57,22 @@ faqs:
     answer: 'Sour, swampy or faintly like sewage, an unmistakably wrong smell coming from the soil or the roots when you unpot. Healthy soil smells earthy and clean. The odour comes from anaerobic bacteria thriving in waterlogged soil where oxygen has been driven out.'
   - question: 'How do I tell healthy roots from rotted ones?'
     answer: 'Touch them. Healthy roots are firm and snap or resist when tugged, and are usually white, cream or pale tan. Rotted roots are brown or black, feel soft and slimy, and the outer sheath slides off between your fingers leaving a thin thread behind. Colour alone can mislead, since some species naturally have darker roots. Firmness is the reliable test.'
-  - question: 'Should I use hydrogen peroxide on root rot?'
-    answer: 'It is optional and often overrated. A dilute solution of one part 3% hydrogen peroxide to three parts water can be poured over trimmed roots to kill surface pathogens and add a little oxygen, but it does not undo damage and it is no substitute for cutting rotted tissue away and fixing the drainage. The physical steps matter far more than any rinse.'
   - question: 'How long should I wait to water after treating root rot?'
-    answer: 'About a week for most plants, and up to two weeks for succulents and cacti. The trimmed root ends need time to callus, and the plant has far less root mass than before so it takes up much less water. When you do resume, water lightly and let the mix dry further than you would normally before the next round.'
+    answer: 'There is no safe universal interval. It depends on the species, how much healthy root remains, the potting mix and whether the plant normally needs a dry callus period. Follow species-specific propagation guidance and keep the reduced root system from sitting in saturated mix.'
 featured: true
 ---
 
-Root rot is the single most common way houseplants die, and it is almost always survivable if you act early. The problem is that it happens underground, so by the time the leaves tell you, the roots have been in trouble for weeks.
+Root rot is a serious houseplant problem, and early action gives the plant a better chance of recovery. Because the damage begins underground, leaf symptoms can appear only after roots are already affected.
 
 ## The counterintuitive signal
 
-**A plant that is wilting in wet soil has root rot until proven otherwise.**
+**A plant that wilts in wet soil may have damaged roots, so inspect before adding more water.**
 
 This trips people up constantly. Rotted roots cannot absorb water, so the plant droops exactly as it would if it were parched. The natural response is to water it, which accelerates the rot.
 
-So: before you water a drooping plant, feel the soil. Wet soil plus wilting means stop watering and unpot it.
+Before you water a drooping plant, feel the soil. If it is wet, pause and inspect drainage and roots rather than assuming the plant is thirsty.
 
-## Signs, in order of appearance
+## Signs that can occur
 
 1. Soil stays damp more than a week after watering
 2. Lower leaves yellow, several at once
@@ -76,7 +81,7 @@ So: before you water a drooping plant, feel the soil. Wet soil plus wilting mean
 5. A sour, swampy smell from the pot
 6. Leaves drop; stems collapse
 
-By stage 4 you should be unpotting immediately, not waiting.
+Several of these signs together justify inspecting the root system promptly.
 
 ## Confirming it
 
@@ -95,23 +100,17 @@ Firmness is the reliable test. Some species naturally have darker roots, so colo
 
 Work over newspaper and take your time.
 
-**1. Remove all the old soil.** Shake it off and rinse the roots under lukewarm water until you can see what you are dealing with. That soil is saturated and full of pathogens, so none of it goes back in.
+**1. Remove enough old mix to inspect the roots.** Gently shake or rinse it away until you can distinguish firm roots from soft, damaged tissue. Do not reuse waterlogged or contaminated mix.
 
-**2. Cut away everything rotted.** Use clean, sharp scissors. Remove every soft, brown or slimy root, cutting back into firm healthy tissue. Be ruthless: leaving rotted material behind restarts the whole process. Wipe the blades with rubbing alcohol between cuts.
+**2. Remove affected tissue.** Use clean, sharp scissors to cut back soft or collapsed roots to firm tissue. Clean the blades between cuts.
 
-**3. Reduce the foliage to match.** If you removed a third or more of the roots, remove a comparable amount of top growth. The remaining roots cannot support the whole plant, and cutting back gives it a fighting chance.
+**3. Repot healthy sections.** Use a clean container with drainage holes and fresh, well-drained mix suited to the species. Do not oversize the pot for the reduced root system.
 
-**4. Let the cuts dry.** For succulents, cacti and thick-rooted plants like ZZ and snake plants, leave them in open air for 24 hours so the cuts callus. For thin-rooted tropicals, an hour is enough.
-
-**5. Repot into fresh, dry mix.** Not damp. Dry. Choose a pot only slightly larger than the reduced root ball, with drainage holes. Add perlite or bark to whatever mix the species prefers.
-
-**6. Wait before watering.** A week for most plants, up to two for succulents. Then water lightly and let the mix dry further than usual before the next round.
+**4. Adjust aftercare to the species.** Succulents and other plants commonly propagated after a callus period need different handling from thin-rooted tropicals. Use a species-specific propagation reference and avoid saturating the reduced root system.
 
 ## What to expect afterwards
 
-Recovery is slow and looks unimpressive. The plant may drop leaves for several weeks as it rebalances to a smaller root system. Growth stalls. This is normal.
-
-Watch for **new growth** as the sign it has taken. That can be one to three months in.
+Recovery varies with the plant and the amount of healthy tissue left. Watch for firm existing growth and eventually new growth, while recognizing that continued collapse can mean the rot was more extensive than it first appeared.
 
 ## When it cannot be saved
 
@@ -121,9 +120,9 @@ Salvage what you can: cut well above any softness into clean firm tissue, and ro
 
 ## Preventing the next one
 
-- **Drainage holes, always.** A pot with no drainage is the leading cause. Keep plants in plastic nursery pots inside decorative cachepots and lift them out to water.
+- **Use drainage holes.** Keep plants in nursery pots inside decorative cachepots if the outer container has no drainage, and lift them out to water.
 - **Empty the saucer.** Never let a pot stand in collected water.
-- **Right-size the pot.** One to two inches wider than the root ball. Excess soil the roots do not occupy stays wet for weeks.
+- **Right-size the pot.** Choose a modest step up rather than surrounding a small root ball with a large volume of slow-drying mix.
 - **Check before watering.** Finger two inches in. Damp means wait.
-- **Cut back in winter.** Most plants slow down and need dramatically less water from November through February. Watering on a summer schedule through winter is a classic route to rot.
-- **Match the mix.** Succulents and cacti want gritty mix. Aroids want bark and perlite. Bagged potting soil alone holds too much water for most houseplants.
+- **Respond to slower growth.** Many houseplants use water more slowly in cooler, darker conditions, so keep checking the mix instead of carrying a summer interval into winter.
+- **Match the mix.** Use a well-drained mix suited to the species rather than one formula for every plant.

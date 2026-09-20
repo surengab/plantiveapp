@@ -1,18 +1,21 @@
 ---
-import { APP, NAV } from '../consts';
+import { APP, NAV, appStoreUrl, contentGroupForPath } from '../consts';
 import Logo from './Logo.astro';
 import AppStoreButton from './AppStoreButton.astro';
 
 const path = Astro.url.pathname;
+const storeUrl = appStoreUrl(contentGroupForPath(path));
 const isActive = (href: string) => path === href || (href !== '/' && path.startsWith(href));
 ---
 
 <header class="site-header">
   <div class="wrap bar">
     <a
-      href={APP.appStoreUrl}
+      href={storeUrl}
       class="brand"
       rel="noopener"
+      data-app-store-link
+      data-source="header-logo"
       aria-label={`Download ${APP.name} on the App Store`}
     >
       <Logo size={34} />

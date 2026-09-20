@@ -6,7 +6,7 @@ import AppStoreButton from '../components/AppStoreButton.astro';
 import PlantCard from '../components/PlantCard.astro';
 import FaqSection from '../components/FaqSection.astro';
 import CtaBand from '../components/CtaBand.astro';
-import { APP, SITE } from '../consts';
+import { APP } from '../consts';
 import { faqPage, mobileApp } from '../lib/schema';
 
 const allPlants = await getCollection('plants', (p) => !p.data.draft);
@@ -36,7 +36,7 @@ const description =
 const features = [
   {
     title: 'Identify from a photo',
-    body: 'Point your camera at any plant, flower, tree, leaf or succulent. Plantive names the species in seconds. No account needed to scan.',
+    body: 'Point your camera at a plant, flower, tree, leaf or succulent. Plantive suggests a species name in seconds so you can compare the result.',
     icon: 'M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z',
   },
   {
@@ -78,7 +78,7 @@ const faqs = [
   {
     question: 'Is Plantive free?',
     answer:
-      'Yes. Plantive is free to download on the App Store and you can scan a plant without creating an account. Optional Pro subscriptions and a lifetime unlock are available as in-app purchases for people who want the full feature set.',
+      'Plantive is free to download from the App Store. Optional Pro subscriptions and lifetime purchases are available in the app; check the current App Store listing for purchase details.',
   },
   {
     question: 'What can Plantive identify?',
@@ -123,9 +123,9 @@ const schema = [mobileApp(), faqPage(faqs, '/')].filter(Boolean);
           <a href="/plant-care/" class="btn btn-secondary">Browse care guides</a>
         </div>
         <ul class="hero-meta">
-          <li>No account needed to scan</li>
+          <li>Photo-based identification</li>
           <li>{guideCount} care and troubleshooting guides</li>
-          <li>Works offline once saved</li>
+          <li>Free to download · In-app purchases</li>
         </ul>
       </div>
 
@@ -237,7 +237,7 @@ const schema = [mobileApp(), faqPage(faqs, '/')].filter(Boolean);
   </section>
 
   <div class="wrap">
-    <CtaBand source="home-mid" />
+    <CtaBand source="home-secondary" />
   </div>
 
   <!-- ================= Blog ================= -->

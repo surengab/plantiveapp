@@ -13,7 +13,7 @@ const appFaqs = [
   {
     question: 'Is Plantive free to use?',
     answer:
-      'Yes. Plantive is free to download from the App Store and you can identify a plant without creating an account. Optional Pro subscriptions and a lifetime unlock are offered as in-app purchases for people who want the full feature set.',
+      'Plantive is free to download from the App Store. Optional Pro subscriptions and lifetime purchases are available in the app; check the current App Store listing for purchase details.',
   },
   {
     question: 'What devices does Plantive support?',
@@ -23,11 +23,6 @@ const appFaqs = [
     question: 'What can Plantive identify?',
     answer:
       'Plants, flowers, trees, leaves, succulents and houseplants. Identification is most accurate on a sharp, well-lit close-up of a distinctive feature, such as a flower or a single leaf against a plain background, rather than a wide shot containing several plants.',
-  },
-  {
-    question: 'Do I need an internet connection?',
-    answer:
-      'Identifying a new plant requires a connection, since the image is processed remotely. Guides you have already saved to your garden remain readable offline.',
   },
   {
     question: 'How do I cancel a subscription?',
@@ -45,7 +40,7 @@ const careFaqs = [
   {
     question: 'How accurate is photo-based plant identification?',
     answer:
-      'Accuracy depends far more on the photo than on the app. A close, well-lit shot of a flower or a single leaf identifies common cultivated and wild species reliably. Distant photos, dim or harsh light, several plants in frame, or damaged foliage all reduce accuracy significantly. Distinguishing named cultivars within a species is genuinely difficult for any tool.',
+      'Accuracy depends on the plant, the tool and the evidence visible in the photo. A sharp, well-lit close-up of a distinctive flower or leaf can improve the suggestion, while distant photos, several plants in frame and damaged foliage can make it less reliable. Compare the suggested name with other features, especially before making a safety decision.',
   },
   {
     question: 'How often should I water my houseplants?',
@@ -55,7 +50,7 @@ const careFaqs = [
   {
     question: 'Why do my plants keep dying?',
     answer:
-      'Overwatering and insufficient light account for the large majority of houseplant deaths. Both are correctable once identified: check soil moisture before watering rather than following a calendar, and be realistic about light. If you could not comfortably read a book in that spot at midday without a lamp, it is a low-light position regardless of how bright the room feels.',
+      'Too much water and too little light are common problems, but pests, temperature, drainage and species-specific needs can look similar. Check the soil before watering, inspect the roots and leaves, and compare the plant’s location with a reliable care reference before choosing a fix.',
   },
   {
     question: 'Can I use Plantive to check if a plant is safe for my pet?',
@@ -63,9 +58,9 @@ const careFaqs = [
       'You can identify the species and read its toxicity information, and our pet-safe plants guide covers the common ones. But never rely on an app alone in an emergency. If a pet has eaten part of a plant, call your vet or an animal poison control line immediately and bring the plant or a photo. Do not spend time identifying it yourself first.',
   },
   {
-    question: 'Are the care guides on this site written by people?',
+    question: 'How are the care guides sourced?',
     answer:
-      'Yes. Every guide is written and reviewed by our team against established horticultural sources, and each page shows when it was last reviewed. The advice is general horticultural guidance rather than professional or veterinary advice, so always confirm toxicity information with a vet.',
+      'Guides are maintained by Plantive and are being updated with links to horticultural and botanical references. A page names an author or reviewer only when that attribution has been confirmed. The advice is general horticultural guidance rather than professional or veterinary advice.',
   },
 ];
 
@@ -108,7 +103,7 @@ const schema = [breadcrumbs(trail), faqPage(allFaqs, '/faq/')].filter(Boolean);
   </div>
 
   <div class="wrap">
-    <CtaBand source="faq" />
+    <CtaBand source="page-cta" />
   </div>
 </Base>
 

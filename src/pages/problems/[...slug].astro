@@ -45,6 +45,9 @@ const schema = [
     section: 'Plant problems',
     keywords: d.keywords,
     image: d.image?.src,
+    author: d.author,
+    reviewer: d.reviewer,
+    references: d.references,
   }),
   faqPage(d.faqs, url),
 ].filter(Boolean);
@@ -73,7 +76,12 @@ const h2s = headings.filter((h) => h.depth === 2);
       <Breadcrumbs trail={trail} />
       <span class={`sev sev-${d.severity}`}>{d.severity} severity</span>
       <h1>{d.heading ?? d.title}</h1>
-      <p class="dates">Published by <a href="/about/">Plantive</a> · {d.updatedDate ? `Updated ${fmt(d.updatedDate)}` : `Published ${fmt(d.publishDate)}`}</p>
+      <p class="dates">
+        {d.author ? 'By ' : 'Published by '}
+        {d.author?.url ? <a href={d.author.url}>{d.author.name}</a> : d.author?.name ?? <a href="/about/">Plantive</a>}
+        {' · '}{d.updatedDate ? `Updated ${fmt(d.updatedDate)}` : `Published ${fmt(d.publishDate)}`}
+        {d.reviewer && <> · Reviewed by {d.reviewer.url ? <a href={d.reviewer.url}>{d.reviewer.name}</a> : d.reviewer.name}</>}
+      </p>
 
       <div class="quick-answer">
         <p class="qa-label">Short answer</p>
@@ -85,7 +93,7 @@ const h2s = headings.filter((h) => h.depth === 2);
     {
       d.causes.length > 0 && (
         <section class="wrap section-tight" id="causes">
-          <h2 class="h-sec">Work through the causes in order</h2>
+          <h2 class="h-sec">Check these possible causes</h2>
           <ol class="causes">
             {d.causes.map((c, i) => (
               <li class="cause">
@@ -114,6 +122,23 @@ const h2s = headings.filter((h) => h.depth === 2);
       <div class="prose">
         {d.image && <ArticleImage image={d.image} />}
         <Content />
+        {
+          d.references.length > 0 && (
+            <section class="references" aria-labelledby="references-heading">
+              <h2 id="references-heading">Sources and further reading</h2>
+              <ul>
+                {d.references.map((reference) => (
+                  <li>
+                    <a href={reference.url} rel="external noopener">
+                      {reference.title}
+                    </a>
+                    {reference.publisher && ` — ${reference.publisher}`}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
       </div>
 
       <aside class="side">
@@ -155,7 +180,7 @@ const h2s = headings.filter((h) => h.depth === 2);
       </div>
 
       <CtaBand
-        source={`problem-${problem.id}`}
+        source="article-cta"
         heading="Sure you know what plant this is?"
         body="The right fix depends on the species. A succulent and a fern showing the same symptom need opposite treatment. Scan yours with Plantive to confirm."
       />

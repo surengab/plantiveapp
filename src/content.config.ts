@@ -1,6 +1,17 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
+const contributor = z.object({
+  name: z.string(),
+  url: z.string().url().optional(),
+});
+
+const reference = z.object({
+  title: z.string(),
+  url: z.string().url(),
+  publisher: z.string().optional(),
+});
+
 /** Shared SEO fields every content type needs. */
 const seo = {
   title: z.string().max(70),
@@ -10,6 +21,10 @@ const seo = {
   heading: z.string().optional(),
   publishDate: z.coerce.date(),
   updatedDate: z.coerce.date().optional(),
+  /** Add only confirmed, publicly displayable attribution. */
+  author: contributor.optional(),
+  reviewer: contributor.optional(),
+  references: z.array(reference).default([]),
   image: z.object({
     src: z.string(),
     alt: z.string(),

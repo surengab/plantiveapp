@@ -3,7 +3,17 @@ title: 'How to Identify a Plant or Flower From a Photo'
 description: 'Identify a plant or flower from a photo: capture the flower, leaves and whole plant, then check the suggested name. Includes an orchid example and iPhone tips.'
 heading: 'How to Identify a Plant or Flower From a Photo'
 publishDate: 2026-07-22
-updatedDate: 2026-09-13
+updatedDate: 2026-09-20
+references:
+  - title: 'iNaturalist Educator’s Guide'
+    url: 'https://help.inaturalist.org/en/support/solutions/articles/151000170805-inaturalist-educator-s-guide'
+    publisher: 'iNaturalist'
+  - title: 'Phalaenopsis'
+    url: 'https://plants.ces.ncsu.edu/plants/phalaenopsis/'
+    publisher: 'NC State Extension'
+  - title: 'ASPCA Animal Poison Control Center'
+    url: 'https://www.aspca.org/pet-care/aspca-poison-control'
+    publisher: 'ASPCA'
 category: 'Identification'
 excerpt: 'Photograph distinctive features, get a suggested name, then compare the result. Use this checklist for houseplants, flowers and outdoor plants.'
 readingTime: 5

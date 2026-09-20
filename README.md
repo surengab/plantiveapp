@@ -16,6 +16,10 @@ npm run build    # astro check && astro build -> dist/
 npm run preview  # serve dist/ locally
 ```
 
+Copy `.env.example` only when configuring production analytics or App Store campaign attribution.
+Both integrations are opt-in and render no tracking code or campaign parameters when unconfigured.
+See [docs/seo-analytics.md](docs/seo-analytics.md) for setup and verification.
+
 ## Deployment
 
 Hosted on **Cloudflare Pages**, project `plantiveapp`

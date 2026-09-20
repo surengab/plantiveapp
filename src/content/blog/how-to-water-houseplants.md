@@ -1,10 +1,17 @@
 ---
 title: 'How to Water Houseplants Properly (Stop Using a Schedule)'
-description: 'Watering on a fixed schedule kills more houseplants than neglect. The check-then-soak method, how often each plant type needs water, and why drainage matters.'
+description: 'A fixed watering schedule ignores species, light, pot and season. Learn the check-then-soak method, how to read the potting mix and why drainage matters.'
 publishDate: 2026-07-05
-updatedDate: 2026-08-20
+updatedDate: 2026-09-20
+references:
+  - title: 'How to Care for Houseplants'
+    url: 'https://yardandgarden.extension.iastate.edu/how-to/how-care-houseplants'
+    publisher: 'Iowa State University Extension and Outreach'
+  - title: 'Spring Houseplant Care'
+    url: 'https://extension.umn.edu/garden-and-home/yard-and-garden/gardening-in-minnesota/houseplants/spring-houseplant-care'
+    publisher: 'University of Minnesota Extension'
 category: 'Watering'
-excerpt: 'Watering "once a week" is the single most common cause of houseplant death. Here is what to do instead.'
+excerpt: 'Watering once a week is not a universal rule. Check the plant and potting mix first, then water thoroughly when the plant needs it.'
 readingTime: 7
 keywords:
   - how to water houseplants
@@ -36,7 +43,7 @@ A plant's water needs change constantly with conditions that have nothing to do 
 - **Temperature and humidity.** A warm dry room dries soil at several times the rate of a cool humid one.
 - **Root mass.** A root-bound plant drinks its pot dry far faster than a freshly repotted one.
 
-Two identical pothos, one on a bright windowsill in terracotta and one in a plastic pot in a dim corner, can differ by a factor of three in how often they need water. A fixed schedule cannot account for that, so it is always wrong for one of them.
+Two identical pothos can dry at very different rates when one is in a bright window and porous pot while the other is in a dimmer spot and plastic pot. A fixed schedule cannot account for those conditions.
 
 ## The method: check, then soak
 

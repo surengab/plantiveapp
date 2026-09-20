@@ -8,16 +8,12 @@ import CtaBand from '../../components/CtaBand.astro';
 import LeafArt from '../../components/LeafArt.astro';
 import PhotoCredit from '../../components/PhotoCredit.astro';
 import photos from '../../data/plant-photos.json';
-import { APP } from '../../consts';
+import { appStoreUrl } from '../../consts';
 import { breadcrumbs, article, faqPage, careHowTo } from '../../lib/schema';
 
 export async function getStaticPaths() {
   const plants = await getCollection('plants', (p) => !p.data.draft);
   return plants.map((plant) => ({ params: { slug: plant.id }, props: { plant } }));
-}
-
-interface Props {
-  plant: CollectionEntry<'plants'>;
 }
 
 const { plant } = Astro.props;
@@ -69,6 +65,9 @@ const schema = [
     section: 'Plant care',
     keywords: d.keywords,
     image: photo ? `/photos/${plant.id}-900.webp` : undefined,
+    author: d.author,
+    reviewer: d.reviewer,
+    references: d.references,
   }),
   careHowTo({
     url,
@@ -83,6 +82,7 @@ const fmt = (date: Date) =>
   date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
 const h2s = headings.filter((h) => h.depth === 2);
+const storeUrl = appStoreUrl('plant-care');
 ---
 
 <Base
@@ -173,6 +173,23 @@ const h2s = headings.filter((h) => h.depth === 2);
     <div class="wrap body-grid">
       <div class="prose">
         <Content />
+        {
+          d.references.length > 0 && (
+            <section class="references" aria-labelledby="references-heading">
+              <h2 id="references-heading">Sources and further reading</h2>
+              <ul>
+                {d.references.map((reference) => (
+                  <li>
+                    <a href={reference.url} rel="external noopener">
+                      {reference.title}
+                    </a>
+                    {reference.publisher && ` — ${reference.publisher}`}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
       </div>
 
       <aside class="side">
@@ -192,8 +209,14 @@ const h2s = headings.filter((h) => h.depth === 2);
         }
         <div class="side-cta">
           <img src="/assets/icon-192.png" width="52" height="52" alt="" decoding="async" />
-          <p>Scan a plant and get its care schedule instantly.</p>
-          <a class="btn btn-primary side-btn" href={APP.appStoreUrl} rel="noopener">
+          <p>Scan a plant, check the suggested species, and open its care guidance.</p>
+          <a
+            class="btn btn-primary side-btn"
+            href={storeUrl}
+            rel="noopener"
+            data-app-store-link
+            data-source="article-sidebar"
+          >
             Get Plantive free
           </a>
         </div>
@@ -247,7 +270,7 @@ const h2s = headings.filter((h) => h.depth === 2);
       </div>
 
       <CtaBand
-        source={`plant-${plant.id}`}
+        source="article-cta"
         heading={`Is this really a ${d.commonName}?`}
         body="Plant labels are often wrong and lookalikes are common. Scan yours with Plantive to confirm the species before you commit to a care routine."
       />
@@ -272,7 +295,10 @@ const h2s = headings.filter((h) => h.depth === 2);
       }
 
       <p class="dates">
-        Published {fmt(d.publishDate)}{d.updatedDate && ` · Last reviewed ${fmt(d.updatedDate)}`}
+        {d.author ? 'By ' : 'Published by '}
+        {d.author?.url ? <a href={d.author.url}>{d.author.name}</a> : d.author?.name ?? <a href="/about/">Plantive</a>}
+        {' · '}Published {fmt(d.publishDate)}{d.updatedDate && ` · Updated ${fmt(d.updatedDate)}`}
+        {d.reviewer && <> · Reviewed by {d.reviewer.url ? <a href={d.reviewer.url}>{d.reviewer.name}</a> : d.reviewer.name}</>}
       </p>
     </div>
   </article>

@@ -1,5 +1,5 @@
 ---
-import { APP } from '../consts';
+import { APP, appStoreUrl, contentGroupForPath } from '../consts';
 
 interface Props {
   /** Placement label, kept as a data attribute for analytics without altering the URL. */
@@ -9,15 +9,16 @@ interface Props {
   variant?: 'dark' | 'light';
 }
 
-const { source = 'site', label, class: className = '', variant = 'dark' } = Astro.props;
+const { source = 'inline', label, class: className = '', variant = 'dark' } = Astro.props;
 
-const href = APP.appStoreUrl;
+const href = appStoreUrl(contentGroupForPath(Astro.url.pathname));
 ---
 
 <a
   class={`asb asb-${variant} ${className}`}
   href={href}
   rel="noopener"
+  data-app-store-link
   data-source={source}
   aria-label={`Download ${APP.name} on the App Store`}
 >

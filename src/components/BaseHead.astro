@@ -1,5 +1,5 @@
 ---
-import { SITE } from '../consts';
+import { contentGroupForPath, SITE, smartAppBannerContent } from '../consts';
 import '../styles/global.css';
 
 interface Props {
@@ -37,6 +37,7 @@ const {
 
 const canonicalUrl = new URL(canonical ?? Astro.url.pathname, Astro.site ?? SITE.url);
 const ogImage = new URL(image, Astro.site ?? SITE.url);
+const appBannerContent = smartAppBannerContent(contentGroupForPath(Astro.url.pathname));
 
 // Every page ships one @graph rather than several disconnected blobs, so the
 // crawler resolves Organization/WebSite/WebPage relationships in a single pass.
@@ -130,7 +131,7 @@ const graph = [
 <meta name="twitter:image:alt" content={imageAlt} />
 
 <!-- Apple Smart App Banner: turns organic mobile traffic into installs -->
-<meta name="apple-itunes-app" content="app-id=6762530988" />
+<meta name="apple-itunes-app" content={appBannerContent} />
 
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
 <link rel="icon" href="/assets/icon-192.png" type="image/png" sizes="192x192" />

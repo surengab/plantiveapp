@@ -45,6 +45,9 @@ export function article({
   section,
   keywords,
   image,
+  author,
+  reviewer,
+  references,
 }: {
   url: string;
   headline: string;
@@ -55,7 +58,16 @@ export function article({
   keywords?: string[];
   /** Root-relative path to the article's lead image, if it has one. */
   image?: string;
+  author?: { name: string; url?: string };
+  reviewer?: { name: string; url?: string };
+  references?: { url: string }[];
 }) {
+  const person = (contributor: { name: string; url?: string }) => ({
+    '@type': 'Person',
+    name: contributor.name,
+    ...(contributor.url ? { url: contributor.url } : {}),
+  });
+
   return {
     '@type': 'Article',
     '@id': `${abs(url)}#article`,
@@ -65,11 +77,13 @@ export function article({
     description,
     datePublished: publishDate.toISOString(),
     dateModified: (updatedDate ?? publishDate).toISOString(),
-    author: orgRef,
+    author: author ? person(author) : orgRef,
+    ...(reviewer ? { reviewedBy: person(reviewer) } : {}),
     publisher: orgRef,
     inLanguage: SITE.lang,
     ...(section ? { articleSection: section } : {}),
     ...(keywords?.length ? { keywords: keywords.join(', ') } : {}),
+    ...(references?.length ? { citation: references.map((reference) => reference.url) } : {}),
     ...(image ? { image: { '@type': 'ImageObject', url: abs(image), width: 900, height: 600 } } : {}),
   };
 }

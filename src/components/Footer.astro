@@ -1,11 +1,12 @@
 ---
-import { APP, FOOTER_LINKS, SITE } from '../consts';
+import { APP, FOOTER_LINKS, SITE, appStoreUrl, contentGroupForPath } from '../consts';
 import Logo from './Logo.astro';
 import EmailLink from './EmailLink.astro';
 import AppStoreButton from './AppStoreButton.astro';
 
 const year = new Date().getFullYear();
 const isExternal = (href: string) => href.startsWith('http');
+const storeUrl = appStoreUrl(contentGroupForPath(Astro.url.pathname));
 ---
 
 <footer class="site-footer">
@@ -26,20 +27,25 @@ const isExternal = (href: string) => href.startsWith('http');
           <nav class="link-col" aria-label={group.heading}>
             <h2>{group.heading}</h2>
             <ul>
-              {group.links.map((link) => (
-                <li>
-                  {link.href.startsWith('mailto:') ? (
-                    <EmailLink label={link.label} />
-                  ) : (
-                    <a
-                      href={link.href}
-                      {...(isExternal(link.href) ? { rel: 'noopener', target: '_blank' } : {})}
-                    >
-                      {link.label}
-                    </a>
-                  )}
-                </li>
-              ))}
+              {group.links.map((link) => {
+                const isStore = link.href === APP.appStoreUrl;
+                const href = isStore ? storeUrl : link.href;
+                return (
+                  <li>
+                    {link.href.startsWith('mailto:') ? (
+                      <EmailLink label={link.label} />
+                    ) : (
+                      <a
+                        href={href}
+                        {...(isExternal(href) ? { rel: 'noopener', target: '_blank' } : {})}
+                        {...(isStore ? { 'data-app-store-link': '', 'data-source': 'footer-link' } : {})}
+                      >
+                        {link.label}
+                      </a>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </nav>
         ))

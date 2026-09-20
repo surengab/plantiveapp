@@ -2,7 +2,8 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE } from '../consts';
+import { contentGroupForPath, SITE } from '../consts';
+import { GA } from '../lib/analytics';
 
 interface Props {
   title: string;
@@ -20,12 +21,30 @@ interface Props {
 }
 
 const props = Astro.props;
+const contentGroup = contentGroupForPath(Astro.url.pathname);
+const plantSlug = Astro.url.pathname.match(/^\/plant-care\/([^/]+)\/?$/)?.[1];
 ---
 
 <!doctype html>
 <html lang={SITE.lang}>
   <head>
     <BaseHead {...props} />
+    {
+      GA.enabled && (
+        <>
+          <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA.measurementId}`}></script>
+          <script is:inline define:vars={{ gaMeasurementId: GA.measurementId }}>
+            if (!window.__plantiveGaInitialized) {
+              window.__plantiveGaInitialized = true;
+              window.dataLayer = window.dataLayer || [];
+              window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+              window.gtag('js', new Date());
+              window.gtag('config', gaMeasurementId);
+            }
+          </script>
+        </>
+      )
+    }
     <script is:inline>
       // Applied before first paint so a stored theme never flashes the wrong ground.
       try {
@@ -36,12 +55,35 @@ const props = Astro.props;
       } catch {}
     </script>
   </head>
-  <body>
+  <body data-content-group={contentGroup} data-plant-slug={plantSlug}>
     <a class="skip-link" href="#main">Skip to content</a>
     <Header />
     <main id="main">
       <slot />
     </main>
     <Footer />
+    {
+      GA.enabled && (
+        <script is:inline>
+          if (!window.__plantiveAppStoreTracking) {
+            window.__plantiveAppStoreTracking = true;
+            document.addEventListener('click', (event) => {
+              const target = event.target instanceof Element ? event.target : null;
+              const link = target?.closest('a[data-app-store-link]');
+              if (!link || typeof window.gtag !== 'function') return;
+
+              const params = {
+                cta_location: link.dataset.source || 'unknown',
+                content_group: document.body.dataset.contentGroup || 'other',
+                page_path: window.location.pathname,
+              };
+              const plantSlug = document.body.dataset.plantSlug;
+              if (plantSlug) params.plant_slug = plantSlug;
+              window.gtag('event', 'app_store_click', params);
+            });
+          }
+        </script>
+      )
+    }
   </body>
 </html>

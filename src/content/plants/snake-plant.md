@@ -3,7 +3,14 @@ title: 'Snake Plant Care: Watering, Light and Root Rot Prevention'
 description: 'Snake plant (Dracaena trifasciata) care guide: how often to water, why it survives low light, how to avoid root rot, and how to propagate from leaf cuttings.'
 heading: 'Snake Plant Care Guide'
 publishDate: 2026-06-09
-updatedDate: 2026-08-13
+updatedDate: 2026-09-20
+references:
+  - title: 'Dracaena trifasciata (Snake Plant)'
+    url: 'https://plants.ces.ncsu.edu/plants/dracaena-trifasciata/'
+    publisher: 'NC State Extension'
+  - title: 'Snake Plant: A Forgiving, Low-maintenance Houseplant'
+    url: 'https://extension.psu.edu/snake-plant-a-forgiving-low-maintenance-houseplant'
+    publisher: 'Penn State Extension'
 keywords:
   - snake plant care
   - how often to water snake plant
@@ -30,8 +37,8 @@ care:
     label: 'Low to bright indirect'
     detail: 'Survives in genuinely dim corners and thrives in bright indirect light. Direct sun is tolerated if introduced gradually, but sudden full sun bleaches the leaves.'
   water:
-    label: 'Every 3-6 weeks'
-    detail: 'Let the soil dry out completely, all the way to the bottom of the pot, before watering. In winter that can mean once every 6-8 weeks.'
+    label: 'Let the mix dry between waterings'
+    detail: 'Check that the potting mix has dried well before watering again, then soak it and let excess water drain. Expect a longer interval in winter.'
   humidity:
     label: 'Any'
     detail: 'Indifferent to humidity. Dry heated rooms in winter cause it no trouble at all.'
@@ -42,14 +49,14 @@ care:
     label: 'Cactus and succulent mix'
     detail: 'Use a gritty cactus mix, or standard potting soil cut 50/50 with perlite or coarse sand. Never plant in dense, water-retentive soil.'
   fertilizer:
-    label: '2-3 times per year'
-    detail: 'A diluted balanced feed in spring and midsummer is plenty. Snake plants store nutrients and are easily overfed.'
+    label: 'Light feeding during active growth'
+    detail: 'Use a balanced houseplant fertilizer according to its label while the plant is growing; plants in low light need less frequent feeding.'
   repotting:
-    label: 'Every 3-5 years'
-    detail: 'They flower and grow best when tight in the pot. Repot only when the rhizomes crack the container, and choose terracotta.'
+    label: 'When crowded or unstable'
+    detail: 'Repot when roots or rhizomes crowd the container, drainage worsens or the plant becomes top-heavy. Choose a pot with drainage holes.'
   propagation:
     label: 'Division or leaf cuttings'
-    detail: 'Division is fastest and preserves variegation. Leaf cuttings root in water or soil in 4-8 weeks but variegated types revert to plain green.'
+    detail: 'Division preserves the parent plant’s markings. Leaf cuttings also work, but variegated cultivars may produce plain-green growth.'
 troubleshooting:
   - symptom: 'Leaves soft, mushy and yellow at the base'
     cause: 'Root rot from overwatering'
@@ -67,7 +74,7 @@ troubleshooting:
     fix: 'Give it a thorough soak and let it drain. Leaves plump back up over a week or two.'
 faqs:
   - question: 'How often should I water a snake plant?'
-    answer: 'Every three to six weeks in spring and summer, and as little as every six to eight weeks in winter. The soil must dry out completely to the bottom of the pot between waterings. Snake plants store water in their thick leaves and rhizomes, so they are far more likely to die from too much water than too little.'
+    answer: 'Water only after the potting mix has dried well, then soak it thoroughly and let it drain. The interval changes with light, temperature, pot size and season and is usually longer in winter, so check the mix instead of following a fixed calendar.'
   - question: 'Can a snake plant live in a room with no windows?'
     answer: 'It can survive for months in very low light but it will not grow, and in a windowless room with only occasional artificial light it will gradually decline. A snake plant is a good choice for a dim corner of a lit room, not for a genuinely dark one. If a room has no natural light at all, a grow light on a timer solves the problem.'
   - question: 'Why is my snake plant falling over?'
@@ -83,25 +90,19 @@ related:
 featured: true
 ---
 
-The snake plant is the plant that survives you. It handles low light, forgets you exist for a month, ignores dry air, and keeps its architectural shape indefinitely. There is essentially one way to kill it, and this guide is mostly about avoiding that one way.
+Snake plants tolerate lower light, dry indoor air and missed waterings better than many common houseplants. Their main avoidable risk is persistently wet, poorly drained potting mix.
 
-## The only real rule: let it dry out completely
+## The most important rule: let the mix dry between waterings
 
 Snake plants are succulents. Their thick, waxy leaves and fleshy rhizomes store water, and their roots are adapted to seasonally dry African soil. They are not adapted to sitting in moisture.
 
-**Wait until the soil is bone dry all the way to the bottom of the pot.** Not "the top inch is dry". Completely dry. Then water thoroughly until it drains out the bottom, and empty the saucer.
+**Wait until the potting mix has dried well before watering again.** Then water thoroughly until excess drains from the bottom, and empty the saucer.
 
-Practically:
-
-- **Spring and summer:** every 3-4 weeks
-- **Autumn:** every 4-6 weeks
-- **Winter:** every 6-8 weeks
-
-If you cannot tell whether the bottom of the pot is dry, use a wooden skewer. Push it to the base, leave it a minute, and pull it out. If it comes out clean and dry, water. If soil clings to it, wait.
+The wait is often longer in winter or low light. If you cannot tell whether the lower mix is dry, use a wooden skewer or compare the pot's weight before and after watering; if damp mix clings to the skewer, wait.
 
 ## Why terracotta matters here
 
-Unglazed terracotta is porous and wicks moisture out of the soil through the pot walls. For a plant this vulnerable to root rot, that is real insurance. Combine it with a gritty cactus mix and you make overwatering almost impossible to do fatal damage with.
+Unglazed terracotta is porous and lets the potting mix lose moisture through the pot walls. It can be helpful in slow-drying rooms, but drainage holes and checking the mix still matter.
 
 A snake plant in a glazed ceramic pot with no drainage hole, in dense potting soil, is on borrowed time no matter how careful you are.
 
@@ -142,10 +143,10 @@ If the rot has reached most of the rhizome, salvage the healthiest leaves as cut
 
 **Division (recommended).** Tip the plant out, find where rhizomes join clumps of leaves, and separate them by hand or with a clean knife. Pot each division into dry cactus mix. This is fast, reliable, and preserves variegation.
 
-**Leaf cuttings.** Cut a healthy leaf into 3-inch sections, keeping track of which end pointed down, because they only root from the original bottom edge. Let the cuts callus for a day or two, then stand them upright in barely damp mix. Roots take 4-8 weeks and pups follow after that.
+**Leaf cuttings.** Cut a healthy leaf into short sections, keeping track of which end pointed down, because they root from the original bottom edge. Let the cuts dry briefly, then stand them upright in a lightly moist, well-drained mix. Rooting and new shoots can take time.
 
 The important caveat: **leaf cuttings of variegated cultivars lose their variegation.** The yellow margin of a Laurentii is a chimera in the outer cell layer, and new plants grow from the inner green tissue. If you want yellow edges, divide.
 
 ## Feeding
 
-Barely necessary. Two or three doses of half-strength balanced fertiliser across spring and summer covers it. Snake plants evolved in poor soil and respond to heavy feeding with weak, floppy growth.
+Feed lightly while the plant is actively growing, following the fertilizer label and reducing the dose for plants in low light. More fertilizer is not a substitute for suitable light and drainage.
