@@ -87,6 +87,8 @@ Keep one subject in focus, use even light and avoid filters that alter its color
 
 For availability and purchase details, use the App Store link below. If you already know the plant's name, go straight to the free [plant care library](/plant-care/).
 
+If you are deciding which tool to try, see the [plant identification app comparison](/blog/plant-identification-apps-compared/) or the focused [Plantive versus PictureThis comparison](/blog/plantive-vs-picturethis/). The comparison uses current App Store listings rather than an unsupported accuracy ranking.
+
 ## When a photo is not enough
 
 An uncertain image result should not decide whether a wild plant is edible or safe for a pet. For ingestion concerns, contact a poison-control service or veterinarian promptly; use the photographs as supporting information. The [ASPCA Poison Control guidance](https://www.aspca.org/pet-care/aspca-poison-control) explains how to get help for an animal exposure.

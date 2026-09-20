@@ -142,7 +142,7 @@ const blog = defineCollection({
   schema: z.object({
     ...seo,
     excerpt: z.string(),
-    category: z.enum(['Watering', 'Light', 'Getting started', 'Plant picks', 'Identification']),
+    category: z.enum(['Watering', 'Light', 'Getting started', 'Plant picks', 'Identification', 'App comparisons']),
     readingTime: z.number().optional(),
     faqs: faqSchema,
     featured: z.boolean().default(false),

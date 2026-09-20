@@ -37,7 +37,7 @@ const fileFor = (url) => {
   return existsSync(path) && statSync(path).isDirectory() ? resolve(path, 'index.html') : path;
 };
 const urls = [...read(`${root}/sitemap-0.xml`).matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
-assert.equal(urls.length, 37, 'Keep every existing indexable URL');
+assert.equal(urls.length, 40, 'Keep every existing indexable URL and the three comparison pages');
 assert.equal(new Set(urls).size, urls.length, 'Duplicate sitemap URLs');
 const titles = new Set();
 const descriptions = new Set();
@@ -67,7 +67,7 @@ for (const url of urls) {
     : 'app-id=6762530988';
   assert.equal(banner && decodeAttribute(banner), expectedBanner, `Smart App Banner attribution: ${url}`);
 
-  const storeLinks = tags(html, 'a').filter((a) => a.href?.startsWith('https://apps.apple.com/'));
+  const storeLinks = tags(html, 'a').filter((a) => a.href?.startsWith(appStoreBase));
   assert(storeLinks.length >= 3, `Expected shared App Store links: ${url}`);
   for (const link of storeLinks) {
     assert.equal(decodeAttribute(link.href), appStoreUrl(group), `App Store campaign URL: ${url}`);
@@ -97,6 +97,13 @@ for (const url of urls) {
 
 assert(existsSync(`${root}/404.html`), 'Missing static 404 page');
 assert(read(`${root}/robots.txt`).includes(`Sitemap: ${origin}/sitemap-index.xml`), 'robots.txt sitemap origin');
+
+const comparisonPages = ['/blog/plant-identification-apps-compared/', '/blog/plantive-vs-picturethis/', '/blog/plantive-vs-planta/'];
+for (const path of comparisonPages) {
+  const html = pages.get(path);
+  assert(html.includes('data-source="comparison-top"'), `Missing top comparison CTA: ${path}`);
+  assert(html.includes('data-source="comparison-bottom"'), `Missing bottom comparison CTA: ${path}`);
+}
 
 const priority = ['/problems/monstera-leaves-not-splitting/', '/problems/fungus-gnats/', '/blog/how-to-identify-a-plant-from-a-photo/'];
 for (const path of priority) {

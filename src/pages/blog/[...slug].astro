@@ -6,6 +6,7 @@ import FaqSection from '../../components/FaqSection.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import ArticleImage from '../../components/ArticleImage.astro';
 import { breadcrumbs, article, faqPage } from '../../lib/schema';
+import { APP, appStoreUrl, contentGroupForPath } from '../../consts';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', (p) => !p.data.draft);
@@ -50,6 +51,8 @@ const fmt = (date: Date) =>
   date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
 const h2s = headings.filter((h) => h.depth === 2);
+const attributedAppStoreUrl = appStoreUrl(contentGroupForPath(Astro.url.pathname));
+const isComparison = d.category === 'App comparisons';
 ---
 
 <Base
@@ -81,6 +84,19 @@ const h2s = headings.filter((h) => h.depth === 2);
       </p>
     </header>
 
+    {
+      isComparison && (
+        <div class="wrap comparison-cta">
+          <CtaBand
+            heading="Try Plantive on your own plant"
+            body="Plantive publishes this comparison. Download the iPhone app, scan a plant, and verify the suggested name using the checklist below."
+            source="comparison-top"
+            compact
+          />
+        </div>
+      )
+    }
+
     <div class="wrap body-grid">
       <div class="prose">
         {d.image && <ArticleImage image={d.image} />}
@@ -92,7 +108,12 @@ const h2s = headings.filter((h) => h.depth === 2);
               <ul>
                 {d.references.map((reference) => (
                   <li>
-                    <a href={reference.url} rel="external noopener">
+                    <a
+                      href={reference.url === APP.appStoreUrl ? attributedAppStoreUrl : reference.url}
+                      rel="external noopener"
+                      data-app-store-link={reference.url === APP.appStoreUrl ? true : undefined}
+                      data-source={reference.url === APP.appStoreUrl ? 'article-source' : undefined}
+                    >
                       {reference.title}
                     </a>
                     {reference.publisher && ` — ${reference.publisher}`}
@@ -127,7 +148,11 @@ const h2s = headings.filter((h) => h.depth === 2);
         <FaqSection faqs={d.faqs} />
       </div>
 
-      <CtaBand source="article-cta" />
+      <CtaBand
+        heading={isComparison ? 'Ready to try Plantive?' : undefined}
+        body={isComparison ? 'Download Plantive for iPhone, identify a plant from a photo, and explore its watering and light guidance.' : undefined}
+        source={isComparison ? 'comparison-bottom' : 'article-cta'}
+      />
 
       <section class="section-tight">
         <h2 class="h-sec">More from the blog</h2>
