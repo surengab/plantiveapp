@@ -14,10 +14,11 @@ const campaigns = {
   home: 'website-home',
   'plant-care': 'website-plant-care',
   problems: 'website-problems',
+  guides: 'website-guides',
   blog: 'website-blog',
   other: 'website-other',
 };
-const contentGroup = (path) => path === '/' ? 'home' : path.startsWith('/plant-care/') ? 'plant-care' : path.startsWith('/problems/') ? 'problems' : path.startsWith('/blog/') ? 'blog' : 'other';
+const contentGroup = (path) => path === '/' ? 'home' : path.startsWith('/plant-care/') ? 'plant-care' : path.startsWith('/problems/') ? 'problems' : path.startsWith('/guides/') ? 'guides' : path.startsWith('/blog/') ? 'blog' : 'other';
 const appStoreUrl = (group) => {
   const url = new URL(appStoreBase);
   if (providerToken) {
@@ -37,7 +38,7 @@ const fileFor = (url) => {
   return existsSync(path) && statSync(path).isDirectory() ? resolve(path, 'index.html') : path;
 };
 const urls = [...read(`${root}/sitemap-0.xml`).matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
-assert.equal(urls.length, 40, 'Keep every existing indexable URL and the three comparison pages');
+assert(urls.length >= 47, 'Keep every existing indexable URL and the practical guides');
 assert.equal(new Set(urls).size, urls.length, 'Duplicate sitemap URLs');
 const titles = new Set();
 const descriptions = new Set();

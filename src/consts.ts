@@ -50,12 +50,13 @@ export const APP = {
     'https://docs.google.com/document/d/1lY8Z_TE3wIUNrO6oh_VBa-9Tc_n3oxA0yO7c9g8UeDM',
 } as const;
 
-export type ContentGroup = 'home' | 'plant-care' | 'problems' | 'blog' | 'other';
+export type ContentGroup = 'home' | 'plant-care' | 'problems' | 'guides' | 'blog' | 'other';
 
 const APP_STORE_CAMPAIGNS: Record<ContentGroup, string> = {
   home: 'website-home',
   'plant-care': 'website-plant-care',
   problems: 'website-problems',
+  guides: 'website-guides',
   blog: 'website-blog',
   other: 'website-other',
 };
@@ -70,6 +71,7 @@ export function contentGroupForPath(pathname: string): ContentGroup {
   if (pathname === '/') return 'home';
   if (pathname.startsWith('/plant-care/')) return 'plant-care';
   if (pathname.startsWith('/problems/')) return 'problems';
+  if (pathname.startsWith('/guides/')) return 'guides';
   if (pathname.startsWith('/blog/')) return 'blog';
   return 'other';
 }
@@ -95,6 +97,7 @@ export function smartAppBannerContent(contentGroup: ContentGroup): string {
 export const NAV = [
   { label: 'Plant Care Guides', href: '/plant-care/' },
   { label: 'Plant Problems', href: '/problems/' },
+  { label: 'Guides', href: '/guides/' },
   { label: 'Blog', href: '/blog/' },
   { label: 'FAQ', href: '/faq/' },
 ] as const;
@@ -105,6 +108,7 @@ export const FOOTER_LINKS = [
     links: [
       { label: 'Plant care guides', href: '/plant-care/' },
       { label: 'Diagnose a problem', href: '/problems/' },
+      { label: 'Practical guides', href: '/guides/' },
       { label: 'Blog', href: '/blog/' },
       { label: 'Frequently asked questions', href: '/faq/' },
     ],

@@ -149,4 +149,24 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { plants, problems, blog };
+/** Short, task-focused evergreen guides. */
+const guides = defineCollection({
+  loader: glob({ base: './src/content/guides', pattern: '**/*.md' }),
+  schema: z.object({
+    ...seo,
+    excerpt: z.string(),
+    category: z.enum([
+      'Getting started',
+      'Routine',
+      'Plant health',
+      'Feeding',
+      'Environment',
+      'Travel care',
+    ]),
+    readingTime: z.number().optional(),
+    faqs: faqSchema,
+    featured: z.boolean().default(false),
+  }),
+});
+
+export const collections = { plants, problems, blog, guides };

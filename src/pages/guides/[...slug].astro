@@ -1,0 +1,248 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import ArticleImage from '../../components/ArticleImage.astro';
+import { breadcrumbs, article, faqPage } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides', (guide) => !guide.data.draft);
+  return guides.map((guide) => ({ params: { slug: guide.id }, props: { guide } }));
+}
+
+interface Props {
+  guide: CollectionEntry<'guides'>;
+}
+
+const { guide } = Astro.props;
+const d = guide.data;
+const { Content, headings } = await render(guide);
+const url = `/guides/${guide.id}/`;
+const trail = [{ label: 'Guides', href: '/guides/' }, { label: d.title }];
+
+const others = (await getCollection('guides', (item) => !item.data.draft))
+  .filter((item) => item.id !== guide.id)
+  .sort((a, b) => Number(b.data.featured) - Number(a.data.featured))
+  .slice(0, 3);
+
+const schema = [
+  breadcrumbs(trail),
+  article({
+    url,
+    headline: d.heading ?? d.title,
+    description: d.description,
+    publishDate: d.publishDate,
+    updatedDate: d.updatedDate,
+    section: d.category,
+    keywords: d.keywords,
+    image: d.image?.src,
+    author: d.author,
+    reviewer: d.reviewer,
+    references: d.references,
+  }),
+  faqPage(d.faqs, url),
+].filter(Boolean);
+
+const fmt = (date: Date) =>
+  date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const h2s = headings.filter((heading) => heading.depth === 2);
+---
+
+<Base
+  title={d.title}
+  description={d.description}
+  canonical={url}
+  type="article"
+  publishDate={d.publishDate}
+  updatedDate={d.updatedDate}
+  image={d.image?.src}
+  imageAlt={d.image?.alt}
+  imageWidth={d.image ? 900 : undefined}
+  imageHeight={d.image ? 600 : undefined}
+  schema={schema}
+>
+  <article>
+    <header class="wrap guide-head">
+      <Breadcrumbs trail={trail} />
+      <span class="pill">{d.category}</span>
+      <h1>{d.heading ?? d.title}</h1>
+      <p class="lede">{d.excerpt}</p>
+      <p class="byline">
+        Published by <a href="/about/">Plantive</a> · {fmt(d.publishDate)}
+        {d.updatedDate && ` · Updated ${fmt(d.updatedDate)}`}
+        {d.readingTime && ` · ${d.readingTime} min read`}
+      </p>
+    </header>
+
+    <div class="wrap body-grid">
+      <div class="prose">
+        {d.image && <ArticleImage image={d.image} />}
+        <Content />
+        {
+          d.references.length > 0 && (
+            <section class="references" aria-labelledby="references-heading">
+              <h2 id="references-heading">Sources and further reading</h2>
+              <ul>
+                {d.references.map((reference) => (
+                  <li>
+                    <a href={reference.url} rel="external noopener">{reference.title}</a>
+                    {reference.publisher && ` — ${reference.publisher}`}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
+      </div>
+
+      <aside class="side">
+        {
+          h2s.length > 2 && (
+            <nav class="toc" aria-label="On this page">
+              <h2>On this page</h2>
+              <ul>
+                {h2s.map((heading) => (
+                  <li><a href={`#${heading.slug}`}>{heading.text}</a></li>
+                ))}
+              </ul>
+            </nav>
+          )
+        }
+      </aside>
+    </div>
+
+    <div class="wrap">
+      <div class="wrap-prose faq-wrap"><FaqSection faqs={d.faqs} /></div>
+      <CtaBand source="guide-article" />
+
+      <section class="section-tight">
+        <h2 class="h-sec">More practical guides</h2>
+        <div class="grid grid-3">
+          {
+            others.map((item) => (
+              <a class="card other" href={`/guides/${item.id}/`}>
+                <span class="pill pill-outline">{item.data.category}</span>
+                <h3>{item.data.title}</h3>
+                <p>{item.data.excerpt}</p>
+              </a>
+            ))
+          }
+        </div>
+      </section>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .guide-head {
+    padding-top: 2.25rem;
+    max-width: calc(var(--wrap-prose) + 2 * var(--gutter));
+    margin-inline: auto;
+  }
+
+  .guide-head .pill {
+    margin-top: 1rem;
+  }
+
+  .guide-head h1 {
+    margin-block: 0.85rem 1rem;
+    font-size: var(--step-4);
+  }
+
+  .byline {
+    margin-top: 1.25rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  .body-grid {
+    display: grid;
+    gap: clamp(2rem, 5vw, 3.5rem);
+    align-items: start;
+    padding-top: 2rem;
+  }
+
+  @media (min-width: 1000px) {
+    .body-grid {
+      grid-template-columns: minmax(0, 1fr) 16rem;
+    }
+  }
+
+  .side {
+    position: sticky;
+    top: 5.5rem;
+  }
+
+  .toc {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.25rem;
+    background: var(--bg-raised);
+  }
+
+  .toc h2 {
+    margin-bottom: 0.75rem;
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    font-weight: 650;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .toc ul {
+    display: grid;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .toc a {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.4;
+    text-decoration: none;
+  }
+
+  .toc a:hover {
+    color: var(--accent);
+  }
+
+  .h-sec {
+    font-size: var(--step-3);
+    margin-bottom: 1.4rem;
+  }
+
+  .other {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .other h3 {
+    font-size: 1.08rem;
+    line-height: 1.3;
+  }
+
+  .other p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .faq-wrap {
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+
+  @media (max-width: 999px) {
+    .side {
+      position: static;
+    }
+  }
+</style>

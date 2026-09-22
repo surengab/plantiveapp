@@ -74,6 +74,51 @@ const steps = [
   },
 ];
 
+const careTips = [
+  {
+    n: '01',
+    title: 'Set up a new plant safely',
+    body: 'Inspect the leaves, learn its light needs and keep it apart from your collection for the first week. Avoid repotting or feeding it before it settles in.',
+    href: '/guides/new-houseplant-first-week/',
+    link: 'Use the new-plant checklist',
+  },
+  {
+    n: '02',
+    title: 'Build a weekly routine',
+    body: 'A short check of soil, new growth and leaf undersides catches most problems before they spread—and prevents watering just because it is Sunday.',
+    href: '/guides/weekly-houseplant-care-routine/',
+    link: 'Follow the 10-minute routine',
+  },
+  {
+    n: '03',
+    title: 'Keep leaves clean',
+    body: 'Dust dulls broad leaves and makes pests harder to spot. Use lukewarm water or a soft damp cloth, then let the foliage dry with good airflow.',
+    href: '/guides/clean-houseplant-leaves/',
+    link: 'Clean leaves safely',
+  },
+  {
+    n: '04',
+    title: 'Feed active growth only',
+    body: 'Fertiliser supports growth; it does not repair stressed roots or make up for low light. Feed modestly when the plant is actively producing new leaves.',
+    href: '/guides/fertilize-houseplants/',
+    link: 'Fertilise without overdoing it',
+  },
+  {
+    n: '05',
+    title: 'Raise humidity effectively',
+    body: 'Misting changes humidity for only a few minutes. Group compatible plants or use a humidifier when a genuinely humidity-loving plant needs more.',
+    href: '/guides/houseplant-humidity/',
+    link: 'See what actually works',
+  },
+  {
+    n: '06',
+    title: 'Prepare before a trip',
+    body: 'Check each pot before leaving, move thirsty plants away from hot sun and test any wick system in advance. Extra water is not travel insurance.',
+    href: '/guides/vacation-houseplant-care/',
+    link: 'Make a vacation care plan',
+  },
+];
+
 const faqs = [
   {
     question: 'Is Plantive free?',
@@ -192,6 +237,31 @@ const schema = [mobileApp(), faqPage(faqs, '/')].filter(Boolean);
           >how to identify a plant from a photo</a
         >, including a flower-photo example and a checklist for verifying the result.
       </p>
+    </div>
+  </section>
+
+  <!-- ================= Quick guides ================= -->
+  <section class="section quick-guides" id="guides">
+    <div class="wrap">
+      <div class="guide-intro">
+        <p class="eyebrow">Practical guides</p>
+        <h2>Six practical guides for healthier houseplants</h2>
+        <p class="lede">
+          Start with a quick answer here, then open the step-by-step guide when you need it.
+        </p>
+      </div>
+      <div class="grid grid-3 guide-grid">
+        {
+          careTips.map((tip) => (
+            <article class="card guide-card">
+              <span class="guide-number" aria-hidden="true">{tip.n}</span>
+              <h3>{tip.title}</h3>
+              <p>{tip.body}</p>
+              <a href={tip.href}>{tip.link} →</a>
+            </article>
+          ))
+        }
+      </div>
     </div>
   </section>
 
@@ -469,6 +539,51 @@ const schema = [mobileApp(), faqPage(faqs, '/')].filter(Boolean);
     margin-top: 2.25rem;
     font-size: 0.93rem;
     color: var(--text-muted);
+  }
+
+  /* ---------------- Quick guides ---------------- */
+  .quick-guides {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .guide-intro {
+    max-width: 48rem;
+  }
+
+  .guide-grid {
+    margin-top: 2.25rem;
+  }
+
+  .guide-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .guide-number {
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+
+  .guide-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .guide-card p {
+    color: var(--text-muted);
+    font-size: 0.93rem;
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .guide-card a {
+    font-family: var(--font-display);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
   }
 
   /* ---------------- Section headers ---------------- */
