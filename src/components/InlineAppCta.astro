@@ -1,0 +1,81 @@
+---
+/**
+ * A slim install prompt placed near the top of long articles.
+ *
+ * On phones the sidebar card and the closing CTA band sit thousands of pixels
+ * down the page, and Safari's Smart App Banner never shows in Chrome or the
+ * Google app. This gives mobile readers one contextual
+ * prompt early on without interrupting the answer they came for.
+ */
+import { APP, appStoreUrl, contentGroupForPath } from '../consts';
+
+interface Props {
+  /** One short sentence tied to the page's topic. */
+  text: string;
+  /** Placement label for analytics. */
+  source?: string;
+}
+
+const { text, source = 'article-inline' } = Astro.props;
+const href = appStoreUrl(contentGroupForPath(Astro.url.pathname));
+---
+
+<aside class="inline-cta" aria-label="Plantive app">
+  <img src="/assets/icon-192.png" width="40" height="40" alt="" decoding="async" loading="lazy" />
+  <p>{text}</p>
+  <a
+    class="inline-cta-btn"
+    href={href}
+    rel="noopener"
+    data-app-store-link
+    data-source={source}
+    aria-label={`Get ${APP.name} on the App Store`}
+  >
+    Get the free app
+  </a>
+</aside>
+
+<style>
+  .inline-cta {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+    margin-block: 1.5rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--green-300);
+    border-radius: var(--radius-lg, 1rem);
+    background: var(--accent-soft);
+  }
+
+  .inline-cta img {
+    flex: none;
+    border-radius: 0.6rem;
+  }
+
+  .inline-cta p {
+    flex: 1 1 14rem;
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    color: var(--text);
+  }
+
+  .inline-cta-btn {
+    flex: none;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    background: var(--green-800);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .inline-cta-btn:hover {
+    background: var(--green-700);
+    color: #fff;
+  }
+</style>

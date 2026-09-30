@@ -90,6 +90,8 @@ A smaller number of plants are seriously dangerous, and those are worth knowing 
 
 Toxicity is species-specific, and common names are unreliable, since the same name refers to different plants in different places. If you are unsure what a plant is, identify it by its botanical name before deciding whether it is safe.
 
+**Holiday plants:** the ASPCA lists [Christmas cactus](/plant-care/christmas-cactus/) as non-toxic to cats and dogs, while [poinsettia](/plant-care/poinsettia/) is listed as toxic, though its effects are usually mild irritation rather than a true emergency. The [money tree](/plant-care/money-tree/) (*Pachira aquatica*) is also on the ASPCA non-toxic list; [jade plant](/plant-care/jade-plant/) is not.
+
 ## If your pet eats a plant
 
 1. **Call your vet or an animal poison control line immediately.** Do not wait for symptoms.

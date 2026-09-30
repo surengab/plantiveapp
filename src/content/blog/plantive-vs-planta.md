@@ -30,7 +30,7 @@ faqs:
   - question: 'Are Plantive and Planta free?'
     answer: 'Both US App Store listings currently say Free with In-App Purchases. Planta lists subscription options, while Plantive lists in-app purchases. Plans and local prices can change, so check the purchase sheet before confirming.'
   - question: 'Which app has the smaller listed download?'
-    answer: 'At the time checked, Plantive is listed at 15.3 MB and Planta at 288.4 MB. App sizes change between versions, and size alone is not a quality measure.'
+    answer: 'At the time checked, Plantive is listed at 15.5 MB and Planta at 288.4 MB. App sizes change between versions, and size alone is not a quality measure.'
 featured: false
 ---
 
@@ -48,7 +48,7 @@ Plantive publishes this page, so it is not an independent review. It uses curren
 | Extra tools listed | Focused feature set; reminders and light meter are not currently listed | Light meter, problem guidance, shared care and community features |
 | Devices listed | iPhone | iPhone and iPad |
 | Minimum iOS listed | iOS 17 | iOS 18 |
-| Listed download size | 15.3 MB | 288.4 MB |
+| Listed download size | 15.5 MB | 288.4 MB |
 | Download model | Free with in-app purchases | Free with in-app purchases |
 | Developer-reported privacy label | Data Not Collected | Lists tracking and linked-data categories; inspect the current label for purposes |
 
@@ -76,7 +76,7 @@ Plantive's current developer-reported App Store label says **Data Not Collected*
 
 ## Compatibility, size and purchases
 
-Plantive currently requires iOS 17 or later and is listed at 15.3 MB for iPhone. Planta currently requires iOS 18 or later, lists iPhone and iPad support, and is shown at 288.4 MB.
+Plantive currently requires iOS 17 or later and is listed at 15.5 MB for iPhone. Planta currently requires iOS 18 or later, lists iPhone and iPad support, and is shown at 288.4 MB.
 
 Both listings say free with in-app purchases. Planta currently presents subscription options; Plantive presents in-app purchase options. Exact availability, trials and prices vary by region and can change between versions.
 

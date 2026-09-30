@@ -7,3 +7,7 @@
 # Google Search Console requires its verification file to return 200 at the
 # exact URL it was given, so rewrite (200) instead of letting Pages redirect.
 /googled3a3104e21d45d9e.html  /googled3a3104e21d45d9e  200
+
+# /sitemap.xml is the path crawlers, SEO tools and people guess first, but
+# @astrojs/sitemap writes sitemap-index.xml. Send the guess to the real index.
+/sitemap.xml  /sitemap-index.xml  301

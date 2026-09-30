@@ -12,7 +12,7 @@ import sitemap from '@astrojs/sitemap';
  * unreliable lastmod is one Google discounts wholesale. A page's honest date is
  * its updatedDate, or its publishDate if it has never been revised.
  */
-const CONTENT = { plants: 'plant-care', problems: 'problems', blog: 'blog' };
+const CONTENT = { plants: 'plant-care', problems: 'problems', guides: 'guides', blog: 'blog' };
 
 const contentDates = new Map();
 for (const [dir, route] of Object.entries(CONTENT)) {
@@ -80,7 +80,7 @@ export default defineConfig({
         const path = new URL(item.url).pathname;
         // Content pages carry their own date; hubs inherit their newest child;
         // static pages (privacy, terms, about) fall back to the build date.
-        const hub = /^\/(plant-care|problems|blog)\/$/.test(path);
+        const hub = /^\/(plant-care|problems|guides|blog)\/$/.test(path);
         item.lastmod = (
           contentDates.get(path) ??
           staticDates.get(path) ??
@@ -89,8 +89,8 @@ export default defineConfig({
 
         // Homepage and the two content hubs are the priority crawl targets.
         if (item.url === 'https://plantiveapp.com/') item.priority = 1.0;
-        else if (/\/(plant-care|problems|blog)\/$/.test(item.url)) item.priority = 0.9;
-        else if (/\/(plant-care|problems)\//.test(item.url)) item.priority = 0.8;
+        else if (/\/(plant-care|problems|guides|blog)\/$/.test(item.url)) item.priority = 0.9;
+        else if (/\/(plant-care|problems|guides)\//.test(item.url)) item.priority = 0.8;
         else item.priority = 0.6;
         return item;
       },

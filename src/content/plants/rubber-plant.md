@@ -82,7 +82,7 @@ faqs:
     answer: 'Yes, mildly. The milky latex sap contains compounds that cause mouth irritation, drooling and vomiting in cats and dogs, and it can irritate human skin on contact. It is not usually dangerous but is worth keeping out of reach, and gloves are sensible when pruning.'
 related:
   - fiddle-leaf-fig
-  - monstera-deliciosa
+  - money-tree
   - zz-plant
 featured: false
 ---

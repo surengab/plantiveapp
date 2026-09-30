@@ -137,7 +137,7 @@ Pothos stem cuttings root readily when they include a healthy node.
 
 **Fine webbing under leaves.** This can indicate spider mites. Isolate the plant and use the [spider-mite guide](/problems/spider-mites/) to confirm the signs before treating it.
 
-**Sticky residue on leaves or the shelf below.** Inspect closely for scale or mealybugs, isolate the plant if pests are present, and use a treatment labelled for the pest and plant.
+**Sticky residue on leaves or the shelf below.** Inspect closely for scale or [mealybugs](/problems/mealybugs/), isolate the plant if pests are present, and use a treatment labelled for the pest and plant.
 
 ## Pothos and pets
 

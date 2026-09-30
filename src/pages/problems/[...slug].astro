@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import CtaBand from '../../components/CtaBand.astro';
+import InlineAppCta from '../../components/InlineAppCta.astro';
 import ArticleImage from '../../components/ArticleImage.astro';
 import { breadcrumbs, article, faqPage } from '../../lib/schema';
 
@@ -113,6 +114,10 @@ const h2s = headings.filter((h) => h.depth === 2);
               </li>
             ))}
           </ol>
+          <InlineAppCta
+            source="problem-inline"
+            text="Care advice depends on the species. Identify the plant with Plantive, then open the care guide for that plant."
+          />
         </section>
       )
     }

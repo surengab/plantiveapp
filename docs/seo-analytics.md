@@ -33,7 +33,7 @@ Leave `PUBLIC_APPLE_PROVIDER_TOKEN` blank until App Store Connect supplies the n
 1. In App Store Connect, select Plantive, then **Analytics → Acquisition → Campaigns**.
 2. Create the first campaign link and copy the provider token (`pt`). Apple generates this token; do not invent it.
 3. Put the token in the production build environment as `PUBLIC_APPLE_PROVIDER_TOKEN` and rebuild.
-4. The site will add `pt`, `ct`, and `mt=8` to App Store links and the Safari Smart App Banner. It uses five stable campaign tokens: `website-home`, `website-plant-care`, `website-problems`, `website-blog`, and `website-other`. GA4, not Apple campaign proliferation, reports individual CTA placements.
+4. The site will add `pt`, `ct`, and `mt=8` to App Store links and the Safari Smart App Banner. It uses six stable campaign tokens: `website-home`, `website-plant-care`, `website-problems`, `website-guides`, `website-blog`, and `website-other`. GA4, not Apple campaign proliferation, reports individual CTA placements.
 5. In App Store Connect Analytics, filter Metrics by Campaign. Apple says campaigns may take at least 24 hours to appear, dashboard metrics require a threshold of five in the selected range, first-time-download attribution uses a 24-hour window, and small detailed-report groups may be withheld or combined for privacy.
 
 Reference: [Apple campaign links](https://developer.apple.com/help/app-store-connect-analytics/acquisition/campaign-links).

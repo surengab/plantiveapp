@@ -3,8 +3,9 @@ import { getCollection } from 'astro:content';
 import { SITE } from '../consts';
 
 export async function GET(context) {
-  const [blog, plants, problems] = await Promise.all([
+  const [blog, guides, plants, problems] = await Promise.all([
     getCollection('blog', (p) => !p.data.draft),
+    getCollection('guides', (p) => !p.data.draft),
     getCollection('plants', (p) => !p.data.draft),
     getCollection('problems', (p) => !p.data.draft),
   ]);
@@ -15,6 +16,13 @@ export async function GET(context) {
       description: p.data.excerpt,
       pubDate: p.data.publishDate,
       link: `/blog/${p.id}/`,
+      categories: [p.data.category],
+    })),
+    ...guides.map((p) => ({
+      title: p.data.title,
+      description: p.data.excerpt,
+      pubDate: p.data.updatedDate ?? p.data.publishDate,
+      link: `/guides/${p.id}/`,
       categories: [p.data.category],
     })),
     ...plants.map((p) => ({

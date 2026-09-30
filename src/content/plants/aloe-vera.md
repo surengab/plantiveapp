@@ -82,7 +82,7 @@ faqs:
     answer: 'Wait until a pup is about a third the size of the parent and has formed its own roots. Tip the whole plant out, gently tease the pup away with its roots intact, using a clean knife if needed. Leave the separated pup in open air for two days so the cut surfaces callus, then pot it into dry cactus mix and wait another week before the first watering.'
 related:
   - snake-plant
-  - zz-plant
+  - jade-plant
   - echeveria
 featured: false
 ---

@@ -40,8 +40,8 @@ export const APP = {
   currency: 'USD',
   platform: 'iOS',
   minimumOsVersion: '17.0',
-  fileSizeMb: 15.3,
-  version: '1.2',
+  fileSizeMb: 15.5,
+  version: '1.3',
   contentRating: '13+',
   supportEmail: 'contact@deductify.org',
   privacyUrl:

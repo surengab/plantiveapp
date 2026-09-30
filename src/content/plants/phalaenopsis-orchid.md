@@ -81,8 +81,8 @@ faqs:
     answer: 'No. Phalaenopsis are epiphytes that grow clinging to tree bark with their roots exposed to air. Potting soil holds moisture against them and suffocates them, and root rot follows within weeks. Use coarse orchid bark, ideally in a clear plastic pot so you can monitor root colour.'
 related:
   - peace-lily
+  - christmas-cactus
   - calathea
-  - spider-plant
 featured: false
 ---
 

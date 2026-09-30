@@ -33,7 +33,7 @@ affectedPlants:
 related:
   - overwatering-vs-underwatering
   - root-rot
-  - drooping-wilting-plant
+  - white-mold-on-soil
 faqs:
   - question: 'Are fungus gnats harmful to houseplants?'
     answer: 'Adults are mainly a nuisance. Larvae live in the growing medium and can damage roots, with seedlings and young cuttings especially vulnerable.'

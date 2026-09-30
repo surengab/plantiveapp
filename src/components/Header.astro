@@ -10,14 +10,7 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
 
 <header class="site-header">
   <div class="wrap bar">
-    <a
-      href={storeUrl}
-      class="brand"
-      rel="noopener"
-      data-app-store-link
-      data-source="header-logo"
-      aria-label={`Download ${APP.name} on the App Store`}
-    >
+    <a href="/" class="brand" aria-label={`${APP.shortName} home`}>
       <Logo size={34} />
     </a>
 
@@ -58,6 +51,18 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
 
       <AppStoreButton source="header" class="header-cta" />
 
+      <!-- Phones: the full badge does not fit beside the menu, so show a compact install link. -->
+      <a
+        class="header-get"
+        href={storeUrl}
+        rel="noopener"
+        data-app-store-link
+        data-source="header-mobile"
+        aria-label={`Get ${APP.name} on the App Store`}
+      >
+        Get the app
+      </a>
+
       <button
         type="button"
         class="menu-toggle"
@@ -84,6 +89,11 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
       }
       <li><a href="/support/">Support</a></li>
       <li><a href="/about/">About</a></li>
+      <li>
+        <a href={storeUrl} rel="noopener" data-app-store-link data-source="mobile-menu"
+          >Download Plantive for iPhone</a
+        >
+      </li>
     </ul>
   </nav>
 </header>
@@ -249,14 +259,47 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
     border-bottom: 1px solid var(--border);
   }
 
+  .header-get {
+    display: none;
+    align-items: center;
+    padding: 0.55rem 0.95rem;
+    border-radius: 999px;
+    background: var(--green-800);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .header-get:hover {
+    background: var(--green-700);
+    color: #fff;
+  }
+
   @media (max-width: 940px) {
     .nav {
       display: none;
+    }
+    /* The hidden nav is still the sibling, so push the actions right explicitly. */
+    .nav + .actions {
+      margin-inline-start: auto;
     }
     .menu-toggle {
       display: flex;
     }
     .actions :global(.header-cta) {
+      display: none;
+    }
+    .header-get {
+      display: inline-flex;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .theme-toggle {
       display: none;
     }
   }

@@ -162,6 +162,6 @@ Check the undersides of leaves regularly for:
 
 - **Spider mites**: fine webbing where the leaf meets the stem, stippled yellow speckling. Thrive in dry air.
 - **Thrips**: silvery scarring and black specks; new growth comes in distorted.
-- **Mealybugs**: white cottony clumps in leaf axils.
+- **Mealybugs**: white cottony clumps in leaf axils. See [how to get rid of mealybugs](/problems/mealybugs/).
 
 Wipe the leaves with a damp cloth when they become dusty. This also gives you a chance to notice pests before they spread.

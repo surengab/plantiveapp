@@ -136,7 +136,7 @@ Avoid diagnosing a specific deficiency from leaf color alone. If the roots are h
 Turn a few leaves over and look closely, ideally with your phone camera zoomed in.
 
 - **Fine stippling with tiny webs** in leaf joints → [spider mites](/problems/spider-mites/)
-- **White cottony clumps** in leaf axils → mealybugs
+- **White cottony clumps** in leaf axils → [mealybugs](/problems/mealybugs/)
 - **Sticky residue** on leaves or the surface below → scale or aphids
 - **Silvery streaks with black specks** → thrips
 

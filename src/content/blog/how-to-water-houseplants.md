@@ -101,6 +101,8 @@ Continuing a summer watering routine through winter is one of the most reliable 
 
 **In winter:** check just as often, water considerably less. A plant that needed water weekly in July may need it every three weeks in January.
 
+If your plants spent the summer outdoors, the guide to [bringing plants indoors for winter](/guides/bring-plants-indoors-for-winter/) covers the move. Going away over the holidays? Use the [vacation houseplant care plan](/guides/vacation-houseplant-care/) instead of watering extra before you leave.
+
 ## Water quality
 
 For most plants, tap water is fine. A few species are genuinely sensitive:

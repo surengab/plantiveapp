@@ -26,6 +26,11 @@ const SPECIES = {
   'snake-plant': ['Dracaena trifasciata'],
   'spider-plant': ['Chlorophytum comosum'],
   'zz-plant': ['Zamioculcas zamiifolia'],
+  // Added with the September 2026 guides; pick by eye before running apply-photo-picks.
+  'christmas-cactus': ['Schlumbergera × buckleyi', 'Schlumbergera'],
+  poinsettia: ['Euphorbia pulcherrima'],
+  'jade-plant': ['Crassula ovata'],
+  'money-tree': ['Pachira aquatica'],
 };
 
 const strip = (s = '') =>

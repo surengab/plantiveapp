@@ -47,7 +47,7 @@ Plantive publishes this page, so it is not an independent review. It compares cu
 | Extra tools listed | Focused feature set; reminders and light meter are not currently listed | Light meter, reminders, collection tools and expert consultation |
 | Devices listed | iPhone | iPhone and iPad |
 | Minimum iOS listed | iOS 17 | iOS 15 |
-| Listed download size | 15.3 MB | 251 MB |
+| Listed download size | 15.5 MB | 251 MB |
 | Download model | Free with in-app purchases | Free with in-app purchases |
 | Developer-reported privacy label | Data Not Collected | Lists collection across several categories; inspect the current label for purposes and linkage |
 
@@ -77,7 +77,7 @@ Plantive's current App Store privacy label says **Data Not Collected**. PictureT
 
 ## Compatibility, size and purchases
 
-Plantive currently requires iOS 17 or later and is listed as a 15.3 MB iPhone app. PictureThis currently requires iOS 15 or later, supports iPhone and iPad, and is listed at 251 MB.
+Plantive currently requires iOS 17 or later and is listed as a 15.5 MB iPhone app. PictureThis currently requires iOS 15 or later, supports iPhone and iPad, and is listed at 251 MB.
 
 Both are free to download with in-app purchases. The App Store can present multiple purchase options, trials and region-specific prices. This comparison intentionally avoids turning a changeable purchase list into a promise about what every user will pay.
 

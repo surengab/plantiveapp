@@ -80,7 +80,7 @@ faqs:
     answer: 'Prune it. In spring, cut the main stem just above a leaf node, and the plant typically responds by pushing two or three new branches from below the cut. Notching, where you cut a shallow wedge about a third into the trunk above a node, achieves the same thing without removing height.'
 related:
   - rubber-plant
-  - monstera-deliciosa
+  - money-tree
   - calathea
 featured: true
 ---

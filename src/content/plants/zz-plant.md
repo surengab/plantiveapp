@@ -96,7 +96,7 @@ If you are unsure, wait. A thirsty ZZ plant shows no symptoms for weeks. An over
 
 ## Light
 
-ZZ plants photosynthesise efficiently enough to grow in genuinely low light: a bookshelf across the room from a window, a north-facing hall, an office lit by ceiling panels.
+ZZ plants photosynthesise efficiently enough to grow in genuinely low light: a bookshelf across the room from a window, a north-facing hall, an office lit by ceiling panels. It sits near the top of our list of [low-light houseplants](/blog/best-low-light-houseplants/).
 
 That said, "tolerates low light" means slow growth. In bright indirect light a ZZ plant might push three or four new stems a year; in a dim corner, one. Both plants stay healthy.
 

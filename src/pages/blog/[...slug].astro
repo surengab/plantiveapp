@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import CtaBand from '../../components/CtaBand.astro';
+import InlineAppCta from '../../components/InlineAppCta.astro';
 import ArticleImage from '../../components/ArticleImage.astro';
 import { breadcrumbs, article, faqPage } from '../../lib/schema';
 import { APP, appStoreUrl, contentGroupForPath } from '../../consts';
@@ -82,6 +83,18 @@ const isComparison = d.category === 'App comparisons';
         {d.reviewer && <> · Reviewed by {d.reviewer.url ? <a href={d.reviewer.url}>{d.reviewer.name}</a> : d.reviewer.name}</>}
         {d.readingTime && ` · ${d.readingTime} min read`}
       </p>
+      {
+        !isComparison && (
+          <InlineAppCta
+            source="blog-inline"
+            text={
+              d.category === 'Identification'
+                ? 'Plantive identifies plants, flowers and succulents from a photo on your iPhone.'
+                : 'Not sure what a plant is? Plantive identifies it from a photo and shows its care needs.'
+            }
+          />
+        )
+      }
     </header>
 
     {

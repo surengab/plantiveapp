@@ -62,6 +62,8 @@ const graph = [
     '@id': `${SITE.url}/#website`,
     url: SITE.url,
     name: SITE.name,
+    // Helps Google settle on "Plantive" as the site name in results.
+    alternateName: ['Plantive App', SITE.domain],
     description: SITE.description,
     publisher: { '@id': `${SITE.url}/#organization` },
     inLanguage: SITE.lang,

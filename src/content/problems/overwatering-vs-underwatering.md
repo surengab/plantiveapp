@@ -43,6 +43,10 @@ faqs:
     answer: 'Underwatering, by a wide margin. Most houseplants bounce back within hours of a thorough soak, with only some crispy leaf edges as lasting damage. Overwatering causes root rot, which takes weeks or months to recover from and frequently kills the plant. When genuinely unsure, waiting another few days is the safer error.'
   - question: 'How often should I water my houseplants?'
     answer: 'There is no universal answer, and following a fixed calendar is the most common cause of both problems. Water frequency depends on species, pot size and material, light level, temperature, humidity and season, so the same plant may need water weekly in July and every three weeks in January. Check the soil instead, on a regular schedule, and water only when that particular plant wants it.'
+related:
+  - root-rot
+  - white-mold-on-soil
+  - drooping-wilting-plant
 featured: true
 ---
 

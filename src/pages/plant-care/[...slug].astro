@@ -5,6 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import CareTable from '../../components/CareTable.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import CtaBand from '../../components/CtaBand.astro';
+import InlineAppCta from '../../components/InlineAppCta.astro';
 import LeafArt from '../../components/LeafArt.astro';
 import PhotoCredit from '../../components/PhotoCredit.astro';
 import photos from '../../data/plant-photos.json';
@@ -167,6 +168,10 @@ const storeUrl = appStoreUrl('plant-care');
     <section class="wrap section-tight" id="care">
       <h2 class="care-h">{d.commonName} care at a glance</h2>
       <CareTable care={d.care} />
+      <InlineAppCta
+        source="plant-inline"
+        text={`Not sure yours is a ${d.commonName}? Scan it with Plantive to check the species before you follow this routine.`}
+      />
     </section>
 
     <!-- ---------------- Body + TOC ---------------- -->

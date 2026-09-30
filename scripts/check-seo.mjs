@@ -38,7 +38,7 @@ const fileFor = (url) => {
   return existsSync(path) && statSync(path).isDirectory() ? resolve(path, 'index.html') : path;
 };
 const urls = [...read(`${root}/sitemap-0.xml`).matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
-assert(urls.length >= 47, 'Keep every existing indexable URL and the practical guides');
+assert(urls.length >= 55, 'Keep every existing indexable URL, the practical guides and the September 2026 additions');
 assert.equal(new Set(urls).size, urls.length, 'Duplicate sitemap URLs');
 const titles = new Set();
 const descriptions = new Set();
@@ -68,6 +68,8 @@ for (const url of urls) {
     : 'app-id=6762530988';
   assert.equal(banner && decodeAttribute(banner), expectedBanner, `Smart App Banner attribution: ${url}`);
 
+  assert.equal(tags(html, 'a').find((a) => a.class === 'brand')?.href, '/', `Header logo must link home: ${url}`);
+  assert(html.includes('data-source="header-mobile"'), `Missing mobile header install link: ${url}`);
   const storeLinks = tags(html, 'a').filter((a) => a.href?.startsWith(appStoreBase));
   assert(storeLinks.length >= 3, `Expected shared App Store links: ${url}`);
   for (const link of storeLinks) {
@@ -98,6 +100,7 @@ for (const url of urls) {
 
 assert(existsSync(`${root}/404.html`), 'Missing static 404 page');
 assert(read(`${root}/robots.txt`).includes(`Sitemap: ${origin}/sitemap-index.xml`), 'robots.txt sitemap origin');
+assert(/^\/sitemap\.xml\s+\/sitemap-index\.xml\s+301\s*$/m.test(read(`${root}/_redirects`)), '/sitemap.xml redirect to sitemap-index.xml');
 
 const comparisonPages = ['/blog/plant-identification-apps-compared/', '/blog/plantive-vs-picturethis/', '/blog/plantive-vs-planta/'];
 for (const path of comparisonPages) {

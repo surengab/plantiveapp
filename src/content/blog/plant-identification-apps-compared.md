@@ -57,13 +57,13 @@ Plantive publishes this comparison, so it is not an independent review. The purp
 | Plantum | Identification of plants and other natural objects | Reminders, light and pot meters, water calculator, journal and weather tools | Free with in-app purchases |
 | Blossom | Identification combined with guided plant care | Reminders, water calculator, disease guidance, journal and edible-plant tools | Free with in-app purchases |
 
-This table summarizes what each developer currently lists; it does not confirm that every feature is equally accurate, complete or included without payment.
+This table summarizes what each developer currently lists; it does not confirm that every feature is equally accurate, complete or included without payment. If you only need a quick name for one photo, your iPhone's built-in Visual Look Up may be enough; see [how to identify plants on iPhone](/blog/how-to-identify-plants-on-iphone/).
 
 ## How the apps differ
 
 ### Plantive: focused identification and care
 
-Plantive's App Store listing describes photo identification for plants, flowers, trees, succulents and houseplants, followed by watering, light and general care information. It is listed as a 15.3 MB iPhone app requiring iOS 17 or later.
+Plantive's App Store listing describes photo identification for plants, flowers, trees, succulents and houseplants, followed by watering, light and general care information. It is listed as a 15.5 MB iPhone app requiring iOS 17 or later.
 
 The listing's developer-supplied privacy label says **Data Not Collected**. It does not currently list care reminders, a light meter, a plant journal or expert consultations. Choose it when a smaller, more focused identification-and-guidance app matches the job; do not choose it expecting an unlisted scheduling system.
 

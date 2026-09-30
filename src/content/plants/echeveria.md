@@ -81,7 +81,7 @@ faqs:
     answer: 'Grip a healthy leaf near the stem and twist gently sideways until it detaches cleanly with its whole base, since a torn leaf will not root. Lay it on dry cactus mix somewhere bright but out of direct sun and leave it for three to five days to callus. Mist lightly every few days. Roots appear within two to three weeks, followed by a tiny rosette, and the original leaf shrivels as it is consumed.'
 related:
   - aloe-vera
-  - snake-plant
+  - jade-plant
   - zz-plant
 featured: false
 ---

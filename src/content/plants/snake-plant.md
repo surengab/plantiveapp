@@ -118,7 +118,7 @@ Snake plants are the standard recommendation for low light, and the recommendati
 | Direct sun | Fine if introduced gradually; sudden exposure bleaches leaves |
 | No natural light | Slow decline over months |
 
-If you want your snake plant to actually grow rather than just persist, give it bright indirect light.
+If you want your snake plant to actually grow rather than just persist, give it bright indirect light. For other plants that cope with dim rooms, see the [best low-light houseplants](/blog/best-low-light-houseplants/).
 
 ## Spotting and treating root rot
 

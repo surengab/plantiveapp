@@ -25,7 +25,7 @@ image:
 keywords:
   - how to identify a flower from a photo
   - identify plant from photo
-  - plant identifier for iPhone
+  - identify plant by picture
   - what plant is this
 faqs:
   - question: 'How do I identify a flower from a photo?'
@@ -84,6 +84,8 @@ Keep one subject in focus, use even light and avoid filters that alter its color
 ## Identify a plant on iPhone with Plantive
 
 [Plantive](/) offers photo-based plant identification and care guidance for iPhone. Start with the clearest image of your subject, compare the suggested name using the checklist above, then open the relevant care information.
+
+Your iPhone also has a built-in option: Visual Look Up in the Photos app. The guide to [identifying plants on iPhone](/blog/how-to-identify-plants-on-iphone/) compares it with Google Lens and plant apps, step by step.
 
 For availability and purchase details, use the App Store link below. If you already know the plant's name, go straight to the free [plant care library](/plant-care/).
 
