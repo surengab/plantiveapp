@@ -28,10 +28,7 @@
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 
-/sitemap-index.xml
-  Cache-Control: public, max-age=3600
-
-/sitemap-0.xml
+/sitemap.xml
   Cache-Control: public, max-age=3600
 
 /rss.xml

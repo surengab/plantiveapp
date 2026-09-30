@@ -8,6 +8,9 @@
 # exact URL it was given, so rewrite (200) instead of letting Pages redirect.
 /googled3a3104e21d45d9e.html  /googled3a3104e21d45d9e  200
 
-# /sitemap.xml is the path crawlers, SEO tools and people guess first, but
-# @astrojs/sitemap writes sitemap-index.xml. Send the guess to the real index.
-/sitemap.xml  /sitemap-index.xml  301
+# The sitemap lives at /sitemap.xml (see sitemapXml in astro.config.mjs).
+# These are the file names @astrojs/sitemap used to publish; keep them
+# working for anything that saved the old URLs. Never add a rule for
+# /sitemap.xml itself: it would shadow the real file.
+/sitemap-index.xml  /sitemap.xml  301
+/sitemap-0.xml  /sitemap.xml  301

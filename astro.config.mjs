@@ -1,6 +1,8 @@
 // @ts-check
 import { execFileSync } from 'node:child_process';
-import { readFileSync, readdirSync } from 'node:fs';
+import { readFileSync, readdirSync, renameSync, rmSync } from 'node:fs';
+import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
@@ -67,6 +69,35 @@ const staticDates = new Map(
   Object.entries(STATIC_PAGES).map(([route, file]) => [route, lastCommitDate(file)])
 );
 
+/**
+ * Publish the sitemap at /sitemap.xml.
+ *
+ * @astrojs/sitemap always writes an index (sitemap-index.xml) that points at
+ * numbered chunks (sitemap-0.xml, ...), and has no single-file option. The site
+ * is far below the 45,000-URL chunk size, so there is exactly one chunk:
+ * promote it to sitemap.xml and drop the index. public/_redirects sends the
+ * old sitemap-index.xml and sitemap-0.xml URLs here.
+ *
+ * Must be listed after sitemap(): Astro runs build:done hooks in order.
+ * Throws rather than shipping without a sitemap, because @astrojs/sitemap
+ * only logs its own errors and lets the build pass.
+ * @type {import('astro').AstroIntegration}
+ */
+const sitemapXml = {
+  name: 'sitemap-xml',
+  hooks: {
+    'astro:build:done': ({ dir }) => {
+      const out = fileURLToPath(dir);
+      const chunks = readdirSync(out).filter((f) => /^sitemap-\d+\.xml$/.test(f));
+      if (chunks.length !== 1) {
+        throw new Error(`sitemap-xml: expected 1 sitemap chunk, found ${chunks.length} (${chunks.join(', ') || 'none'})`);
+      }
+      renameSync(join(out, chunks[0]), join(out, 'sitemap.xml'));
+      rmSync(join(out, 'sitemap-index.xml'), { force: true });
+    },
+  },
+};
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://plantiveapp.com',
@@ -95,6 +126,7 @@ export default defineConfig({
         return item;
       },
     }),
+    sitemapXml,
   ],
   markdown: {
     shikiConfig: { theme: 'github-light', wrap: true },

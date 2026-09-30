@@ -37,7 +37,9 @@ const fileFor = (url) => {
   assert(path.startsWith(root), `Path outside build: ${url}`);
   return existsSync(path) && statSync(path).isDirectory() ? resolve(path, 'index.html') : path;
 };
-const urls = [...read(`${root}/sitemap-0.xml`).matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
+const sitemapXml = read(`${root}/sitemap.xml`);
+assert(sitemapXml.includes('<urlset'), 'sitemap.xml must be a urlset, not an index');
+const urls = [...sitemapXml.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
 assert(urls.length >= 55, 'Keep every existing indexable URL, the practical guides and the September 2026 additions');
 assert.equal(new Set(urls).size, urls.length, 'Duplicate sitemap URLs');
 const titles = new Set();
@@ -99,8 +101,13 @@ for (const url of urls) {
 }
 
 assert(existsSync(`${root}/404.html`), 'Missing static 404 page');
-assert(read(`${root}/robots.txt`).includes(`Sitemap: ${origin}/sitemap-index.xml`), 'robots.txt sitemap origin');
-assert(/^\/sitemap\.xml\s+\/sitemap-index\.xml\s+301\s*$/m.test(read(`${root}/_redirects`)), '/sitemap.xml redirect to sitemap-index.xml');
+assert(read(`${root}/robots.txt`).includes(`Sitemap: ${origin}/sitemap.xml`), 'robots.txt sitemap origin');
+const redirects = read(`${root}/_redirects`);
+assert(!/^\/sitemap\.xml\s/m.test(redirects), '_redirects must not redirect /sitemap.xml');
+for (const old of ['sitemap-index.xml', 'sitemap-0.xml']) {
+  assert(!existsSync(`${root}/${old}`), `Stale sitemap file in build: ${old}`);
+  assert(new RegExp(`^/${old.replace('.', '\\.')}\\s+/sitemap\\.xml\\s+301\\s*$`, 'm').test(redirects), `Missing redirect: /${old} -> /sitemap.xml`);
+}
 
 const comparisonPages = ['/blog/plant-identification-apps-compared/', '/blog/plantive-vs-picturethis/', '/blog/plantive-vs-planta/'];
 for (const path of comparisonPages) {

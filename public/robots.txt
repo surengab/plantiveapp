@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://plantiveapp.com/sitemap-index.xml
+Sitemap: https://plantiveapp.com/sitemap.xml
