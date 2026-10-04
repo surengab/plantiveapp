@@ -40,7 +40,7 @@ const fileFor = (url) => {
 const sitemapXml = read(`${root}/sitemap.xml`);
 assert(sitemapXml.includes('<urlset'), 'sitemap.xml must be a urlset, not an index');
 const urls = [...sitemapXml.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
-assert(urls.length >= 55, 'Keep every existing indexable URL, the practical guides and the September 2026 additions');
+assert(urls.length >= 58, 'Keep existing indexable URLs and the October 2026 articles');
 assert.equal(new Set(urls).size, urls.length, 'Duplicate sitemap URLs');
 const titles = new Set();
 const descriptions = new Set();
@@ -116,6 +116,17 @@ for (const path of comparisonPages) {
   assert(html.includes('data-source="comparison-bottom"'), `Missing bottom comparison CTA: ${path}`);
 }
 
+const newArticles = ['/blog/how-to-propagate-pothos/', '/blog/grow-lights-for-houseplants/', '/problems/scale-insects/'];
+for (const path of newArticles) {
+  const html = pages.get(path);
+  assert(html, `New article missing from sitemap: ${path}`);
+  assert(read(`${root}/rss.xml`).includes(path), `New article missing from RSS: ${path}`);
+  assert(pages.get(path.startsWith('/blog/') ? '/blog/' : '/problems/').includes(`href="${path}"`), `New article missing from hub: ${path}`);
+  const graph = JSON.parse(html.match(/<script type="application\/ld\+json"[^>]*>(.*?)<\/script>/s)[1])['@graph'];
+  const article = graph.find((entry) => entry['@type'] === 'Article');
+  assert(article?.datePublished.startsWith('2026-10-04'), `Article publication date: ${path}`);
+  assert(html.includes('id="references-heading"'), `Missing visible sources: ${path}`);
+}
 const priority = ['/problems/monstera-leaves-not-splitting/', '/problems/fungus-gnats/', '/blog/how-to-identify-a-plant-from-a-photo/'];
 for (const path of priority) {
   const html = pages.get(path);

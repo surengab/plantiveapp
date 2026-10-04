@@ -3,7 +3,7 @@ title: 'Leggy Houseplants: Why Plants Stretch and How to Fix It'
 description: 'Long bare stems and widely spaced leaves mean one thing: not enough light. How to confirm it, fix the light, and prune a stretched plant back into shape.'
 heading: 'Why Is My Plant Leggy and Stretched?'
 publishDate: 2026-07-27
-updatedDate: 2026-08-20
+updatedDate: 2026-10-04
 keywords:
   - leggy houseplant
   - plant stretching for light
@@ -16,7 +16,7 @@ causes:
   - name: 'Not enough light'
     likelihood: 'most likely'
     tell: 'Long gaps between leaves, stems leaning hard toward the window, new leaves smaller and paler than old ones. Succulents show it most dramatically.'
-    fix: 'Move closer to a bright window or add an LED grow light for 10-12 hours a day. Then prune back the stretched growth to force compact regrowth.'
+    fix: 'Move to a suitable brighter position or add a grow light with enough output and coverage. Judge the response by new growth, then prune stretched stems if appropriate for the species.'
   - name: 'Never pruned'
     likelihood: 'common'
     tell: 'A vining plant with a few very long stems and leaves only at the tips. The plant is healthy but shapeless.'
@@ -47,7 +47,7 @@ faqs:
   - question: 'How much light do houseplants actually need?'
     answer: 'Far more than most homes provide. Light intensity falls off with the square of the distance, so a spot three metres from a window can have less than a tenth the light of a spot right beside it, even though both look bright to your eyes, because your eyes adjust and a plant cannot. A useful rule: if you could not comfortably read a book there at midday without a lamp, it is a low-light spot.'
   - question: 'Are grow lights worth it?'
-    answer: 'Yes, and they are cheaper than most people expect. A basic LED grow light running 10-12 hours a day on a timer costs very little to run and completely solves legginess in rooms with poor natural light. For succulents and high-light plants in northern climates it is often the difference between a plant that survives and one that actually looks good.'
+    answer: 'A suitable grow light can help when window light is insufficient. Choose its output, coverage, distance and daily duration for the plant. A light cannot shorten existing stretched stems, so look for stronger new growth and check other causes if the plant continues to decline.'
 featured: false
 ---
 
@@ -83,7 +83,7 @@ A practical test: at midday, could you comfortably read a paperback there withou
 - Choose an **east or south-facing** window where possible
 - **Clean the glass** and open blinds fully
 - **Rotate the pot** a quarter turn weekly so growth stays even
-- Add an **LED grow light** on a timer for 10-12 hours a day if natural light is genuinely insufficient
+- If natural light is insufficient, use the [grow-light setup guide](/blog/grow-lights-for-houseplants/) to choose a lamp position and timer setting for your plant
 
 Grow lights are the underrated answer. They are inexpensive to buy and run, and in a north-facing flat they are often the only thing that works.
 

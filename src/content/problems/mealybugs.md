@@ -94,7 +94,7 @@ Root mealybugs live on the roots, so the leaves can look clean while the plant s
 | Flat white powder on leaf surfaces | Powdery mildew | A coating, not raised clusters of insects |
 | Tiny white insects that fly up when touched | Whiteflies | Winged adults on leaf undersides |
 
-UC IPM notes that woolly aphids, cottony cushion scale, soft scales and whiteflies also produce wax and honeydew and can be confused with mealybugs. If the white material is only on the soil, work through [white mold on plant soil](/problems/white-mold-on-soil/) instead.
+UC IPM notes that woolly aphids, cottony cushion scale, soft scales and whiteflies also produce wax and honeydew and can be confused with mealybugs. For attached shell-like bumps, compare the [scale-insect identification guide](/problems/scale-insects/). If the white material is only on the soil, work through [white mold on plant soil](/problems/white-mold-on-soil/) instead.
 
 ## How to get rid of mealybugs: a checklist
 

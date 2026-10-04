@@ -66,6 +66,7 @@ Iowa State suggests isolating returning plants from other houseplants for 3 to 4
 | --- | --- | --- |
 | Spider mites | Pale stippling on leaves, then fine webbing | [Spider mites on houseplants](/problems/spider-mites/) |
 | Mealybugs | White, cottony masses on stems and leaf undersides | [How to deal with mealybugs](/problems/mealybugs/) |
+| Scale insects | Attached shell-like bumps; soft scale can leave sticky honeydew | [Identify and remove scale](/problems/scale-insects/) |
 | Fungus gnats | Small dark flies; larvae live in damp potting mix | [Fungus gnat control](/problems/fungus-gnats/) |
 | Aphids and whiteflies | Clusters on new growth or tiny white insects; sticky honeydew | Isolate and identify before treating |
 
@@ -73,7 +74,7 @@ Iowa State suggests isolating returning plants from other houseplants for 3 to 4
 
 Even a sunny window provides far less light than a summer spot outdoors. Iowa State recommends bright, indirect light for returning plants and notes that some will drop leaves in response to the change; new foliage should replace them.
 
-University of Minnesota Extension suggests easing the transition by starting a plant in a very sunny window, then gradually reducing its sun exposure before moving it to a less sunny spot. If your brightest position is still dim, [measure the light where the plant will sit](/blog/how-to-measure-light-for-houseplants/) and consider supplemental lighting.
+University of Minnesota Extension suggests easing the transition by starting a plant in a very sunny window, then gradually reducing its sun exposure before moving it to a less sunny spot. If your brightest position is still dim, [measure the light where the plant will sit](/blog/how-to-measure-light-for-houseplants/) and use our [grow-light setup guide](/blog/grow-lights-for-houseplants/) to plan supplemental lighting.
 
 ## Adjust watering and feeding
 

@@ -3,7 +3,7 @@ title: 'Pothos Care Guide: Watering, Light & Why Leaves Turn Yellow'
 description: 'Practical pothos (Epipremnum aureum) care: how to judge watering, provide light for variegation, propagate cuttings, and investigate yellow leaves or leggy vines.'
 heading: 'Pothos Care Guide'
 publishDate: 2026-06-06
-updatedDate: 2026-09-20
+updatedDate: 2026-10-04
 references:
   - title: 'Pothos as a Houseplant'
     url: 'https://extension.psu.edu/pothos-as-a-houseplant'
@@ -127,7 +127,9 @@ Pothos stem cuttings root readily when they include a healthy node.
 - Cut a section of vine with **at least one node** and 2-4 leaves.
 - Strip the leaf closest to the cut so the node sits bare.
 - Stand it in a glass of water with the node submerged.
-- Change the water when it becomes cloudy and wait for several healthy roots before potting into a well-drained mix.
+- Refresh the water regularly and wait for healthy roots before potting into a well-drained mix.
+
+For a node diagram, a comparison of water and rooting mix, and help with stalled cuttings, follow [how to propagate pothos](/blog/how-to-propagate-pothos/).
 
 ## Common problems
 
@@ -137,7 +139,7 @@ Pothos stem cuttings root readily when they include a healthy node.
 
 **Fine webbing under leaves.** This can indicate spider mites. Isolate the plant and use the [spider-mite guide](/problems/spider-mites/) to confirm the signs before treating it.
 
-**Sticky residue on leaves or the shelf below.** Inspect closely for scale or [mealybugs](/problems/mealybugs/), isolate the plant if pests are present, and use a treatment labelled for the pest and plant.
+**Sticky residue on leaves or the shelf below.** Inspect closely for [scale insects](/problems/scale-insects/) or [mealybugs](/problems/mealybugs/), isolate the plant if pests are present, and use a treatment labelled for the pest and plant.
 
 ## Pothos and pets
 

@@ -2,7 +2,7 @@
 title: 'How to Measure Light in Your Home for Houseplants'
 description: 'Bright indirect light explained properly: what each light level means in real rooms, three ways to measure it without buying anything, and which plants match.'
 publishDate: 2026-07-14
-updatedDate: 2026-09-13
+updatedDate: 2026-10-04
 category: 'Light'
 excerpt: '"Bright indirect light" is the most repeated and least explained instruction in plant care. Here is what it actually means in your rooms.'
 readingTime: 6
@@ -19,7 +19,7 @@ faqs:
   - question: 'Does window direction really matter that much?'
     answer: 'Yes, considerably, in the northern hemisphere. South-facing windows get the most light all day, east gets gentle direct morning sun, west gets intense direct afternoon sun, and north gets steady indirect light with no direct sun. In the southern hemisphere north and south swap. Obstructions like trees, balconies and neighbouring buildings can matter as much as direction.'
   - question: 'Are grow lights worth buying?'
-    answer: 'For most people with a dim flat, yes. A basic LED grow light on a timer for 10-12 hours a day costs very little to run and reliably solves stretched, leggy growth in rooms where no window is bright enough. They are close to essential for succulents and other high-light plants in northern climates through winter.'
+    answer: 'A suitable grow light can help when available window light does not meet the plant’s needs. Output, distance, coverage and daily duration all matter. Judge the result by new growth; existing stretched stems will not shorten.'
 featured: true
 ---
 
@@ -131,7 +131,7 @@ Winter light in temperate regions can be **a fifth or less** of summer light, an
 Two adjustments help:
 
 1. **Move plants closer to windows in winter**, and back once spring light returns.
-2. **Add a grow light.** A basic LED on a timer for 10-12 hours a day costs very little to run and completely solves winter stretching. For succulents in northern climates it is close to essential.
+2. **Add a grow light.** Choose a fixture that covers the leaves and set its distance and timer for the plant. Follow our [grow-light setup guide](/blog/grow-lights-for-houseplants/) for placement, total light hours and signs that you need to adjust it. Existing stretched growth will not become compact again.
 
 ## Matching plants to what you have
 

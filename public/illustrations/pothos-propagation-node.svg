@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600" role="img" aria-labelledby="title desc">
+  <title id="title">Where to cut a pothos vine</title>
+  <desc id="desc">A simplified cutting with a node above the cut. A second view shows the lower node in water and leaves above the waterline.</desc>
+  <rect width="900" height="600" rx="28" fill="#f1f6ed"/>
+  <g font-family="Arial, sans-serif" fill="#193e2b">
+    <text x="48" y="64" font-size="31" font-weight="700">Keep the node. Grow a new vine.</text>
+    <text x="48" y="98" font-size="19" fill="#506958">Pothos propagation · simplified guide</text>
+    <rect x="32" y="128" width="404" height="388" rx="20" fill="#fff"/>
+    <rect x="460" y="128" width="408" height="388" rx="20" fill="#fff"/>
+    <text x="56" y="169" font-size="24" font-weight="700">1. Cut below a node</text>
+    <text x="484" y="169" font-size="24" font-weight="700">2. Root the lower node</text>
+    <path d="M211 434 Q224 330 240 208" fill="none" stroke="#517e48" stroke-width="12" stroke-linecap="round"/>
+    <path d="M223 329 Q190 294 154 281" fill="none" stroke="#517e48" stroke-width="7"/>
+    <path d="M155 281 C101 299 94 256 119 235 C139 218 157 226 165 242 C178 219 208 222 208 246 C208 266 176 280 155 281" fill="#4d8050"/>
+    <path d="M155 281 L164 245" stroke="#aac492" stroke-width="2"/>
+    <circle cx="224" cy="329" r="15" fill="#dfac55" stroke="#193e2b" stroke-width="3"/>
+    <path d="M243 328 H280" fill="none" stroke="#506958" stroke-width="2"/>
+    <text x="289" y="325" font-size="21" font-weight="700">Node</text>
+    <text x="289" y="351" font-size="16">Leaf joins vine</text>
+    <path d="M187 395 L250 405" stroke="#b54b38" stroke-width="4" stroke-dasharray="8 6"/>
+    <path d="M259 404 H285" fill="none" stroke="#b54b38" stroke-width="2"/>
+    <text x="294" y="412" font-size="20" fill="#a54030">Cut here</text>
+    <text x="56" y="482" font-size="18">Keep the node on your cutting.</text>
+    <path d="M539 332 V451 Q539 469 556 469 H708 Q725 469 725 451 V332" fill="#e6f3f6" stroke="#7da3b0" stroke-width="3"/>
+    <path d="M541 365 H723" fill="none" stroke="#7da3b0" stroke-width="2" stroke-dasharray="7 5"/>
+    <path d="M625 420 Q631 342 641 239" fill="none" stroke="#517e48" stroke-width="10" stroke-linecap="round"/>
+    <path d="M637 286 Q677 253 694 248" fill="none" stroke="#517e48" stroke-width="6"/>
+    <path d="M693 248 C655 223 679 187 700 206 C721 176 757 199 744 224 C733 243 710 249 693 248" fill="#4d8050"/>
+    <path d="M634 318 Q603 293 592 287" fill="none" stroke="#517e48" stroke-width="6"/>
+    <path d="M592 287 C545 313 530 267 554 252 C571 242 585 254 587 264 C610 242 632 271 614 280 C605 285 597 287 592 287" fill="#639255"/>
+    <circle cx="628" cy="391" r="12" fill="#dfac55" stroke="#193e2b" stroke-width="3"/>
+    <path d="M628 398 Q593 418 597 448 M624 404 Q651 420 661 448 M624 409 Q620 438 631 453" stroke="#b39262" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M735 365 H749" stroke="#506958" stroke-width="2"/>
+    <text x="757" y="360" font-size="17">Water</text>
+    <text x="757" y="384" font-size="17">level</text>
+    <text x="484" y="497" font-size="18">Leaves above water; lower node below.</text>
+    <text x="48" y="558" font-size="19" fill="#506958">Use a healthy stem cutting, not a detached leaf.</text>
+    <text x="768" y="558" font-size="18" font-weight="700">Plantive</text>
+  </g>
+</svg>
